@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = @NextGen.Framework.Utility.Constants.ToolTitlePrefix + "Chart";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<div ng-controller="chartController" class="master-view-content">
+    <div class="master-leftpanel">
+        @{Html.RenderPartial("_LeftPanel");}
+    </div>
+
+    <div class="master-content-area">
+        <div class="chart-toplayer">
+            <ul>
+                <li ng-repeat="chart in chartTypes track by $index">
+                    <div class="{{chart.css}} chart-type{{chart.isdefault==true?'-active':''}}" data-chart="{{chart.type}}" onclick="changeChart(this)"><span>{{chart.type}}</span></div>
+                </li>
+            </ul>
+        </div>
+        <div class="chart-bottomlayer">
+            <div id="chart-visualisation"></div>
+        </div>
+    </div>
+</div>
+@System.Web.Optimization.Styles.Render("~/bundle/schart")
+@System.Web.Optimization.Scripts.Render("~/bundle/jchart")
+<script src="~/Scripts/chart.js"></script>

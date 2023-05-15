@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = @NextGen.Framework.Utility.Constants.ToolTitlePrefix + "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Styles.Render("~/bundle/theme")
+    @System.Web.Optimization.Scripts.Render("~/bundle/jlib")
+</head>
+
+<body>
+    <div ng-app="mainApp" class="master-layout">
+        <div class="master-top-header">
+        </div>
+        <div class="master-content">
+            <div ng-controller="homeController">
+                <ul>
+                    <li>@Html.ActionLink("Chart", "Index", "Chart")</li>
+                    <li>@Html.ActionLink("Snapshot", "Index", "Snapshot")</li>
+                    <li>@Html.ActionLink("Table", "Index", "Table")</li>
+                    <li>@Html.ActionLink("Report", "Index", "Report")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+@*@System.Web.Optimization.Scripts.Render("~/bundle/jlib")*@
+@System.Web.Optimization.Scripts.Render("~/bundle/jhome")
+@System.Web.Optimization.Styles.Render("~/bundle/shome")
+</body>
+</html>

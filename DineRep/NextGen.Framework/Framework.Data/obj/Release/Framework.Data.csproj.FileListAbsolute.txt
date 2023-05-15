@@ -1,0 +1,12 @@
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\Framework.Data.dll
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\Framework.Data.pdb
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\AqUtility.dll
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\Framework.Models.dll
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\NextGen.Core.Configuration.dll
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\NextGen.Core.Data.dll
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\NextGen.Core.Models.dll
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\Newtonsoft.Json.dll
+D:\DineRep\NextGen.Framework\Framework.Data\bin\Release\Framework.Models.pdb
+D:\DineRep\NextGen.Framework\Framework.Data\obj\Release\Framework.Data.csprojResolveAssemblyReference.cache
+D:\DineRep\NextGen.Framework\Framework.Data\obj\Release\Framework.Data.dll
+D:\DineRep\NextGen.Framework\Framework.Data\obj\Release\Framework.Data.pdb

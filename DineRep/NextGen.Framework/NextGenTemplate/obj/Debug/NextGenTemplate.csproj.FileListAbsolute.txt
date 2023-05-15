@@ -1,0 +1,6 @@
+D:\DineRep\NextGen.Framework\NextGenTemplate\bin\Debug\ProjectTemplates\NextGen.Framework.zip
+D:\DineRep\NextGen.Framework\NextGenTemplate\bin\Debug\AQNextGen.Framework.vsix
+D:\DineRep\NextGen.Framework\NextGenTemplate\bin\Debug\extension.vsixmanifest
+D:\DineRep\NextGen.Framework\NextGenTemplate\obj\Debug\AQNextGen.Framework.dll
+D:\DineRep\NextGen.Framework\NextGenTemplate\obj\Debug\AQNextGen.Framework.pdb
+D:\DineRep\NextGen.Framework\NextGenTemplate\obj\Debug\extension.vsixmanifest

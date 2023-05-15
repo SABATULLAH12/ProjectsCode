@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<div ng-controller="reportController">
+    <div class="chart-leftpanel">
+    </div>
+    <div class="chart-area">
+        <div class="chart-toplayer">
+            <ul>
+                <li ng-repeat="chart in chartTypes">
+                    <div>{{chart.type}}</div>
+                </li>
+            </ul>
+        </div>
+        <div class="chart-bottemlayer">
+            <div></div>
+        </div>
+    </div>
+</div>
+@System.Web.Optimization.Styles.Render("~/bundle/sreport")
+@System.Web.Optimization.Scripts.Render("~/bundle/jreport")

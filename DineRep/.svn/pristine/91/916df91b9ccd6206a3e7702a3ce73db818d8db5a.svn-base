@@ -1,0 +1,252 @@
+{
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "Food Service Occassion",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": "fso_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_FoodServiceOccasion",
+          "PrimaryKey": "FSO_ID",
+          "DisplayTextColumnName": "Level",
+          "ParentPrimaryKey": "ParentId",
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 2,
+        "Label": "Food Service Channel",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_FoodServiceChannel",
+          "PrimaryKey": "FSC_ID",
+          "DisplayTextColumnName": "Level",
+          "ParentPrimaryKey": "ParentId",
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 3,
+        "Label": "Period",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": null,
+        "IsTimePeriod": true,
+        "HideTrend": false,
+        "Database": {
+          "Table": "CrestBasic_Timeperiod",
+          "PrimaryKey": "ID",
+          "DisplayTextColumnName": "Period_Description",
+          "ParentPrimaryKey": null,
+          "ParentText": "TimeInterval",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 4,
+        "Label": "Measure",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Measure",
+          "PrimaryKey": "MeasureId",
+          "DisplayTextColumnName": "Measure",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 5,
+        "Label": "Demographics",
+        "IsMultiSelect": true,
+        "IsRequired": true,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimDemographics",
+          "PrimaryKey": "SlNo",
+          "DisplayTextColumnName": "KeyName",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentKeyName",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 7,
+        "Label": "Geography",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimGeography",
+          "PrimaryKey": "SlNo",
+          "DisplayTextColumnName": "KeyName",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentKeyName",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": "where [key] not like 'h%' and [key] not like 'bev%' and [key] not like 'e%'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 6,
+        "Label": "SCC",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimSCC",
+          "PrimaryKey": "SlNo",
+          "DisplayTextColumnName": "KeyName",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentKeyName",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": "where [Key] not like 'on%' and [Key] not like 'eb%' and [Key] not like 'sm%'"
+        },
+        "IsFilterBasedOnOtherFilter": true,
+        "Parameters": null
+      }
+    ]
+  },
+  "IsProcedure": true,
+  "Procedure": {
+    "Name": "usp_ChartGenerator",
+    "Parameters": [
+      {
+        "FilterLabel": "Food Service Channel",
+        "Format": null,
+        "DefaultValue": null,
+        "Prefix": null,
+        "Postfix": null,
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": "Food Service Occassion",
+        "Format": null,
+        "DefaultValue": null,
+        "Prefix": null,
+        "Postfix": null,
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": null,
+        "Format": null,
+        "DefaultValue": "1",
+        "Prefix": null,
+        "Postfix": null,
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": "Period",
+        "Format": "|",
+        "DefaultValue": null,
+        "Prefix": null,
+        "Postfix": null,
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": "Measure",
+        "Format": null,
+        "DefaultValue": null,
+        "Prefix": null,
+        "Postfix": null,
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": "Demographics",
+        "Format": ",",
+        "DefaultValue": null,
+        "Prefix": "DemoID|",
+        "Postfix": null,
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": "Geography",
+        "Format": ",",
+        "DefaultValue": null,
+        "Prefix": "GeoID|",
+        "Postfix": null,
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": "SCC",
+        "Format": ",",
+        "DefaultValue": null,
+        "Prefix": "SccID in (",
+        "Postfix": ") AND MenuItemId = 138 and DaypartId = 1 AND WoweID = 1",
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": null,
+        "Format": null,
+        "DefaultValue": "0",
+        "Prefix": null,
+        "Postfix": null,
+        "CustomPropertyLabel": null
+      },
+      {
+        "FilterLabel": null,
+        "Format": null,
+        "DefaultValue": null,
+        "Prefix": null,
+        "Postfix": null,
+        "CustomPropertyLabel": "139"
+      }
+    ],
+    "SeriesColumn": "MetricName1",
+    "XAxisColumn": "MetricName2",
+    "YAxisColumn": "Incidence",
+    "ZAxisColumn": null,
+    "IgnoreColumns": [ ],
+    "Value1": null,
+    "Value2": null,
+    "Value3": null,
+    "Value4": null,
+    "Value5": null
+  },
+  "Widgets": null
+}

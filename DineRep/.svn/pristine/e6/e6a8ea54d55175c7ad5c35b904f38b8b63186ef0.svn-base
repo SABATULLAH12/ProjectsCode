@@ -1,0 +1,27 @@
+﻿namespace NextGen.Core.Models
+{
+    public class ViewConfigDatabase
+    {
+        public string Table { get; set; }
+        public string PrimaryKey { get; set; }
+        public string DisplayTextColumnName { get; set; }
+        public string ParentPrimaryKey { get; set; }
+        public string ParentText { get; set; }
+        public string SelectableColumnName { get; set; }
+        public string TimeperiodYearBreakUp { get; set; }
+        public string WhereCondition { get; set; }
+        public string InlineLevel { get; set; }
+        public string IsSubHeading { get; set; }
+        public string IsSubHeadingID { get; set; }
+        public string SearchName { get; set; }
+
+        public string LevelId { get; set; }
+        public string ShowAll { get; set; }
+        public string ParentOfParent { get; set; }
+        public string Colorcode { get; set; }
+        public string GuestOrVisitFilter { get; set; }
+        public string IsChannelFlag { get; set; }
+
+
+    }
+}

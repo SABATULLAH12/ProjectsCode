@@ -1,0 +1,66 @@
+﻿<!-- Selection Panel -->
+<div class="master-lft-ctrl" style="height:80px;">
+    <div class="lft-ctrl-toggle">
+        <div class="lft-ctrl-toggle-text pit active lft-popup-tp-smnu lft-popup-tp-smnu-active" data-val="pit">Point in Time</div>
+        <label class="pit-trend-switch">
+            <input type="checkbox" id="pit-toggle" data-val="pit">
+            <div class="pit-trend-slider round active"></div>
+        </label>
+        <div class="lft-ctrl-toggle-text trend lft-popup-tp-smnu" data-val="trend" ng-hide="fltr.HideTrend=='true'">TREND</div>
+    </div>
+</div>
+<section ng-repeat="fltr in filters track by $index" ng-init="initializeSearch()">
+    <!-- Filter Panel -->
+    <div class="master-lft-ctrl" data-val="{{fltr.Label}}" data-isdynamicfilter="{{fltr.IsFilterBasedOnOtherFilter}}">
+        <div class="lft-ctrl"></div>
+        <div class="lft-ctrl2">
+            <div class="lft-ctrl-label" ng-switch="fltr.IsTimeperiod">
+                <span>{{fltr.Label}}</span>
+                <div ng-switch-when="true">
+                </div>
+
+            </div>
+            @*<div class="lft-ctrl-next">>></div>*@
+            <div class="lft-ctrl-next {{fltr.Image}}"></div>
+            <div class="lft-ctrl-txt" style="{{fltr.IsMultiSelect==true?'height:50px': ''}}"></div>
+        </div>
+        <div class="lft-ctrl3" data-ismultiselect="{{fltr.IsMultiSelect}}" data-required="{{fltr.IsRequired}}" ng-switch="fltr.IsTimeperiod">
+            <div class="lft-ctrl3-header"><span>X</span></div>
+            <div class="lft-ctrl3-content" ng-switch-when="false">
+                <div class="lft-popup-col{{paneldata.Level}} lft-popup-col" data-level="{{paneldata.Level}}" ng-repeat="paneldata in fltr.PanelPopup track by $index">
+                    <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                    <div class="lft-popup-col-search">
+                        <input type="text" name="search" id="{{'search-list-'+fltr.Label}}" class="search-list" placeholder="Search.." class="ui-autocomplete-input" autocomplete="off">
+                        <div class="search-img"></div>
+                    </div>
+                    <div class="lft-popup-ele" ng-repeat="panelelement in paneldata.Data track by $index">
+                        <span class="lft-popup-ele-label-img {{removeBlankSpace(panelelement.Text)}}_img"></span>
+                        <span class="lft-popup-ele-label" data-id="{{panelelement.ID}}" data-val="{{panelelement.Text}}" data-parent="{{panelelement.ParentID}}" parent-text="{{panelelement.ParentText}}" data-isSelectable="{{panelelement.IsSelectable==undefined?true:panelelement.IsSelectable}}">{{panelelement.Text}}</span>
+                        <span class="lft-popup-ele-next sidearrw" ng-hide="panelelement.ChildCount==0"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="lft-ctrl3-content" ng-switch-when="true">
+                <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                <div class="lft-popup-tp" ng-repeat="t in fltr.Time track by $index" data-val="{{t.Years}}">{{t.Interval}}</div>
+
+                <div style="margin: 56px 30px 10px 20px;">
+                    <div id="slider-range"></div>
+                    <div id="slider-range-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Filter Panel -->
+    @*<hr />*@
+
+</section>
+
+<!-- Submit Panel -->
+<div class="master-lft-ctrl submt">
+    <div class="master-btn lft-ctrl2" id="master-btn" ng-click="prepareContentArea()">@*<span>Submit</span>*@</div>
+</div>
+<!-- Submit Panel -->
+<div class="master-lft-ctrl" style="display:none;">
+    <div class="lft-ctrl2" id="master-clear"><span><a href="#" id="clearLeftPanel">Clear All</a></span></div>
+</div>

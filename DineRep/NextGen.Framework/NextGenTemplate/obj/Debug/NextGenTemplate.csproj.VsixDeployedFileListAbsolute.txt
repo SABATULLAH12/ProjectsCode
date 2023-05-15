@@ -1,0 +1,2 @@
+C:\Users\11173\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Thanuj Kumara AS\AQNextGen.Framework\1.0.12\\extension.vsixmanifest
+C:\Users\11173\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Thanuj Kumara AS\AQNextGen.Framework\1.0.12\ProjectTemplates\\NextGen.Framework.zip

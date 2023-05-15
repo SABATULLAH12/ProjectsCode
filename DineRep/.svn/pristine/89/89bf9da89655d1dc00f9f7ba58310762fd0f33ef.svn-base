@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = NextGen.Framework.Utility.Constants.ToolTitlePrefix + "Table";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<div ng-controller="tableController" class="master-view-content">
+    <div class="master-leftpanel">
+        @{Html.RenderPartial("_LeftPanel");}
+    </div>
+    <div class="master-content-area">
+        <div class="table-toplayer"></div>
+        <div class="table-bottomlayer">
+            <div id="parent">
+                <table id="flexi-table" class="table"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@System.Web.Optimization.Styles.Render("~/bundle/stable")
+@System.Web.Optimization.Scripts.Render("~/bundle/jtable")

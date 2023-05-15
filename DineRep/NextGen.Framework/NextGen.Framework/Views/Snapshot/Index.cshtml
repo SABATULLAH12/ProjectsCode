@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = NextGen.Framework.Utility.Constants.ToolTitlePrefix + "Snapshot";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<div ng-controller="snapshotController" class="master-view-content">
+    <div class="master-leftpanel">
+        @{Html.RenderPartial("_LeftPanel");}
+    </div>
+    <div class="master-content-area">
+        <div class="snapshot-toplayer">
+        </div>
+        <div class="snapshot-bottomlayer">
+            <div class="snapshot-widgets">
+                @*<div class="snapshot-widget"></div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+@System.Web.Optimization.Scripts.Render("~/bundle/jsnapshot")
+@System.Web.Optimization.Styles.Render("~/bundle/ssnapshot")

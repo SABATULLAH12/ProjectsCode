@@ -1,0 +1,4 @@
+D:\DineRep\NextGen.Framework\Framework.Models\bin\Debug\Framework.Models.dll
+D:\DineRep\NextGen.Framework\Framework.Models\bin\Debug\Framework.Models.pdb
+D:\DineRep\NextGen.Framework\Framework.Models\obj\Debug\Framework.Models.dll
+D:\DineRep\NextGen.Framework\Framework.Models\obj\Debug\Framework.Models.pdb
