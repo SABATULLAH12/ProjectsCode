@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = Dine.Utility.Constants.ToolTitlePrefix + "Table";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div ng-controller="tableController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band"></div>
+        <div class="submodules-options">
+            <ul>
+                <li class="link_hover establishment_table-msehover classMouseHover">
+                    <div class="link_items">ESTABLISHMENT<div class="downarrw"></div></div>
+                    <div class="list_content">
+                        <div class="submodules-options-link establishment-link-compare establishment-compare-table-msehover classMouseHover">@Html.ActionLink("COMPARE ESTABLISHMENTS", "EstablishmentCompare", "Table")</div>
+                        <div class="submodules-options-link establishment-link-deep-dive establishment-deep-dive-table-msehover classMouseHover">@Html.ActionLink("ESTABLISHMENT DEEP DIVE", "EstablishmentDeepDive", "Table")</div>
+                    </div>
+                </li>
+                <li class="link_hover beverage_table-msehover classMouseHover">
+                    <div class="link_items">BEVERAGES<div class="downarrw"></div></div>
+                    <div class="list_content">
+                        <div class="submodules-options-link beverage-link beverage-compare-table-msehover classMouseHover">@Html.ActionLink("COMPARE BEVERAGES", "BeverageCompare", "Table")</div>
+                        <div class="submodules-options-link beverage-link beverage-deep-dive-table-msehover classMouseHover">@Html.ActionLink("BEVERAGE DEEP DIVE", "BeverageDeepDive", "Table")</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="red_bar"></div>
+    
+</div>
+
+@System.Web.Optimization.Styles.Render("~/bundle/stable")
+@System.Web.Optimization.Scripts.Render("~/bundle/jtable")
+
+@*<script src="@Utils.ContentVersioned("~/Scripts/table.js")"> </script>
+
+    <link href="@Utils.ContentVersioned("~/Content/table.css")" rel="stylesheet" />*@

@@ -1,0 +1,77 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 2,
+        "Label": "Establishment",
+        "IsMultiSelect": true,
+        "IsRequired": true,
+        "Image": "establishment_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Establishment",
+          "PrimaryKey": "EstablishmentId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 4,
+        "Label": "Measures",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": "measure_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Measures_CorrespondenceMap",
+          "PrimaryKey": "MeasureId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 3,
+        "Label": "Demography Filters",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "demograhicFitr_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

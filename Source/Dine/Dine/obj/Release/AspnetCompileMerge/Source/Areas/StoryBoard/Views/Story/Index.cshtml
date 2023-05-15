@@ -1,0 +1,567 @@
+﻿@{
+    ViewBag.Title = @Dine.Utility.Constants.ToolTitlePrefix + "Report";/* "Storyboard";*/
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<link href="~/Content/storyboard.css" rel="stylesheet" />
+<script src="~/Scripts/storyBoard.js"></script>
+
+<div ng-controller="storyboardController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band" style="margin-left:37.7%;"></div> @*bug id 5297*@
+        @*<div class="submodules-options">
+                <ul>
+                    <li class="link_hover">
+                        <div class="link_items">STANDARD REPORTS<div class="downarrw"></div>
+                        </div>
+                        <div class="list_content">
+                            <div class="submodules-options-link report-link-dinereport">@Html.ActionLink("DINE REPORTS", "DineReports", "../Report")</div>
+                            <div class="submodules-options-link report-link-summaryreport">@Html.ActionLink("SUMMARY REPORTS", "SummaryReports", "../Report")</div>
+                        </div>
+                    </li>
+                    <li class="link_hover">
+                        <div class="link_items storyboard_link">@Html.ActionLink("STORYBOARD", "Story", "StoryBoard")</div>
+                    </li>.table-content-col
+                </ul>
+            </div>*@
+    </div>
+    <div class="master-leftpanel">
+        <div class="master-lft-ctrl">
+            <div class="storyboard-ctrl-next folder-img folder-img-msehover classMouseHover" ng-click="myFiles()"></div>
+        </div>
+        <div class="master-lft-ctrl">
+            <div class="storyboard-ctrl-next share-img share-img-msehover classMouseHover" ng-click="sharedFiles()"></div>
+        </div>
+
+        <div class="master-lft-ctrl">
+            <div class="storyboard-ctrl-next myfavorite-img myfavorite-img-msehover classMouseHover" ng-click="myFavouriteFiles()"></div>
+        </div>
+    </div>
+    <div class="master-content-area">
+        <div class="storyboard-toplayer">
+            <div class="storyboard-search">
+                <div class="search-input-top">
+                    <input type="text" placeholder="Search...." class="sb-search" ng-model="sbSearch" />
+                    <div class="search-img-top"></div>
+                </div>
+            </div>
+            <div class="storyboard-menu-list common">
+                <div class="menu refresh refresh-msehover classMouseHover" ng-mouseover="hoverInRefresh()" ng-mouseleave="hoverOutRefresh()" ng-click="refreshMain()">
+                    <div class="menu-img">
+                        <div class="refresh-image"></div>
+                    </div>
+                    <div class="menu-label">REFRESH</div>
+                </div>
+                <div class="refresh-div">
+                    <div class="add-to-storyboard refresh-sub-level-btn" ng-click="refreshSubLevel()"><div class="refresh-image"></div><div class="refresh-image-div">REFRESH</div></div>
+                </div>
+
+                <div class="vertical-divider"></div>
+                <div class="menu save-as save-as-msehover classMouseHover" ng-mouseover="hoverInSave()" ng-mouseleave="hoverOutSave()" ng-click="saveAsFunction()">
+                    <div class="menu-img">
+                        <div class="save-as-img"></div>
+                    </div>
+                    <div class="menu-label">SAVE AS</div>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="menu view view-msehover classMouseHover" ng-mouseover="hoverInView()" ng-mouseleave="hoverOutView()" ng-click="viewFunction()">
+                    <div class="menu-img">
+                        <div class="view-img"></div>
+                    </div>
+                    <div class="menu-label">VIEW</div>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="menu edit edit-msehover classMouseHover" ng-mouseover="hoverInEdit()" ng-mouseleave="hoverOutEdit()" ng-click="editFunction()">
+                    <div class="menu-img">
+                        <div class="edit-img"></div>
+                    </div>
+                    <div class="menu-label">EDIT</div>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="menu update update-msehover classMouseHover" ng-mouseover="hoverInUpdate()" ng-mouseleave="hoverOutUpdate()" ng-click="updateFunction()">
+                    <div class="menu-img">
+                        <div class="update-img"></div>
+                    </div>
+                    <div class="menu-label">UPDATE</div>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="menu download download-msehover classMouseHover" ng-mouseover="hoverInDownload()" ng-mouseleave="hoverOutDownload()" ng-click="downloadFunction()">
+                    <div class="menu-img">
+                        <div class="download-img"></div>
+                    </div>
+                    <div class="menu-label">DOWNLOAD</div>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="menu share share-msehover classMouseHover" ng-mouseover="hoverInShare()" ng-mouseleave="hoverOutShare()" ng-click="shareFunction()">
+                    <div class="menu-img">
+                        <div class="share-as-img"></div>
+                    </div>
+                    <div class="menu-label">SHARE</div>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="menu delete delete-msehover classMouseHover" ng-mouseover="hoverInDelete()" ng-mouseleave="hoverOutDelete()" ng-click="deleteFunction()">
+                    <div class="menu-img">
+                        <div class="delete-img"></div>
+                    </div>
+                    <div class="menu-label">DELETE</div>
+                </div>
+                <div class="vertical-divider"></div>
+                <div class="menu my-favorite my-favorite-msehover classMouseHover" ng-mouseover="hoverInFavorite()" ng-mouseleave="hoverOutFavorite()" ng-click="myfavourite()">
+                    <div class="menu-img">
+                        <div class="addto-myfavorite-img"></div>
+                    </div>
+                    <div class="menu-label" style="font-size: 12px;">Favorite</div>
+                </div>
+                <div class="menu remove-favorite remove-favorite-msehover classMouseHover" ng-mouseover="hoverInRemoveFavorite()" ng-mouseleave="hoverOutRemoveFavorite()" style="display: none;" ng-click="removefourites()">
+                    <div class="menu-img">
+                        <div class="addto-myfavorite-img"></div>
+                    </div>
+                    <div class="menu-label" style="font-size: 12px;">UNFAVORITE</div>
+                </div>
+            </div>
+
+            <div class="storyboard-menu-list view-storyboard-menu-list">
+                <div class="menu wide-menu  view view-msehover classMouseHover" ng-click="navigateToChartToView()" ng-mouseover="hoverInView()" ng-mouseleave="hoverOutView()">
+                    <div class="menu-img">
+                        <div class="view-img"></div>
+                    </div>
+                    <div class="menu-label">VIEW</div>
+                </div>
+                <div class="vertical-divider wide-vertical"></div>
+                <div class="menu download standard-download download-msehover classMouseHover" ng-mouseover="hoverInStandardDownload()" ng-mouseleave="hoverOutStandardDownload()" ng-click="downloadSlides()">
+                    <div class="menu-img">
+                        <div class="download-img"></div>
+                    </div>
+                    <div class="menu-label">DOWNLOAD STANDARD</div>
+                    <div class="menu-label menu-label-small">One Chart Per Page</div>
+                </div>
+                <div class="vertical-divider wide-vertical"></div>
+                <div class="menu download custom-download custom-download-msehover classMouseHover" ng-mouseover="hoverInCustomDownload()" ng-mouseleave="hoverOutCustomDownload()" ng-click="customDownloadHideShow(flag)">
+                    <div class="menu-img">
+                        <div class="download-img"></div>
+                    </div>
+                    <div class="menu-label">DOWNLOAD CUSTOM</div>
+                    <div class="menu-label menu-label-small">Multiple Charts Per Page</div>
+                </div>
+
+                <div class="menu download helpdoc-download helpdoc-download-msehover classMouseHover" style="display:none;" ng-mouseover="hoverInHelpdocDownload()" ng-mouseleave="hoverOutHelpdocDownload()" ng-click="HelpdocDownload()">
+                    <div class="menu-img">
+                        <div class="helpdoc-img"></div>
+                    </div>
+                    <div class="menu-label">HELP DOC</div>
+                </div>
+
+            </div>
+
+            <div class="storyboard-menu-list edit-storyboard-menu-list">
+                <div class="menu wide-menu view view-msehover classMouseHover" ng-click="navigateToChartToView()" ng-mouseover="hoverInView()" ng-mouseleave="hoverOutView()">
+                    <div class="menu-img">
+                        <div class="view-img"></div>
+                    </div>
+                    <div class="menu-label">VIEW</div>
+                </div>
+                <div class="vertical-divider wide-vertical"></div>
+                <div class="menu wide-menu edit edit-msehover classMouseHover" ng-mouseover="hoverInEdit()" ng-mouseleave="hoverOutEdit()" ng-click="navigateToChartToEdit()">
+                    <div class="menu-img">
+                        <div class="edit-img"></div>
+                    </div>
+                    <div class="menu-label">EDIT</div>
+                </div>
+                <div class="vertical-divider wide-vertical"></div>
+                <div class="menu download standard-download download-msehover classMouseHover" ng-mouseover="hoverInStandardDownload()" ng-mouseleave="hoverOutStandardDownload()" ng-click="downloadSlides()">
+                    <div class="menu-img">
+                        <div class="download-img"></div>
+                    </div>
+                    <div class="menu-label">DOWNLOAD STANDARD</div>
+                    <div class="menu-label menu-label-small">One Chart Per Page</div>
+                </div>
+                <div class="vertical-divider wide-vertical"></div>
+                <div class="menu download custom-download custom-download-msehover classMouseHover" ng-mouseover="hoverInCustomDownload()" ng-mouseleave="hoverOutCustomDownload()" ng-click="customDownloadHideShow(flag)">
+                    <div class="menu-img">
+                        <div class="download-img"></div>
+                    </div>
+                    <div class="menu-label">DOWNLOAD CUSTOM</div>
+                    <div class="menu-label menu-label-small">Multiple Charts Per Page</div>
+                </div>
+                <div class="menu download helpdoc-download helpdoc-download-msehover classMouseHover" style="display:none;" ng-mouseover="hoverInHelpdocDownload()" ng-mouseleave="hoverOutHelpdocDownload()" ng-click="HelpdocDownload()">
+                    <div class="menu-img">
+                        <div class="helpdoc-img"></div>
+                    </div>
+                    <div class="menu-label">HELP DOC</div>
+                </div>
+
+                <div class="vertical-divider wide-vertical"></div>
+                <div class="menu wide-menu delete delete-msehover classMouseHover" ng-mouseover="hoverInDelete()" ng-mouseleave="hoverOutDelete()" ng-click="deleteSlideFunction()">
+                    <div class="menu-img">
+                        <div class="delete-img"></div>
+                    </div>
+                    <div class="menu-label">DELETE</div>
+                </div>
+            </div>
+            @*<div class="add-to-storyboard refresh-main-btn" ng-click="refreshMain()"><div class="refresh-image"></div><div class="refresh-image-div">REFRESH</div></div>
+                <div class="refresh-div">
+                    <div class="add-to-storyboard refresh-sub-level-btn" ng-click="refreshSubLevel()"><div class="refresh-image"></div><div class="refresh-image-div">REFRESH</div></div>
+                </div>*@
+
+        </div>
+        <div class="storyboard-content">
+            <div class="tbl-dta-freq myfiles-heading">MY FILES</div>
+            @*<div class="tbl-data-freqbdr"></div>*@
+            @*<div class="tbl-data-freqtxt">MY FILES</div>*@
+
+            <div class="tbl-dta-freq myfavourites-heading">
+                <div class="tbl-data-freqbdr"></div>
+                <div class="tbl-data-freqtxt">MY FAVOURITES</div>
+            </div>
+
+            <div class="table_header_div">
+                <table class="table-myfiles">
+                    <tbody>
+                        <tr>
+                            <td style="width: 33.3333%; text-align: center;">
+                                <div class="border-right">REPORT NAME</div>
+                            </td>
+                            <td style="width:33.3333%;text-align:center;">
+                                <div class="border-right">CREATED BY</div>
+                            </td>
+                            <td>
+                                <div>LAST UPDATED BY</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="reportTable_holder" style="display:block;overflow :hidden;outline: none;">
+                <table class="table-myfiles">
+
+                    <tbody class="table-content">
+                        <tr class="table-content-row" data-id="{{x.Id}}" ng-repeat="x in reports|orderBy: 'UpdatedOn' : true|filter: {Name : sbSearch}" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="reportClicked(x.Id,$event,x)">
+                            <td class="table-content-col"><div class="divtd"><span>{{x.Name}}</span></div><div class="td-dot"></div></td>
+                            @*<td class="right-divider"></td>
+                            *@
+                            <td class="table-content-col"><div class="divtd"><span>{{x.CreatedBy}}-{{convertToDate(x.CreatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div><div class="td-dot"></div></td>
+                            @*<td class="right-divider"></td>
+                            *@
+                            <td class="table-content-col"><div class="divtd"><span>{{x.UpdatedBy}}-{{convertToDate(x.UpdatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-sharedfiles-content" style="display: none; height: 99%;">
+                <div class="tbl-dta-freq" table-sharedfiles-label>
+                    <div class="tbl-data-freqbdr"></div>
+                    <div class="tbl-data-freqtxt">Shared by me</div>
+                </div>
+
+                @* Commented as per requirement *@
+                @*<div class="storyboard-search" style="height: 6.8%; width: 100%;display:none;">
+                        <div class="search-input" style="margin-top: 0;">
+                            <input type="text" placeholder="Search...." class="sb-search" ng-model="sbSearchSharedbyMe" style="margin-top: 0;" />
+                            <div class="search-img"></div>
+                        </div>
+                    </div>*@
+
+                <div class="shared-by-me">
+                    <div class="table_shared_header_div">
+                        <table class="table-Sharedmyfiles">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 33.3333%; text-align: center;">
+                                        <div class="border-right">REPORT NAME</div>
+                                    </td>
+                                    <td style="width:33.3333%;text-align:center;">
+                                        <div class="border-right">CREATED BY</div>
+                                    </td>
+                                    <td>
+                                        <div>LAST UPDATED BY</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="reportSharedTable_holder" style="display:block;overflow :hidden;outline: none;">
+                        <table class="table-sharedFiles">
+                            <tbody class="table-content">
+                                <tr class="table-content-row" data-id="{{x.Id}}" ng-repeat="x in sharedByMeReports|orderBy:'UpdatedOn' : true|filter: {Name : sbSearch}" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="reportClicked(x.Id,$event,x)">
+                                    <td class="table-content-col"><div class="divtd"><span>{{x.Name}}</span></div><div class="td-dot"></div></td>
+                                    <td class="table-content-col"><div class="divtd"><span>{{x.CreatedBy}}-{{convertToDate(x.CreatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div><div class="td-dot"></div></td>
+                                    <td class="table-content-col"><div class="divtd"><span>{{x.UpdatedBy}}-{{convertToDate(x.UpdatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tbl-dta-freq" table-sharedfiles-label>
+                    <div class="tbl-data-freqbdr"></div>
+                    <div class="tbl-data-freqtxt">Shared with me</div>
+                </div>
+
+                @* Commented as per requirement *@
+                @*<div class="storyboard-search" style="height: 6.8%; width: 100%;display:none;">
+                        <div class="search-input" style="margin-top: 0;">
+                            <input type="text" placeholder="Search...." class="sb-search" ng-model="sbSearchSharedWithMe" style="margin-top: 0;" />
+                            <div class="search-img"></div>
+                        </div>
+                    </div>*@
+
+                <div class="shared-with-me">
+                    <div class="table_shared_with_header_div">
+                        <table class="table-Sharedmyfiles">
+                            <tbody>
+                                <tr>
+                                    <td class="table-header-col" style="width:24.831%;"><div class="border-right">REPORT NAME</div></td>
+                                    <td class="table-header-col" style="width:24.831%;"><div class="border-right">CREATED BY</div></td>
+                                    <td class="table-header-col" style="width:24.831%;"><div class="border-right">LAST UPDATED BY</div></td>
+                                    <td class="table-header-col" style="width:24.831%;">SHARED BY</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="reportSharedWithTable_holder" style="display:block;overflow :hidden;outline: none;">
+                        <table class="table-sharedFiles">
+                            <tbody class="table-content">
+                                <tr class="table-content-row" data-id="{{x.Id}}" ng-repeat="x in sharedWithMeReports|orderBy:'UpdatedOn' : true|filter: {Name : sbSearch}" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="reportClicked(x.Id,$event,x)">
+                                    <td class="table-content-col" style="width:25%;"><div class="divtd"><span>{{x.Name}}</span></div><div class="td-dot"></div></td>
+                                    <td class="table-content-col" style="width:25%;"><div class="divtd"><span>{{x.CreatedBy}}-{{convertToDate(x.CreatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div><div class="td-dot"></div></td>
+                                    <td class="table-content-col" style="width:25%;"><div class="divtd"><span>{{x.UpdatedBy}}-{{convertToDate(x.UpdatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div><div class="td-dot"></div></td>
+                                    <td class="table-content-col" style="width:25%;"><div class="divtd"><span>{{x.SharedByMail}}</span></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="table_fav_header_div" style="display:none;">
+                <table class="table-Favfiles">
+                    <tbody>
+                        <tr>
+                            <td class="table-header-col" style="width:33.1%;"><div class="border-right">REPORT NAME</div></td>
+                            <td class="table-header-col" style="width:33.1%;"><div class="border-right">CREATED BY</div></td>
+                            <td class="table-header-col" style="width:33.1%;"><div>LAST UPDATED BY</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="my-fav-content" style="display:none;overflow :hidden;outline: none;">
+                <table class="table-favFiles">
+                    <tbody class="table-content">
+                        <tr class="table-content-row" data-id="{{x.Id}}" ng-repeat="x in reports|orderBy:'UpdatedOn' : true|filter: {Name : sbSearch}" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="reportClicked(x.Id,$event,x)">
+                            <td class="table-content-col"><div class="divtd"><span>{{x.Name}}</span></div><div class="td-dot"></div></td>
+                            <td class="table-content-col"><div class="divtd"><span>{{x.CreatedBy}}-{{convertToDate(x.CreatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div><div class="td-dot"></div></td>
+                            <td class="table-content-col"><div class="divtd"><span>{{x.UpdatedBy}}-{{convertToDate(x.UpdatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="view-content" style="display: none">
+                <div class="view-header">
+                    <div class="view-header-text">Dine Analysis</div>
+                    <div class="view-back-to-report view-back-to-report-msehover dynpos1 classMouseHover" ng-click="backtoreport($event)">
+                        <div class="back-img"></div>
+                        <div class="back-text">back to report</div>
+                    </div>
+                </div>
+                <div class="view-thumbnails">
+                    <div class="slide-thumbnail slide-thumbnail-cst" ng-repeat="x in slides" ng-mouseover="highlight_div()" ng-mouseleave="hideInfoPopup($event,x)" ng-click="selectSlide(x.Id,$event,x,$index+1)">
+                        <div class="slide-background" ng-mouseenter="displayInfoPopup($event,x)">
+                            <img src="~/StoryBoard Images/{{x.Id}}.png?v={{getTimeStamp}}" height="175" width="210" />
+                        </div>
+                        <div class="slide-number">{{$index+1}}</div>
+                        <div class="comment-section-container comment-section-container-msehover classMouseHover">
+                            <div class="comment-section">
+                                <div class="pre-text">Click to add</div>
+                                <div class="comment-text comment-text-cst" ng-click="addComments(x.Id,x)">Comment/</div>
+                                <div class="notes-label" ng-click="showNotesPopup(x.Id)">Notes</div>
+                                <div class="comment-img"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom_download">
+                    <div class="custom-vertical-divider"></div>
+                    <div class="custom-download-main">
+                        <div class="custom-download_list">
+                            <div class="custom-download_list_header">Saved Multi-Tile selections</div>
+                            <div class="custom-download_list_contains">
+                                <div class="custom-download-slide-row" ng-mouseover="hoverInCustom()" ng-mouseleave="hoverOutCustom()" ng-click="setCustomDownloadList($index)" ng-repeat="x in CustomDownloadSavedList track by $index">
+                                    <div class="custom-dot" style="float:left"></div>
+                                    <input type="radio" class="custom-radio" name="Custom" ng-model="SelectedCustomDownload" ng-value="x" ng-click="setCustomDownloadList($index)"><div class="custom-download-slide-row-name">{{x.Name}}</div>
+                                    <div class="custom-dot" style="float:right"></div>
+                                    <div class="custom-radio-delete" ng-click="deleteSavedCustomDownload($event,x)">X</div>
+                                    <div class="vertical-dashed-line"></div>
+                                </div>
+                            </div><div class="add_to_custom_download add_to_custom_download-msehover classMouseHover" ng-click="addSlidesToCustomDownload()">
+                                <div class="custom_download_text"> Add to slide</div>
+                                <div class="add_to_slide_img"></div>
+                            </div>
+                            <div class="custom-download_slides">
+                                <div class="custom-download_slides_header">
+                                    <div class="custom-download_slides_header_text">Slides</div>
+                                    <div class="custom-download_slides_header_text tile_heading">Tile Nos</div>
+                                </div>
+                                <div class="custom-download_slides_content">
+                                    <div class="custom-download-slide-row" ng-mouseover="hoverInCustom()" ng-mouseleave="hoverOutCustom()" ng-repeat="x in customDownloadList">
+                                        <div class="custom-dot" style="float:left"></div>
+                                        <div class="custom-download_slides_header_slideNo">Slide</div>
+                                        <div class="custom-download_slides_header_TileList">{{$index+1}}</div>
+                                        <div class="custom-download_slides_header_TileList custom-slide ng-binding"><span>{{x.SlideIndex}}</span></div>
+                                        <div class="custom-dot" style="float:right"></div>
+                                        <div class="custom-download_slides_content_close" ng-click="deleteCustomDownloadRow(x,$event,$index)">X</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-download_buttons">
+                                <div class="stat-submt custom-download_button custom_clear-msehover classMouseHover" ng-click="clearCustomDownloadEntries()">Clear</div>
+                                <div class="stat-submt custom-download_button custom_save-msehover classMouseHover" ng-click="customDownloadSave()">Save</div>
+                                <div class="stat-submt custom-download_button custom-download-msehover classMouseHover" ng-click="customDownloadSlides()">Download</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-info-maindiv" style="display:none;">
+                <div class="topleftimage" style="top:-6px;left: 1px;"></div>
+                <div class="leftbottomimage_tooltip" style="left:9px;"></div>
+                <div class="toprightimage" style="top:0px;"></div>
+                <div class="slide-info-centerdiv">
+                    <div class="slide-info" style="margin-top:0px;">
+                    </div>
+                </div>
+            </div>
+            <div class="saveAsPopup" style="display: none;">
+                <div class="stat-topdiv" style="width:100%;">
+                    <div class="stat-topband" style="width:100%;"></div>
+                    <div class="reportClose" style="top:-8%;" ng-click="hidesaveAsPopup()">X</div>
+                </div>
+                <div class="saveAsPopup-heading popup_save_heading" style="width: 91%; margin-left: 22px;">Create New Report</div>
+                <div class="saveAsPopup-report popup_whole">
+                    <div class="saveAs-label">Report Name</div>
+                    <div class="report-input">
+                        <input type="text" class="report-text" ng-model="saveAsReportText" />
+                    </div>
+                    <div class="report-btn">
+                        <div class="save-btn submit_cancel_btn save" ng-click="saveBtnFunction()">SAVE</div>
+                        <div class="cancel-btn submit_cancel_btn save" ng-click="hidesaveAsPopup()">CANCEL</div>
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="saveCustomDownloadPopup" style="display: none;">
+                    <div class="stat-topdiv" style="width:100%;"><div class="stat-topband" style="width:100%;"></div><div class="reportClose" ng-click="customCancelBtnFunction()">x</div></div>
+                    <div class="saveCustomDownload-heading">SAVE CUSTOM DOWNLOAD</div>
+                    <div class="saveCustomDownloadPopup-slide">
+                        <div class="saveAs-label">NAME</div>
+                        <div class="report-input">
+                            <input type="text" class="report-text" ng-model="SaveCustomDownloadText" autofocus="autofocus" />
+                        </div>
+                        <div class="report-btn">
+                            <div class="save-btn submit_cancel_btn" ng-click="customSaveBtnFunction()">SAVE</div>
+                            <div class="cancel-btn submit_cancel_btn" ng-click="customCancelBtnFunction()">CANCEL</div>
+                        </div>
+                    </div>
+                </div>*@
+
+            <div class="saveCustomDownloadPopup" style="display: none;">
+                <div class="stat-topdiv" style="width:100%;"><div class="stat-topband" style="width:100%;"></div><div class="reportClose" ng-click="customCancelBtnFunction()">x</div></div>
+                <div class="stat-closediv" style="width:100%;">
+                    <div class="stat-heading1" style="width:76%;"> Report Format Name :</div>
+                </div>
+                <input id="Formatname" type="text" ng-model="SaveCustomDownloadText" autofocus="autofocus">
+                <div id="FormatSubmit" class="customButton" style="margin-left:104px;" ng-click="customSaveBtnFunction()">
+                    OK
+                </div>
+            </div>
+
+            <div class="sharePopup" style="display: none;">
+                <div class="stat-topdiv" style="width:100%;">
+                    <div class="stat-topband" style="width:100%;"></div>
+                    <div class="reportClose" style="top:-7%;opacity: 0.95;" ng-click="hidesharePopup()">x</div>
+                </div>
+                <div class="sharePopup-heading popup_save_heading">Share Report</div>
+                <div class="sharePopup-report popup_whole">
+
+                    <div class="userGroupSelector" style="display:none;">
+                        @*<input class="user-radio" type="radio" name="userGroup" ng-model="userOrGroup" value="User" checked="checked" ng-click="getUsers()">User</input>
+                            <input class="group-radio" type="radio" name="userGroup" ng-model="userOrGroup" value="Group" ng-click="getGroups()">Group</input>*@
+                        <div class="pit-trend-switch1">
+                            <div class="user">User</div>
+                            <div class="toggle_class user_active" name="userGroup" ng-model="userOrGroup" value="User" ng-click="share_report_toggle()"></div>
+                            <div class="group">Group</div>
+                        </div>
+                    </div>
+                    <div class="share-btn">
+                        <div class="save-btn submit_cancel_btn save" ng-click="shareBtnFunction(shareReportText,activeReportID,userOrGroup)" style="padding:2.5px">SHARE</div>
+                        <div class="cancel-btn submit_cancel_btn save" ng-click="hidesharePopup()" style="padding:2.5px">CANCEL</div>
+                    </div>
+                    <div class="share-input">
+                        <span class="share-label">User Name/Group</span>
+                        <div class="share-text-container">
+                            @*<input type="text" class="share-text" ng-model="shareReportText" />
+                                <div class="share-text-suggestions">
+                                    <ul>
+                                        <li ng-repeat="x in userAndGroup|filter:shareReportText" ng-click="shartListItemClick(x)">{{x}}</li>
+                                    </ul>
+                                </div>
+                            *@
+                            <div class="share-text-suggestions">
+                                @*<select ng-model="shareReportText" ng-options="x for x in groupList" class="share-select-rpt-dropdown" ng-show="userOrGroup=='Group'" />
+                                    <option label="x" value="x">{{x}}</option>
+                                </select>
+                                <select ng-model="shareReportText" ng-options="(x.Name + '(' + x.UserName + ')') for x in userList" class="share-select-rpt-dropdown" ng-show="userOrGroup=='User'" />
+                                    <option label="x.Name" value="x.Name">{{x.Name}}</option>
+                                </select>*@
+                                <input id="txtSelectedID" type="text" maxlength="100" autocomplete="off" data-val="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="notesPopup" style="display: none;">
+                <div class="stat-topdiv" style="width:100%;"><div class="stat-topband" style="width:100%;"></div><div class="reportClose" ng-click="notesCancel();">x</div></div>
+                <div class="notesPopup-heading"><div class="displayPopup_Heading">Notes</div></div>
+                <div class="notes-section">
+                    <div class="notes-text" ng-repeat="x in notesDetails">{{x.Text}}</div>
+                </div>
+
+                <textarea rows="4" cols="70" class="notes-inputText notes-input" maxlength="200" ng-model="notesText"></textarea>
+                <div class="div-MaxCharacters">(Max of 200 Characters)</div>
+
+                <div class="update-by-note"><span class="span-LastUpdatedBy">Last Updated By:{{UpdateDetails.UpdatedBy}}-{{convertToDate(UpdateDetails.UpdatedOn)|  date:'yyyy-MM-dd HH:mm:ss'}}</span></div>
+
+                <div class="notes-btn">
+                    <div class="notes-save-btn common1" ng-click="saveNotes()">SAVE</div>
+                    <div class="notes-cancel-btn common1" ng-click="notesCancel()">CANCEL</div>
+                </div>
+            </div>
+
+            <div class="validation-popup" style="display: none; z-index: 1005;">
+                <div class="validation-topdiv">
+                    <div class="validation-topband"></div>
+                    <div class="reportClose" ng-click="no_notesCancel()">x</div>
+                </div>
+                <div class="validation-content"><div class="validation-custdiv"></div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="confirm-box-container" style="display:none">
+        <div class="confirm-box-close" ng-click="ConfirmBoxObject.Close()"></div>
+        <div class="confirm-box-message">Some text to be displayed</div>
+        <div class="confirm-box-bottom-btn ">
+            <div class="save-btn submit_cancel_btn save" ng-click="ConfirmBoxObject.CallAsyncFunction()">OK</div>
+            <div class="cancel-btn submit_cancel_btn save" ng-click="ConfirmBoxObject.Close()">CANCEL</div>
+        </div>
+    </div>
+
+</div>

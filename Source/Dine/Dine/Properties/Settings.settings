@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Dine.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Dine_com_aqinsights_coke_User_Management" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://coke.aqinsights.com/kiusermanagement/User_Management.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

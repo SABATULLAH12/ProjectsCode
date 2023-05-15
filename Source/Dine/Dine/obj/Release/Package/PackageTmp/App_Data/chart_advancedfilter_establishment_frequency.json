@@ -1,0 +1,77 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "FREQUENCY",
+        "IsMultiSelect": false,
+        "IsRequired": false,
+        "Image": "frequency_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_ConsumedFrequency",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": " Where ISBevModule = 1 ORDER BY ORDERBY"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 2,
+        "Label": "DEVICE USED",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "device_used_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE ColumnName = 'WhichDeviceUsed'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+     {
+        "OrderNumber": 3,        
+        "Label": "CONSUMED FREQUENCY",
+        "IsMultiSelect": false,
+        "IsRequired": false,
+        "Image": "consumed_frequency_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+            "Table": "DimFrequency",
+            "PrimaryKey": "FrequencyId",
+            "DisplayTextColumnName": "FrequencyName",
+            "ParentPrimaryKey": null,
+            "ParentText": null,
+            "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+            "WhereCondition":" where frequencyname not in ('Establishment In Trade Area','Total Visits','Awareness')"
+          },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

@@ -1,0 +1,78 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": true,
+    "ProcedureName": "USP_Leftpanel_P2PReport",
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "Time Period",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": "timeperiod_img",
+        "IsTimePeriod": true,
+        "HideTrend": false,
+        "Database": {
+          "Table": "vw_Timeperiod",
+          "PrimaryKey": "TimeperiodValue",
+          "DisplayTextColumnName": "DisplayText",
+          "ParentPrimaryKey": null,
+          "ParentText": "PeriodType",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": " order by rn"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 2,
+        "Label": "Establishment",
+        "IsMultiSelect": true,
+        "IsRequired": true,
+        "Image": "establishment_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Establishment",
+          "PrimaryKey": "EstablishmentId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+          "Colorcode": "Colorcode",
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": " ORDER BY ToolOrderby"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 3,
+        "Label": "Advance Filters",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "demograhicFitr_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_P2PReport_Dashboard",
+          "PrimaryKey": "ID",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": "ParentId",
+          "ParentText": null,
+          "SelectableColumnName": "Isselectable",
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading": "",
+          "SearchName": "SearchName",
+          "IsSubHeadingID": "",
+          "WhereCondition": " Where ShowInTable=1 ORDER BY ToolOrderby"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

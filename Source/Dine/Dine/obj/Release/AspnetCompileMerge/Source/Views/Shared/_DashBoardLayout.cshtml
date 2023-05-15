@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = Dine.Utility.Constants.ToolTitlePrefix + "DashBoard";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<style type="text/css">
+    .timperiodpittrend {
+        display: none;
+    }
+</style>
+<div ng-controller="dashboardController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band"></div>
+        <div class="submodules-options">
+            <ul>
+                <li class="link_hover">
+                    <div class="link_items dashboard-demo dashboard-demo-msehover classMouseHover">@Html.ActionLink("Path To Purchase", "P2PDashboard", "DashBoard")</div>
+                </li>
+                <li style="display:none;" class="link_hover">
+                    <div class="link_items dashboard-brandhealth dashboard-brandhealth-msehover classMouseHover">@Html.ActionLink("BRAND HEALTH", "BrandHealth", "DashBoard")</div>
+                </li>
+                <li style="display:none;" class="link_hover">
+                    <div class="link_items dashboard-visits dashboard-visits-msehover classMouseHover">@Html.ActionLink("VISITS", "Visits", "DashBoard")</div>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="master-leftpanel">
+        @{Html.RenderPartial("_LeftPanel");}
+    </div>
+    <div class="master-content-area">
+
+        <div class="filter-info-panel">
+            <div class="filter-info-panel-elements"></div>
+            <div class="arrow_popup arrow_popup-msehover dynpos1 classMouseHover"><div class="downarrw arrw"></div></div>
+            @*<div class="filter-info-panel-expandimg">...>></div>*@
+        </div>
+
+        @{Html.RenderPartial("_AdvancedFilter"); }
+       <div class="dashboard-master-content">
+           @RenderBody()
+       </div>
+        <div class="table-statlayer">
+            <ul>
+                <li>
+                    <div id="samplesize" style="">
+                        <ul style="margin:0;padding:0;">
+                            <li><div class="table-stat-text up table-stat-text-msehover dynpos1 classMouseHover">STAT TESTING VS. </div></li>
+                            <li><div class="table-stat activestat up dynpos1 prev_period-msehover classMouseHover" ng-click="statTest($event)" id="table-prevsperiod">PREVIOUS PERIOD</div></li>
+                            <li><div class="table-stat tot-Dine-msehover up dynpos1 classMouseHover" ng-click="statTest($event)" id="table-ttldine">TOTAL DINE</div></li>
+                            <li><div class="table-stat category-msehover up dynpos1 classMouseHover" ng-click="statTest($event)" id="table-categry">CUSTOM BASE</div></li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li><div id="NoteSample" style="float:left;" class="table-stat-empty"><span class="samplesize-note"></span> <span class="samplesize-text">Customize - click for additional
+data points to be included</span></div></li>
+                <li>
+                    <div class="stattest-sign">
+                        <ul>
+                            <li><div class="outer_circle"><div class="table-stat-sigfncegrenimg"></div></div></li>
+                            <li><div class="table-stat-sigfncpstve">Significantly Higher</div></li>
+                            <li><div class="outer_circle"><div class="table-stat-sigfnceredimg"></div></div></li>
+                            <li><div class="table-stat-sigfncnegve">Significantly Lower</div></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="stat-popup popup_css" style="display:none;">
+        <div class="stat-topdiv"><div class="stat-topband topband"></div><div class="stat-clsebtn"></div></div>
+        <div class="stat-closediv popup_css_header">
+            <div class="stat-heading heading_text">CUSTOM BASE</div>
+        </div>
+        <div class="stat-content content_css"></div>
+        <div class="stat-submtdiv">
+            <div class="stat-submt submit_cancel_btn" ng-click="custombaseSubmit()"> Submit</div>
+            <div class="stat-cancel submit_cancel_btn" ng-click="custombaseCancel()">Cancel</div>
+        </div>
+    </div>
+    <div class="null-error-popup">
+        <div class="save-reportPopup popup_css">
+            @*<div class="save-popup-close" ng-click="closeSavePopup()"></div>*@
+            <div class="stat-topdiv"><div class="stat-topband topband"></div><div class="stat-closebtn" ng-click="closeSavePopup()"></div></div>
+            @*<div class="save-popup-heading">SAVE REPORTS</div>*@
+            <div class="save-section">
+                <div class="report-selection">
+                    <div class="stat-closediv popup_css_header">
+                        <div class="stat-heading heading_text"></div>
+                    </div>
+                </div>
+                <div class="list-of-low-SS"></div>
+                <div class="save-popup-btn">
+                    <div class="stat-submt save-proceed-btn proceedClick" ng-click="proceedClick()">PROCEED</div>
+                    <div class="stat-submt cancel-proceed-btn closeSavePopup" ng-click="closeSavePopup()">CANCEL</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+@System.Web.Optimization.Styles.Render("~/bundle/sdashboard")
+@System.Web.Optimization.Scripts.Render("~/bundle/jdashboard")

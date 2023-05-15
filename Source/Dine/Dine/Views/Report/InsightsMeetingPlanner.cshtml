@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "InsightsMeetingPlanner";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script type="text/javascript">
+    var UserOrAdmin = '@ViewBag.Role';
+</script>
+<div class="insight-meet-header"></div>
+<div class="EditSectionContainer">
+    <div class="small-line"></div>
+    <div class="Edit-header">
+        Edit Parent Section
+    </div>
+    <div class="Edit-body">
+        <input type="text" class="editSectionName" id="editName" placeholder="Edit Parent Section Name" autocomplete="off" required />
+        <br />
+        <textarea rows="2" cols="30" name="Description" class="editDescription" id="desp" placeholder="Edit Parent Section Description(250 character)" maxlength="250" required></textarea>
+        <div class="stat-submtContainer">
+            <div class="btn-submt-cancel">
+                <div class="commonbtn stat-submtbtn">
+                    <div id="btntext" onclick="submitSection()">Submit</div>
+                </div>
+                <div class="commonbtn stat-cancelbtn">
+                    <div id="btntext" onclick="editCancel(0)">Cancel</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="EditSubSectionContainer">
+    <div class="small-line2"></div>
+    <div class="Edit-header">
+        Edit Sub-Section
+    </div>
+    <div class="Edit-body">
+        <input type="text" class="editSectionName" id="editsubsecName" placeholder="Name of Sub-Section" autocomplete="off" required />
+        <br />
+        <textarea rows="2" cols="30" name="Description" class="editDescription" id="subsecdesp" placeholder="Description(250 character)" maxlength="250" required></textarea>
+        <div class="stat-submtContainer">
+            <div class="commonbtn stat-submtbtn">
+                <div id="btntext" onclick="submitSubsection()">Submit</div>
+            </div>
+            <div class="commonbtn stat-cancelbtn">
+                <div id="btntext" onclick="editCancel(1)">Cancel</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="insights-meet-plan-main">
+    <div class="insights-meet-plan-topmenu">
+
+        <div class="right-skew-Visits box adv-fltr-label topmenu_1" onclick="suboptions(1)">
+            <span class="common-tab">Home Page</span>
+        </div>
+        <div class="right-skew-Visits box adv-fltr-label topmenu_2" onclick="suboptions(2)"><span class="common-tab">Modify Home Page</span></div>
+        <div class="right-skew-Visits box adv-fltr-label topmenu_3" onclick="suboptions(3)"><span class="common-tab">Create Parent Sections</span></div>
+        <div class="right-skew-Visits box adv-fltr-label topmenu_4" onclick="suboptions(4)"><span class="common-tab">Upload Sub-Sections</span></div>
+        @*<div class="commonbtn browse"><span>browse<input type="file" multiple hidden/></span></div>*@
+        <label for="fileUpload" class="commonbtn browse">
+            <i class="fa fa-cloud-upload"></i>Browse
+        </label>
+        <input id="fileUpload" type="file" onchange="checkPPT(event)" accept="application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation" multiple />
+        <div class="lft-popup-col-search-forinsights-modify" style="display: none;">
+            <input type="text" name="search" id="search-list-establishment-insights-modify" placeholder="Search.." class="ui-autocomplete-input search-list-insights-modify" autocomplete="off">
+
+            <div class="search-img-insgt-modify"></div>
+        </div>
+    </div>
+
+    <div class="insights-meet-subdiv">
+        <div class="insights-meet-suboptn sub_1">
+            <div class="selct-delt-reord-btnsdiv">
+                <label class="home-subsection-seldel-checkbox">
+                    <input type="checkbox" id="insgt-selctunselect" class="home-selct-deselct-check" onclick="selectAllHomeCheckbox()" />
+                    <span id="home-checkbox0"></span>
+                </label>
+                <div class="selct-deselct-text"> Select/Unselect All </div>
+            </div>
+            <div class="lft-popup-col-search-forinsights-home" style="display: none;">
+                <input type="text" name="search" id="search-list-establishment-insights-home" placeholder="Search.." class="ui-autocomplete-input search-list-insights-home" autocomplete="off">
+
+                <div class="search-img-insgt-home"></div>
+            </div>
+            <div class="home-output-area">
+                <div class="home-hdr">
+                    @*<div class="modify-small-line home-small-line"></div>*@
+                    <div class="hdr-parnt-sub hdr-cmmn homesection" id="home-sec1">
+
+                        Parent Section and Subsections
+                    </div>
+                    <div class="smalldiv"></div>
+                    <div class="hdr-uplddon hdr-cmmn homesection" id="home-sec2">Uploaded On</div>
+                    <div class="smalldiv"></div>
+
+                    <div class="hdr-sldescount hdr-cmmn homesection" id="home-sec3">No. Of Slides</div>
+                    <div class="smalldiv"></div>
+                    <div class="home-order-header" id="header1">
+                        Content outline summary
+                    </div>
+                </div>
+                <div class="home-bdy">
+                    <div class="table-bdy"></div>
+                    <div class="home-order-summry-area">
+
+                        <div class="order-summary-bdy">
+
+                        </div>
+                    </div>
+                    <div class="home-generate-btn">
+                        <div class="commonbtn generate-btn" onclick="generateReport()">Generate Report</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="insights-meet-suboptn sub_2">
+            <div class="selct-delt-reord-btnsdiv">
+                <label class="modify-subsection-checkbox">
+                    <input type="checkbox" id="insgt-selctunselect" class="selct-deselct-check" onclick="selectAllCheckbox()" />
+                    <span id="modify-checkbox0"></span>
+                </label>
+                <div class="selct-deselct-text"> Select/Unselect All </div>
+            </div>
+            <div class="stat-submt insgt-delete-btn" onclick="deleteSelected()">Delete Selected</div>
+            <div class="stat-submt reorder-btn" onclick="reorderItem()">Reorder</div>
+            <div class="stat-submt reorder-btnafter" onclick="saveCurrentOrder()">Save CurrentOrder</div>
+            <div class="modify-output-area">
+                <div class="mod-header">
+                    @*<div class="modify-small-line"></div>*@
+                    <div class="hdr-parnt-sub hdr-cmmn section" id="sec1">Parent Section and Subsections</div>
+                    <div class="smalldiv"></div>
+                    <div class="hdr-uplddon hdr-cmmn section" id="sec2">Uploaded On</div>
+                    <div class="smalldiv"></div>
+                    <div class="hdr-uplddon hdr-cmmn section" id="sec5">Uploaded By</div>
+                    <div class="smalldiv"></div>
+                    <div class="hdr-sldescount hdr-cmmn section" id="sec3">No. Of Slides</div>
+                    <div class="smalldiv"></div>
+                    <div class="hdr-edit-sectns hdr-cmmn section" id="sec4">Edit Section Details</div>
+                    <div class="smalldiv"></div>
+                </div>
+                <div class="mod-bdy">
+                    @*<div class="bdy-parnt-sectnamediv">
+                        <div class="bdy-parnt-sectname">
+                            <input type="checkbox" />
+                            <div class="parentsectnname"></div>
+                            <div class="uploadedon"></div>
+                            <div class="edit-sectn"></div>
+                         </div>
+                        </div>*@
+                </div>
+            </div>
+
+        </div><div class="insights-meet-suboptn sub_3">
+            <div class="maincontainer-header">Create New Parent Section<div class="small-line3"></div></div>
+            <div class="maincontainer">
+
+
+                <div class="createParentContainer">
+                    <input type="text" class="ParentSectionName" id="sectionname0" placeholder="Name of Parent Section" autocomplete="off" required />
+                    <br />
+                    <textarea rows="5" cols="30" name="Description" class="Description" id="desc0" placeholder="Description(Max 500 words)" maxlength="500" required></textarea>
+                </div>
+
+
+            </div>
+            <div class="addParentsection" id="addSection" onclick="createParentSection()"></div>
+
+            <div class="commonbtn createParentBtn" onclick="createSection()">
+                Create Parent Section
+            </div>
+
+        </div>
+        <div class="insights-meet-suboptn sub_4">
+            <div class="maincontainer-header subsec-header">Upload sub-sections<div class="small-line4"></div></div>
+            <div class="subsectionmaincontainer">
+
+                <label class="checkbox-subsection">
+                    <input type='checkbox' class="subsection-checkbox span-commoncheckbox checkbox0" value="0" name="section" >
+                    <span id="checkbox0"></span>
+                </label>
+
+                <div class="subSectionContainer" id="subsec0">
+                    <input type="text" class="SubSectionName" id="subName0" placeholder="Name of Sub-Section" autocomplete="off" required />
+                    <br />
+                    <textarea rows="5" cols="30" name="Description" class="subDescription" id="description0" placeholder="Description(Max 500 words)" maxlength="500" required></textarea>
+                    <div id="dropdowncontainer"><select class="commondropdown dropdown0" style="width:96.9%"></select></div>
+                    <div class="commonbtn filename filename0">
+                        Uploaded File Name
+                    </div>
+                    <div class="commonbtn clear" onclick="clearSection('0')">
+                        <p id="text"> Clear</p>
+                    </div>
+                </div>
+                <br id="breakline0" />
+            </div>
+
+            <div id="btnUpload"class="commonbtn uploadBtn" >
+                <p id="text1">upload Selected</p>
+            </div>
+        </div>
+    </div>
+    <div class="show-message-container-nullpopup" style="display:none;">
+        <div class="alert-message-close" onclick="closePopup()"></div>
+        <div class="alert-message"></div>
+        <div class="save-popup-btn">
+            <div class="stat-submt save-proceed-btn OkClick" onclick="redirectToparent()">OK</div>
+        </div>
+    </div>
+    <div class="show-message-container-nullpopup" id="alert" style="display:none;">
+        <div class="alert-message-close" onclick="closePopup()"></div>
+        <div class="alert-message" id="message"></div>
+        <div class="save-popup-btn">
+            <div class="stat-submt save-proceed-btn OkClick" onclick="redirect()">OK</div>
+        </div>
+    </div>
+    <div class="overwrite-alert" style="display:none;">
+        <div class="alert-message-close overwrite" onclick="overWriteCancel()"></div>
+        <div id="overwrite-small-line"></div>
+        <div class="headerdiv"></div>
+        <div class="bdycontent"></div>
+        <div class="popup-submtdiv">
+            <div class="stat-submt save-proceed-btn  submit_btn">Overwrite</div>
+            <div class="stat-submt save-proceed-btn cancel_btn" onclick="overWriteCancel()">Cancel</div>
+        </div>
+    </div>
+    <div class="customerDetail">
+        @* Added by Sabat Ullah 08-01-2019 --start*@
+        <div class="customerDetail-header">
+            ADD CUSTOMER DETAILS
+            <div class="header-smallline"></div>
+        </div>
+        <div class="customerName-text">
+            Customer Name
+            <input type="text" class="CustomerName-Textbox" id="customername" placeholder="(Will be displayed on cover slide)" autocomplete="off" required />
+        </div>
+
+        <div class="customerLogo-div">
+            Customer Logo <input type="text" class="CustomerLogo" id="customerlogo" placeholder="Search for logo from list " autocomplete="off" required /><div class="searchLogo"></div>
+        </div>
+
+        <div class="preview-div">
+            <div class="preview-text"> Preview Logo</div>
+            <div class="crossbtn"><div class="crossbtnImage"></div></div>
+            <div class="preview-image">
+                <div class="preview-child-image">
+
+                </div>
+            </div>
+        </div>
+        @*Added by Sabat Ullah 08-01-2019 --end*@
+        <div class="customerDetail-popup">
+            <div class="cust-submt-cancel">
+                <div class="stat-submt save-proceed-btn  submit_btnCustomer" onclick="generateReportSubmit()"> Submit</div>
+                <div class="stat-submt save-proceed-btn cancel_btnCustomer" onclick="generateReportCancel()">Cancel</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="insight-meet-footer">
+    <span class="footer-text"></span>
+</div>
+<link href="~/Content/insightsmeeting.css" rel="stylesheet" />
+<script src="~/Scripts/insightsmeeting.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+

@@ -1,0 +1,713 @@
+﻿.red_bar {
+    margin-top: 32px;
+    height: 21px;
+    margin-left: -50px;
+    background-color: #EB1F2A;
+    z-index: 34;
+    /* opacity: 0.8; */
+    border-bottom: 2px #EB1F2A solid;
+    border-top: 1px #EB1F2A solid;
+}
+
+.submodules {
+    width: 100%;
+    height: 30.671875px;
+    float: left;
+    border-top: #5f5c5e 1px solid;
+}
+
+.submodules-options {
+    display: block;
+    float: left;
+    /* height: 84%; */
+    width: 100%;
+    margin-left: 0%;
+    text-align: center;
+    /* background-color: rgb(28,28,28); */
+    color: white;
+    position: relative;
+    z-index: 6;
+    background: linear-gradient(to top, rgba(64,64,64,1), rgba(45,43,45,1));
+    height: 200px;
+    opacity: 0.95;
+}
+
+    .submodules-options > ul {
+        border-top: 3px solid #ea1f2a;
+        height: 97%;
+        width: 100%;
+        padding: 0px;
+        margin-top: -3px;
+        list-style: none;
+    }
+        .submodules-options > ul li {
+            position: relative;
+            width: 20%;
+            height: 100px;
+            float: left;
+            margin: 35px 0px 0px 141px;
+        }
+
+.submodules-options-link {
+    /*color: #d0d2d3;
+    padding: 10px 0px 0px 0px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    height: 50%;*/
+
+    color: #d0d2d3;
+    padding: 0px 0px 0px 0px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    height: 90%;
+}
+.submt.SbmtHide {
+    display:none;
+}
+.link_items {
+    text-decoration: none;
+    text-transform: CAPITALIZE;
+    text-align: left;
+    font-size: 13.2px;
+    /* position: absolute; */
+    /* top: 10px; */
+    /* right: 160px; */
+    padding-bottom: 8px;
+    cursor: pointer;
+    /* color: #d0d2d3; */
+    /* font-size: 16px; */
+    color: #ffffff;
+    font-weight: normal;
+    border-bottom: 1px dashed #ffffff;
+    width: 300px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+}
+
+
+.link_hover:hover {
+    background:transparent;
+}
+.storyboard_link {
+    border-bottom: 0px dashed #ffffff;
+}
+.list_content {
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    top: 0px;
+    left: 10px;
+    background-color: transparent;
+    color: #d0d2d3;
+    width: 290px;
+    height: 30px;
+    box-shadow: none;
+}
+.link_hover:last-of-type {
+    position: relative;
+    /*left: -22%;*/
+}
+.submodules-band {
+    margin-left: 37.7%;
+}
+.reports-logo{
+    background-position: 6px 2px;
+}
+.submodules-options-link a {
+    text-transform : capitalize;
+}
+.exl-logo {
+     visibility:visible;
+    display:block;
+}
+.ppt-logo {
+    display:block;
+}
+
+.report_first_level_ele.active {
+     background-color: #EB1F2A !important;
+}
+.lft-popup-ele .filter-info-panel-lbl {
+    width: 93%;
+    margin-left: 7%;
+    float: left;
+    font-size: 9px;
+}
+
+.lft-popup-ele .filter-info-panel-txt-del, .lft-popup-ele-sitn .filter-info-panel-txt-del-sitn {
+    width: 20px;
+    height: 100%;
+    float: right;
+}
+.lft-popup-ele .sel_text {
+    width: auto;
+    height: 100%;
+    float: left;
+    font-size: 10px;
+}
+
+/*.master-lft-ctrl {
+    display:none;
+}*/
+
+.downloadall {
+    display: inline-block !important;
+    background-image: url(../Images/sprite.svg);
+    background-repeat: no-repeat;
+    background-position: -275px -669px;
+    border: none;
+    height: 72px;
+    width: 50px;
+    margin-top: 30px;
+}
+.custom_download {
+    top: 85.5%;
+    display: inline-block !important;
+    background-image: url(../Images/sprite.svg);
+    background-repeat: no-repeat;
+    background-position: -350px -669px;
+    margin-top: 0px;
+    height: 43px;
+    border: none;
+}
+.downloadall {
+    /*top: 371px;*/
+    top: 67%;
+    bottom: 26%;
+}
+.textcstm {
+    float: left;
+    height: 28px;
+    font-size: 5.8pt;
+    /* bottom: 5%; */
+    font-weight: bold;
+    text-align: center;
+    width: 50px;
+    padding-top: 8px;
+    margin-top: 30px;
+    border: none;
+}
+.textdwnall {
+    float: left;
+    height: 28px;
+    font-size: 5.8pt;
+    /* bottom: 5%; */
+    font-weight: bold;
+    text-align: center;
+    width: 50px;
+    margin-top: 44px;
+    padding-top: 8px;
+}
+.benchmark_img, .comparision_img {
+    width: 30px;
+    height: 30px;
+    background: white;
+}
+.center_fix {
+    color: black;
+    width: 100%;
+    height: 75%;
+    margin: 25% 0px 0px 0px;
+    text-align: center;
+}
+
+/* Custom Tile */
+.report-maindiv {
+       width: 93%;
+    height: 86%;
+    margin-top: 2%;
+    float: left;
+    overflow: auto;
+    margin-left: 5%;
+}
+.report-tilerow {
+    width: 100%;
+    height: 42%;
+    float: left;
+    margin-top: 31px;
+}
+.report-tilerow:last-of-type {
+    margin-bottom: 20px;
+}
+.report-tilediv {
+    width: 26%;
+    height: 100%;
+    float: left;  
+    border:1px solid transparent;
+}
+.report-tileimage {
+    width: 100%;
+    height: 80%;
+    float: left;
+}
+.tile-outerdiv {
+   width: 98%;
+    height: 100%;
+    float: left;
+    margin-left: 1.3%;
+}
+.actslctedImgeClr,.defaultslctedImgeClr {
+    width:97.2%;
+}
+.tileimage {
+    height: 100%;
+    width: 100%;
+    float: left;
+    background-position: center;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+.tilebtm-outerdiv {
+    width: 100%;
+    height: 20%;
+    float: left;
+    border: 1px solid #676767;
+}
+.report-tilebttm {
+    width: 98%;
+    height: 95%;
+    float: left;
+    margin-left:1%;
+    background-color: #676767;
+}
+.report-outerborder {
+    width: 103%;
+    height: 45px;
+    float: left;
+    border: 1px solid #676767;
+}
+.slidename {
+        color: white;
+    text-align: center;
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 10px;
+    float: left;
+}
+.chkboximg {
+    background: url(../Images/sprite.svg) no-repeat -1594px -216px;
+    width: 24px;
+    height: 22px;
+    display: inline-block;
+    float: right;
+    margin-right: 14px;
+    margin-top: 11px;
+    cursor: pointer;
+}
+.actselectedTile,.defautlSeldTile {
+    background-color: rgb(234, 31, 42) !important;
+}
+.actslctedBrdrColor,.defautlSeldBrdrClr {
+    border:1px solid rgb(234, 31, 42);
+}
+.activechkboximg {
+    background: url(../Images/sprite.svg) no-repeat -1644px -216px;
+    width: 24px;
+    height: 22px;
+    display: inline-block;
+    float: right;
+    margin-right: 14px;
+    margin-top: 11px;
+    cursor: pointer;
+}
+.report-tileemptydiv {
+    width:7%;
+    height:100%;
+    float:left;
+}
+.selctall-view-downlddiv {
+    width: 100%;
+    height: 5%;
+    margin-top: 7px;
+    float: left;
+}
+.selctall-div {
+    width:10%;
+    height:100%;
+    float:left;
+}
+.selctall-chkbx {
+    text-transform:initial;
+    margin-left:26px;
+}
+.selctallchkbx {
+    height: 30px;
+    width: 28px;
+    float: left;
+}
+#selectallchkbx {
+    height: 22px;
+    width: 20px;
+}
+.selectall_Text {
+    padding-top: 6px;
+    font-size: 14px;
+}
+.view-reportbtn{
+    border-left: 6px solid #eb1f2A;
+    font-size: 12.2px;
+    border-radius: 4px;
+    background: #bb4748;
+    width: 106px;
+    background: linear-gradient(#e8e8e8 50%,#ccc 50%);
+    height: 20px;
+    float: left;
+    margin-left: 435px;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.downloadbtn {
+    border-left: 6px solid #eb1f2A;
+    font-size: 12.2px;
+    border-radius: 4px;
+    background: #bb4748;
+    width: 200px;
+    background: linear-gradient(#e8e8e8 50%,#ccc 50%);
+    height: 20px;
+    float: left;
+    margin-left: 25px;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Custom Tile */
+
+.ppt-logo,.exl-logo {
+    display:none;
+}
+.master-settings {
+    width:auto;
+}
+.master-btn {
+         background-image: url(../Images/sprite.svg) !important; 
+     background-repeat: no-repeat !important; 
+    background-position: 9999px 99999px !important;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    float: left;
+    margin-left: 0%;
+    width: 50px;
+    height: 92%;
+}
+
+/*.submt {
+    background: linear-gradient(to top, rgba(151,21,27,1), rgba(218,31,39,1) 90%);
+    height: 60px;
+    border-bottom: rgba(168, 167, 167,0.7) 1px solid !important;
+    border-top: rgba(168, 167, 167,0.7) 1px solid !important;
+    position: absolute;
+    bottom: 1%;
+}*/
+
+.master-lft-ctrl {
+    margin-top: 3%;
+    height: 51px;
+    overflow: hidden;
+    /* border-bottom: #5f5b5e 1px solid; */
+    /* box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7); */
+}
+
+/*Left Filter Icons*/
+.frequency_diner_img {
+    background-position: -45px -147px;
+}
+/*Left Filter Icons*/
+
+/*Css For popups*/
+.null-error-popup .save-reportPopup, .save-reportPopup-userdirctnly {
+        height: 250px;
+}
+.null-error-popup .report-selection {
+    height: 170px;
+}
+.null-error-popup .list-of-nulls {
+height:145px;
+}
+.null-error-popup .proceed-text {
+    position: relative;
+    left: 3%;
+    width: 50%;
+    height: 50px;
+    float: left;
+    font-size: 9px;
+    width: 100%;
+    height: 15px;
+    margin-top: 7px;
+}
+
+.popup_css {
+    background: #393539;
+    color: white;
+    width: 550px;
+}
+
+.popup_css_header {
+    width: 96%;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background: #393539;
+    border-bottom: 1px dashed lightgray;
+}
+
+.popup1 {
+    border-bottom: 1px solid #666466;
+    width: 92%;
+    line-height: 17px;
+    height:auto;
+}
+.topband {
+    width: 550px;
+}
+
+.heading_text {
+    font-size: 18px;
+    font-weight: normal;
+    width: 100%;
+}
+.stat-content-estblmt-timeperiod {
+    width:100%;
+    float:left;
+    height:16px;
+}
+.stat-content-estblmt, .stat-content-timperiod {
+    width: 35%;
+    height: 100%;
+    float: left;
+    color: #EB1F2A;
+    text-align: left;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.stat-content-timperiod {
+    margin-left:73px;
+}
+.font-sizeusedir {
+    font-size:17px;
+}
+
+.content_css {
+    margin-top: 10px;
+    margin-left: 18px;
+    height: 163px;
+    width: 510px;
+}
+
+.submit_cancel_btn {
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.stat-popup .proceed-text {
+    width: 100%;
+    height: 15px;
+    font-size: 9px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 7px;
+}
+/*Css For popups*/
+
+/*Static Text in P2P Report*/
+.p2pstatic-text-report {
+    float: left;
+    margin-top: 2%;
+    width: 100%;
+    height: 92%;
+}
+.clsMetricDataTitleRow1 {
+    width: 100%;
+    height: 51px;
+    background-color: #ededee;
+    /* padding: 3px; */
+    padding-top: 0px;
+    text-align: center;
+    font-weight: bold;
+    /* border: 1px solid; */
+    /* border-collapse: collapse; */
+    table-layout: fixed;
+}
+.clsMetricDataItem1 {
+    width: 24%;
+    height: 50px;
+    background-color: #d5d6d6;
+    padding: 0px;
+    text-align: center;
+    border-bottom: 1px solid #686868;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 20px;
+    color: #000000;
+    border-right: 1px solid #686868;
+    text-transform:initial;
+}
+.clsMetricDataItem2 {
+    width: 671px;
+    height: 50px;
+    background-color: #d5d6d6;
+    padding: 3px;
+    text-align: center;
+    border-bottom: 1px solid #686868;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 20px;
+    color: #000000;
+    text-transform:initial;
+}
+.ShowChartArea2 {
+    height: calc(100% - 65px);
+    overflow-y: auto;
+    width: 100%;
+    background-color: #fafafa;
+}
+.ShowChartArea2 table {
+    width: 100%;
+}
+.clsReportDataTable {
+    width: 100%;
+    height: 95%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-weight: bold;
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+}
+.clsReportData1 {
+    width: 24%;
+    height: 50px;
+    /* height: auto; */
+    background-color: white;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 15px;
+    border-color: rgb(200, 200, 200);
+    background-color: rgb(235,235,235);
+    /* vertical-align: top; */
+    color: grey;
+}
+.clsReportData2 {
+    width: 630px;
+    height: 50px;
+    /* height: auto; */
+    background-color: rgb(235,235,235);
+    padding-left: 80px;
+    text-align: left;
+    border: 1px solid;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 12px;
+    border-color: rgb(200, 200, 200);
+    /* vertical-align: top; */
+    color: grey;
+}
+.clsReportData3 {
+     width: 24%; 
+    /* height: 70px; */
+    background-color: white;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 15px;
+    border-color: rgb(200, 200, 200);
+    background-color: rgb(235,235,235);
+    /* vertical-align: top; */
+    color: grey;
+}
+.clsReportData4 {
+    /* width: 60%; */
+    /* height: 70px; */
+    background-color: white;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 12px;
+    padding-left: 12px;
+    padding-top: 0px;
+    border-color: rgb(200, 200, 200);
+    background-color: rgb(235,235,235);
+    /* vertical-align: top; */
+}
+.clsReportData5 {
+    /* width: 630px; */
+    height: 12px;
+    background-color: white;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    /* border: 1px solid; */
+    /* border-collapse: collapse; */
+    /* table-layout: fixed; */
+    font-size: 12px;
+    /* vertical-align: top; */
+    padding-left: 70px;
+    padding-bottom: 0px;
+    border-color: rgb(200, 200, 200);
+    background-color: rgb(235,235,235);
+    color: grey;
+}
+.clsReportData6 {
+    /* width: 630px; */
+    /* height: 70px; */
+    background-color: white;
+    padding: 3px;
+    text-align: left;
+    /* border: 1px solid; */
+    /* border-collapse: collapse; */
+    /* table-layout: fixed; */
+    font-size: 10px;
+    border-color: rgb(200, 200, 200);
+    background-color: rgb(235,235,235);
+    /* vertical-align: top; */
+}
+.clsReportData7 {
+    /* width: 630px; */
+    list-style-type: circle;
+    /* height: 70px; */
+    background-color: white;
+    /* padding: 3px; */
+    text-align: left;
+    /* border: 1px solid; */
+    /* border-collapse: collapse; */
+    /* table-layout: fixed; */
+    font-size: 10px;
+    padding-left: 105px;
+    border-color: rgb(200, 200, 200);
+    background-color: rgb(235,235,235);
+    /* vertical-align: top; */
+    color: grey;
+}
+/*Static Text in P2P Report*/
+
+/*Static table Resolution issue fixed*/
+.clsReportDataTable > tbody > tr > td {
+    display: block;
+}
+/*Static table Resolution issue fixed*/
+
+/*.stat-cust-active {
+    height: auto;
+}
+.stat-custdiv {
+   float:none;
+}*/

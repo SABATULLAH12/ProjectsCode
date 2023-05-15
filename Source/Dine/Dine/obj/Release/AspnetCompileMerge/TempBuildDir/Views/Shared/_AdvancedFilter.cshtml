@@ -1,0 +1,231 @@
+﻿<div class="advance-filters">
+    <div class="adv-fltr-top">
+        <div class="adv-fltr {{' '+x.CssName}} {{x.CssName}}{{'-'+x.IsBeverage}} " data-val="{{x.CssName}}" ng-repeat="x in advanceFilter" >
+            <div class="adv-fltr-option" ng-if="x.IsBeverage == 1 || (x.Name !== 'Guests' && x.Name !== 'BeverageGuest')">
+                <div class="right-skew-{{x.Name}} box adv-fltr-label width-{{x.Options.length}}" data-id="{{y.Id}}" ng-click="showSubOptions(x.Name,$event)" data-val="{{y.Text}}" ng-repeat="y in x.Options"><span>{{y.Text}}</span></div>
+            </div>
+
+            <div class="adv-fltr-option" ng-if="x.IsBeverage == 0 && (x.Name == 'Guests' || x.Name =='BeverageGuest') && $last">
+                <div class="right-skew-Guests box adv-fltr-label width-2" data-id="5" ng-click="showSubOptions('Beverage Guest',$event)" data-val="Beverage Guest" style="color: rgb(100, 100, 100);"><span class="ng-binding">Beverage Guest</span></div>
+                <div class="right-skew-Guests box adv-fltr-label width-2" data-id="8" ng-click="showSubOptions('Brand Health Metrics',$event)" data-val="Brand Health Metrics" style="color: rgb(100, 100, 100);"><span class="ng-binding">Brand Health Metrics</span></div>
+            </div>
+
+        </div>
+
+        @*<div class="adv-fltr Guests" data-val="{{z.CssName}}" ng-repeat="z in advanceFilter" ng-if="z.Name === 'Guests'">
+        <div class="adv-fltr-option">
+            <div class="right-skew-Guests box adv-fltr-label width-2" data-id="5" ng-click="showSubOptions('Beverage Guest',$event)" data-val="Beverage Guest" style="color: rgb(100, 100, 100);"><span class="ng-binding">Beverage Guest</span></div>
+            <div class="right-skew-Guests box adv-fltr-label width-2" data-id="8" ng-click="showSubOptions('Brand Health Metrics',$event)" data-val="Brand Health Metrics" style="color: rgb(100, 100, 100);"><span class="ng-binding">Brand Health Metrics</span></div>
+        </div>
+    </div>*@
+    </div>
+    <div class="adv-fltr-details advance-filters-msehover classMouseHover">
+        <div class="adv-fltr-headers">
+            <div class="adv-fltr-title">ADDITIONAL FILTER OPTIONS</div>
+        </div>
+        <div class="adv-fltr-selection">
+            <div class="centerAlign">
+            <div class="adv-fltr-toggle-container">
+                <div class="adv-fltr-toggle adv-fltr-toggle-container-msehover dynpos1 classMouseHover">
+                    <div class="adv-fltr-visit">VISITS</div>
+                    <label class="switch">
+                        <input type="checkbox" id="guest-visit-toggle" class="activeToggle" checked="checked">
+                        <div class="toggle-slider round " ng-click="toggleclick()"></div>
+                    </label>
+                    <div class="adv-fltr-guest">GUESTS</div>
+                </div>
+                <div class="filter-separator" id="addtnal-firstseptor"></div>
+            </div>    
+            
+            @* Only For Frequency SubFilter Start *@
+            <div class="adv-fltr-sub-selection adv-fltr-sub-frequency">
+                <!--additional filter(same left filter)-->
+                <section ng-repeat="fltr in subfilters | limitTo:1" ng-init="initializeSearch()">
+                    <!-- Filter Panel -->
+                    <div class="master-lft-ctrl" data-val="{{fltr.Label}}" data-isdynamicfilter="{{fltr.IsFilterBasedOnOtherFilter}}" popup-type="advanceFilters">
+                        <div class="lft-ctrl"></div>
+                        <div class="lft-ctrl2">
+                            <div class="lft-ctrl-label" ng-switch="fltr.IsTimeperiod">
+                                <span>{{fltr.Label}}</span>
+                                <div ng-switch-when="true">
+                                </div>
+
+                            </div>
+                            <div class="lft-ctrl-next">
+                                <div class="fltr-img-hldr {{fltr.Image}}"></div>
+                                <div class="fltr-txt-hldr {{fltr.Image}}-text" data-val="{{fltr.Label}}">{{fltr.Label}}</div>
+                            </div>
+                            <div class="lft-ctrl-txt" style="{{fltr.IsMultiSelect==true?'height:50px': ''}}"></div>
+                        </div>
+                        <div class="lft-ctrl3" data-ismultiselect="{{fltr.IsMultiSelect}}" data-required="{{fltr.IsRequired}}" ng-switch="fltr.IsTimeperiod">
+                            <div class="lft-ctrl3-header"><span>X</span></div>
+                            <div class="lft-ctrl3-content" ng-switch-when="false">
+                                <div class="lft-popup-col{{paneldata.Level}} lft-popup-col" data-level="{{paneldata.Level}}" ng-repeat="paneldata in fltr.PanelPopup track by $index">
+                                    <div class="popup-header">
+                                        
+                                        <div class="lft-popup-col-search">
+                                            <input type="text" name="search" id="{{'search-list-'+removeBlankSpace(fltr.Label)}}" class="search-list" placeholder="Search.." class="ui-autocomplete-input" autocomplete="off">
+                                            <div class="search-img"></div>
+                                        </div>
+                                        <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                                    </div>
+                                    <div class="lft-popup-ele" ng-repeat="panelelement in paneldata.Data track by $index">
+                                        <span class="lft-popup-ele-label-img {{removeBlankSpace(panelelement.Text)}}_img"></span>
+                                        <span class="lft-popup-ele-label leftAlignTableText" data-id="{{panelelement.ID}}" data-val="{{panelelement.Text}}" data-parent="{{panelelement.ParentID}}" data-isSelectable="{{panelelement.isSelectable==undefined?true:false}}">{{panelelement.Text}}</span>
+                                        <span class="lft-popup-ele-next sidearrwdiv" ng-hide="panelelement.ChildCount == 0">
+                                            <span class="sidearrw"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lft-ctrl3-content" ng-switch-when="true">
+                                <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                                <div class="lft-popup-tp" ng-repeat="t in fltr.Time track by $index" data-val="{{t.Years}}">{{t.Interval}}</div>
+
+                                <div style="margin: 56px 30px 10px 20px;">
+                                    <div id="slider-range"></div>
+                                    <div id="slider-range-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Filter Panel -->
+
+                </section>
+                <!--end additional filter-->
+            </div>
+            @* Only Frequency SubFilter End*@     
+            <div class="filter-separator" id="addtnal-secndseptor"></div>
+            @*<div class="adv-fltr-vertline"></div>*@
+
+            <div class="adv-fltr-sub-selection center-fltr">
+                <!--additional filter(same left filter)-->
+                <section ng-repeat="fltr in subfilters track by $index" ng-if="fltr.Label != 'Establishment' && fltr.Label != 'Frequency' && fltr.Label !='FREQUENCY'" ng-init="initializeSearch()">
+                    <!-- Filter Panel -->
+                    <div class="master-lft-ctrl" data-val="{{fltr.Label}}" data-isdynamicfilter="{{fltr.IsFilterBasedOnOtherFilter}}" popup-type="advanceFilters">
+                        <div class="lft-ctrl"></div>
+                        <div class="lft-ctrl2">
+                            <div class="lft-ctrl-label" ng-switch="fltr.IsTimeperiod">
+                                <span>{{fltr.Label}}</span>
+                                <div ng-switch-when="true">
+                                </div>
+
+                            </div>
+                            <div class="lft-ctrl-next">
+                                <div class="fltr-img-hldr {{fltr.Image}}"></div>
+                                <div class="fltr-txt-hldr {{fltr.Image}}-text" data-val="{{fltr.Label}}">{{fltr.Label}}</div>
+                            </div>
+                            <div class="lft-ctrl-txt" style="{{fltr.IsMultiSelect==true?'height:50px': ''}}"></div>
+                        </div>
+                        <div class="lft-ctrl3" data-ismultiselect="{{fltr.IsMultiSelect}}" data-required="{{fltr.IsRequired}}" ng-switch="fltr.IsTimeperiod">
+                            <div class="lft-ctrl3-header"><span>X</span></div>
+                            <div class="lft-ctrl3-content" ng-switch-when="false">
+                                <div class="lft-popup-col{{paneldata.Level}} lft-popup-col" data-level="{{paneldata.Level}}" ng-repeat="paneldata in fltr.PanelPopup track by $index">
+                                    <div class="popup-header">
+                                        
+                                        <div class="lft-popup-col-search">
+                                            <input type="text" name="search" id="{{'search-list-'+removeBlankSpace(fltr.Label)}}" class="search-list" placeholder="Search.." class="ui-autocomplete-input" autocomplete="off">
+                                            <div class="search-img"></div>
+                                        </div>
+                                        <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                                    </div>
+                                    <div class="lft-popup-ele" ng-repeat="panelelement in paneldata.Data track by $index">
+                                        <span class="lft-popup-ele-label-img {{removeBlankSpace(panelelement.Text)}}_img"></span>
+                                        <span class="lft-popup-ele-label leftAlignTableText" data-id="{{panelelement.ID}}" data-val="{{panelelement.Text}}" data-parent="{{panelelement.ParentID}}" data-isSelectable="{{panelelement.isSelectable==undefined?true:false}}">{{panelelement.Text}}</span>
+                                        <span class="lft-popup-ele-next sidearrwdiv" ng-hide="panelelement.ChildCount == 0">
+                                            <span class="sidearrw"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lft-ctrl3-content" ng-switch-when="true">
+                                <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                                <div class="lft-popup-tp" ng-repeat="t in fltr.Time track by $index" data-val="{{t.Years}}">{{t.Interval}}</div>
+
+                                <div style="margin: 56px 30px 10px 20px;">
+                                    <div id="slider-range"></div>
+                                    <div id="slider-range-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Filter Panel -->
+                    @*<hr />*@
+
+                </section>
+                <!--end additional filter-->
+            </div> 
+
+            @* Only For Establishment of Beverage Visits start *@  
+            <div class="adv-fltr-sub-establmt filter-separator" style="display:none;"></div>
+            <div class="adv-fltr-sub-selection adv-fltr-sub-establmt" style="display:none;">
+                <!--additional filter(same left filter)-->
+                <section ng-repeat="fltr in subfilterEstablishment" ng-if="fltr.Label == 'Establishment'" ng-init="initializeSearch()">
+                    <!-- Filter Panel -->
+                    <div class="master-lft-ctrl" data-val="{{fltr.Label}}" data-isdynamicfilter="{{fltr.IsFilterBasedOnOtherFilter}}" popup-type="advanceFilters">
+                        <div class="lft-ctrl"></div>
+                        <div class="lft-ctrl2">
+                            <div class="lft-ctrl-label" ng-switch="fltr.IsTimeperiod">
+                                <span>{{fltr.Label}}</span>
+                                <div ng-switch-when="true">
+                                </div>
+
+                            </div>
+                            <div class="lft-ctrl-next">
+                                <div class="fltr-img-hldr {{fltr.Image}}"></div>
+                                <div class="fltr-txt-hldr {{fltr.Image}}-text" data-val="{{fltr.Label}}">{{fltr.Label}}</div>
+                            </div>
+                            <div class="lft-ctrl-txt" style="{{fltr.IsMultiSelect==true?'height:50px': ''}}"></div>
+                        </div>
+                        <div class="lft-ctrl3" data-ismultiselect="{{fltr.IsMultiSelect}}" data-required="{{fltr.IsRequired}}" ng-switch="fltr.IsTimeperiod">
+                            <div class="lft-ctrl3-header"><span>X</span></div>
+                            <div class="lft-ctrl3-content" ng-switch-when="false">
+                                <div class="lft-popup-col{{paneldata.Level}} lft-popup-col" data-level="{{paneldata.Level}}" ng-repeat="paneldata in fltr.PanelPopup track by $index">
+                                    <div class="popup-header">
+                                        
+                                        <div class="lft-popup-col-search" style="visibility:hidden">
+                                            <input type="text" name="search" id="{{'search-list-'+removeBlankSpace(fltr.Label)}}" class="search-list" placeholder="Search.." class="ui-autocomplete-input" autocomplete="off">
+                                            <div class="search-img"></div>
+                                        </div>
+                                        <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                                    </div>
+                                    <div class="lft-popup-ele" ng-repeat="panelelement in paneldata.Data track by $index">
+                                        <span class="lft-popup-ele-label-img {{removeBlankSpace(panelelement.Text)}}_img"></span>
+                                        <span class="lft-popup-ele-label leftAlignTableText" data-id="{{panelelement.ID}}" data-val="{{panelelement.Text}}" data-parent="{{panelelement.ParentID}}" data-isSelectable="{{panelelement.isSelectable==undefined?true:false}}">{{panelelement.Text}}</span>
+                                        <span class="lft-popup-ele-next sidearrwdiv" ng-hide="panelelement.ChildCount == 0">
+                                            <span class="sidearrw"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lft-ctrl3-content" ng-switch-when="true">
+                                <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                                <div class="lft-popup-tp" ng-repeat="t in fltr.Time track by $index" data-val="{{t.Years}}">{{t.Interval}}</div>
+
+                                <div style="margin: 56px 30px 10px 20px;">
+                                    <div id="slider-range"></div>
+                                    <div id="slider-range-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Filter Panel -->
+                </section>
+                <!--end additional filter-->
+            </div>
+            @* Only For Establishment of Beverage Visits end *@
+            </div>
+        </div>
+        <div class="adv-fltr-showhide-sectn">
+            <div class="adv-emptydiv"></div>
+            <div class="adv-fltr-applyfiltr" ng-click="prepareContentArea('applyfilter')">
+                <div class="adv-fltr-applyfiltr-txt">APPLY FILTER</div>
+                <div class="adv-fltr-applyfiltr-img"></div>
+            </div>
+            <div class="adv-fltr-showhide" ng-click="showMoreLess()">
+                <div class="adv-fltr-showhide-txt">SHOW MORE</div>
+                <div class="adv-fltr-showhide-img"></div>
+            </div>
+        </div>
+    </div>
+</div>

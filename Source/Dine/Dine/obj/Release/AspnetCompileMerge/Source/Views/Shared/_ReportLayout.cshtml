@@ -1,0 +1,551 @@
+﻿@{
+    ViewBag.Title = @Dine.Utility.Constants.ToolTitlePrefix + "Reports";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+@System.Web.Optimization.Styles.Render("~/bundle/sreport")
+@*<link href="@Utils.ContentVersioned("~/Content/report.css")" rel="stylesheet" />*@
+@*@System.Web.Optimization.Scripts.Render("~/bundle/jreport")*@
+<div ng-controller="reportController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band"></div>
+        <div class="submodules-options">
+            <ul>
+                <li class="link_hover">
+                    <div class="link_items">Standard Reports</div></div>
+                    <div class="list_content">
+                        <div class="submodules-options-link report-link-dinereport">@Html.ActionLink("P2P Report", "P2PReport", "Report")</div>
+                        <div class="submodules-options-link report-link-summaryreport">@Html.ActionLink("Diner Report", "DinerReport", "Report")</div>@*<a href="#">Diner Report</a>*@
+                    </div>
+                </li>
+                <li class="link_hover">
+                    <div class="link_items storyboard_link">@Html.ActionLink("Saved Reports", "Story", "StoryBoard")</div>
+                </li>
+            </ul>
+        </div>
+        <div class="submodule-border-bottom"></div>
+    
+
+    <div class="master-leftpanel">
+        @{Html.RenderPartial("_LeftPanel");}
+    </div>
+
+    <div class="master-content-area">
+        <div class="filter-info-panel">
+            <div class="filter-info-panel-elements"></div>
+            <div class="arrow_popup arrow_popup-msehover dynpos1 classMouseHover"><div class="downarrw arrw"></div></div>
+        </div>
+       
+        <div class="p2pstatic-text-report" id="p2pstatictext" style="display:none">
+            <table class="clsMetricDataTitleRow1">
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <div>
+                                <table style="border-collapse: collapse; width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td class="clsMetricDataItem1">
+                                                Section
+                                            </td>
+                                            <td class="clsMetricDataItem2">
+                                                Details
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="ShowChartArea2" tabindex="6" style="overflow-y: auto; outline: none;">
+                <table class="clsReportDataTable" id="tbleContentListForAll">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <div>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Visit Demographics
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Who Are The Visitors</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>GENDER</li>
+                                                                        <li>AGE</li>
+                                                                        <li>Race/Ethnicity</li>
+                                                                        <li>Occupation</li>
+                                                                        <li>Socioeconomic Level</li>
+                                                                        <li>HH Income</li>
+                                                                        <li>HH SIZE</li>
+                                                                        <li>MARITAL STATUS</li>
+                                                                        <li>Parental Identification</li>
+                                                                        <li>Diner Segmentation</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Occasion Context
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Key Parameters For The Visit</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Daypart</li>
+                                                                        <li>Day of The Week</li>
+                                                                        <li>Service Mode</li>
+                                                                        <li>Food & Beverage Consumed</li>
+                                                                        <li>Meal Type</li>
+                                                                        <li>Number Of Companions</li>
+                                                                        <li>Companion Detail</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Pre-Visit
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Factors Leading Up To The Visit</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>When Planned</li>
+                                                                        <li>Decision Location</li>
+                                                                        <li>Main Decision Maker</li>
+                                                                        <li>Decision Makers</li>
+                                                                        <li>Pre-Visit Origin</li>
+                                                                        <li>Distance Travelled</li>
+                                                                        <li>Mode of Transportation</li>
+                                                                        <li>Trip Purpose</li>
+                                                                        <li>Trip Activities</li>
+                                                                        <li>Occasion Motivation - Segmentation, Primary and Total Motivations</li>
+                                                                        <li>Establishment Motivation - Segmentation, Primary and Total Motivations</li>
+                                                                        <li>Mood - Primary and Total Mentions</li>
+                                                                        <li>Food v Beverage As Driver</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    In-Establishment
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Details Of Time Spent In Establishment</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Order Method</li>
+                                                                        <li>Food Consumed Detail</li>
+                                                                        <li>Beverage Consumption</li>
+                                                                        <li>Barriers Of Beverage Consumption</li>
+                                                                        <li>Consumption Location</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Trip Summary
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Summary Of The Visit</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Time Spent in Outlet - Average and Detailed</li>
+                                                                        <li>Expenditure - Average and Detailed</li>
+                                                                        <li>Payment Method</li>
+                                                                        <li>Satisfaction - Overall and Detailed</li>
+                                                                        <li>Post-Visit Destination</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Beverage Detail
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Details Of Beverage Consumed</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Beverage Categories Purchased</li>
+                                                                        <li>Beverage Motivations - Segmentation, Primary and Total Mentions</li>
+                                                                        <li>Beverage Origin  - Nets and Detailed</li>
+                                                                        <li>Total SSD Brands</li>
+                                                                        <li>Regular SSD Brands</li>
+                                                                        <li>Diet SSD Brands</li>
+                                                                        <li>Package Type</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Appendix
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Additional Details</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Reservation Details</li>
+                                                                        <li>Online Reviews Used</li>
+                                                                        <li>How Food & Beverage Was Received</li>
+                                                                        <li>Device Used</li>
+                                                                        <li>Website/ App Used</li>
+                                                                        <li>Combo Meal/ Dollar Menu/ Promotions</li>
+                                                                        <li>Coupon Usage</li>
+                                                                        <li>Brand Slides For Beverage Categories (Top 7 Categories Excluding Total, Regular and Diet SSD)</li>
+                                                                        <li>Coca-Cola FreeStyle Driving Est. Choice</li>
+                                                                        <li>Coca-Cola FreeStyle - Flavors Selected</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="p2pstatic-text-report" id="p2pstatictext_diner" style="display:none">
+            <table class="clsMetricDataTitleRow1">
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <div>
+                                <table style="border-collapse: collapse; width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td class="clsMetricDataItem1">
+                                                Section
+                                            </td>
+                                            <td class="clsMetricDataItem2">
+                                                Details
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="ShowChartArea2" tabindex="6" style="overflow-y: auto; outline: none;">
+                <table class="clsReportDataTable" id="tbleContentListForAll">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <div>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Frequency Profile
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Visit frequency </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Guest Frequency (On a Total Guest base)</li>
+                                                                        <li>Guest Frequency (On a selected Guest Frequency base)</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Guest Demographics
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Visitor Profile</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>GENDER</li>
+                                                                        <li>AGE</li>
+                                                                        <li>Race/Ethnicity</li>
+                                                                        <li>Occupation</li>
+                                                                        <li>Socioeconomic Level</li>
+                                                                        <li>HH Income</li>
+                                                                        <li>HH SIZE</li>
+                                                                        <li>MARITAL STATUS</li>
+                                                                        <li>Parental Identification</li>
+                                                                        <li>Diner Segmentation</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Brand Health
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Establishment Brand Health </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Establishment Loyalty Pyramid</li>
+                                                                        <li>Establishment Imagery- Factor Comparisons</li>
+                                                                        
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Guest Beverage Consumption
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Beverage Consumption Frequency</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Beverage Categories Summary</li>
+                                                                        <li>Beverage Categories</li>
+                                                                        <li>Manufacturer Beverage Summary</li>
+                                                                        <li>Favorite Brand Across NAB By Manufacturer</li>
+                                                                        <li>Total SSD Brands ( Top 10 Consumed Brands and Top 10 Favorite Brands in Category)</li>
+                                                                        <li>Favorite Brand Across NAB (Top 10 Favorite Brands)</li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="clsReportData3">
+                                                    Appendix
+                                                </td>
+                                                <td class="clsReportData4">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="clsReportData5">Additional Details</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="clsReportData6">
+                                                                    <ul class="clsReportData7">
+                                                                        <li>Top 10 Consumed Brands and Top 10 Favorite Brands by Category</li>
+                                                                        
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            
+
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="report-maindiv" style="display:block">
+            
+        </div>
+        <div class="selctall-view-downlddiv" style="display:none;">
+            <div class="selctall-div">
+                <div class="selctall-chkbx"><div class="selctallchkbx"><input type="checkbox" id="selectallchkbx" /></div><div class="selectall_Text">Select All</div></div>
+            </div>
+            <div class="view-reportbtn">VIEW REPORT</div>
+            <div class="downloadbtn">DOWNLOAD REPORT</div>
+        </div>
+        <div class="diner-statlayer table-statlayer-diner" style="display:none">
+            <ul>
+                <li>
+                    <div id="samplesize" style="">
+                        <ul style="margin:0;padding:0;">
+                            <li><div class="table-stat-text table-stat-text-msehover up dynpos1 classMouseHover">STAT TESTING VS. </div></li>                            
+                            <li><div class="table-stat statTest prev_period-msehover up dynpos1 classMouseHover" data-val="pp" id="table-prevsperiod">PREVIOUS PERIOD</div></li>
+                            <li><div class="table-stat statTest prev_year-msehover up dynpos1 classMouseHover" style="display:none;" data-val="py" id="table-prevsyear">PREVIOUS YEAR</div></li>
+                            <li><div class="table-stat activestat statTest custom_base-msehover dynpos1 up classMouseHover" data-val="cb" id="table-prevsperiod">CUSTOM BASE</div></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><div id="NoteSample" style="float:left;" class="table-stat-empty"><span class="samplesize-note">Note: </span> <span class="samplesize-text">Grey font = Low Sample (30-99), Blank = Sample < 30; NA = Not Applicable</span></div></li>
+                <li>
+                    <div class="stattest-sign">
+                        <ul>
+                            <li><div class="outer_circle"><div class="table-stat-sigfncegrenimg"></div></div></li>
+                            <li><div class="table-stat-sigfncpstve">Significantly Higher</div></li>
+                            <li><div class="outer_circle"><div class="table-stat-sigfnceredimg"></div></div></li>
+                            <li><div class="table-stat-sigfncnegve">Significantly Lower</div></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="stat-popup popup_css" style="display:none;">
+            <div class="stat-topdiv"><div class="stat-topband topband"></div><div class="stat-clsebtn"></div></div>
+            <div class="stat-closediv popup_css_header">
+                <div class="stat-heading heading_text">SELECT STAT TESTING BASE (ANY ONE)</div>
+            </div>
+            <div class="stat-content content_css"></div>
+            <div class="stat-submtdiv">
+                <div class="stat-submt submit_cancel_btn" ng-click="custombaseSubmit()"> Download</div>
+                <div class="stat-cancel submit_cancel_btn" ng-click="custombaseCancel()">Cancel</div>
+            </div>
+            <div class="proceed-text">NOTE: FIRST ESTABLISHMENT ON THE LIST IS SELECTED BY DEFAULT AS CUSTOM BASE.</div>
+        </div>
+        <div class="stat-popup-pp" style="display:none;">
+            <div class="stat-topdiv"><div class="stat-topband"></div><div class="stat-clsebtn"></div></div>
+            <div class="stat-closediv">
+                <div class="stat-heading">DOWNLOAD REPORT WITH PREVIOUS PERIOD BASE</div>
+            </div>
+            <div class="stat-content"></div>
+            <div class="stat-submtdiv">
+                <div class="stat-submt" ng-click="ppSubmit()"> Download</div>
+                <div class="stat-cancel" ng-click="ppCancel()">Cancel</div>
+            </div>
+        </div>
+        <div class="stat-popup-py" style="display:none;">
+            <div class="stat-topdiv"><div class="stat-topband"></div><div class="stat-clsebtn"></div></div>
+            <div class="stat-closediv">
+                <div class="stat-heading">DOWNLOAD REPORT WITH PREVIOUS YEAR BASE</div>
+            </div>
+            <div class="stat-content"></div>
+            <div class="stat-submtdiv">
+                <div class="stat-submt" ng-click="pySubmit()"> Download</div>
+                <div class="stat-cancel" ng-click="pyCancel()">Cancel</div>
+            </div>
+        </div>
+    
+    <div class="null-error-popup">
+        <div class="save-reportPopup popup_css">
+            @*<div class="save-popup-close" ng-click="closeSavePopup()"></div>*@
+            <div class="stat-topdiv"><div class="stat-topband topband"></div><div class="stat-clsebtn" ng-click="closeSavePopup()"></div></div>
+            @*<div class="save-popup-heading">SAVE REPORTS</div>*@
+            <div class="save-section">
+                <div class="report-selection">
+                    <div class="stat-closediv popup_css_header">
+                        <div class="stat-heading heading_text">Sample size is less than 30 for the following</div>
+                    </div>
+                    <div class="proceed-data">
+                        <div class="list-of-nulls">
+                        </div>
+                    </div>
+                </div>
+                <div class="save-popup-btn">
+                    <div class="stat-submt save-proceed-btn proceedClick">PROCEED</div>
+                    <div class="stat-submt cancel-proceed-btn closeSavePopup">CANCEL</div>
+                </div>
+                <div class="proceed-text">NOTE: REPORT WILL NOT FEATURE THESE BRANDS/ CHANNELS.</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@RenderBody()
+
+

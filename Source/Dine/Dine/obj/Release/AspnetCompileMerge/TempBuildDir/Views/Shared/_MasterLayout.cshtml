@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Dinefavicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Styles.Render("~/bundle/theme")
+    @System.Web.Optimization.Scripts.Render("~/bundle/jlib")
+    @System.Web.Optimization.Scripts.Render("~/bundle/d3chart")
+    <script>
+        var kiLoginURL = '@System.Configuration.ConfigurationManager.AppSettings["KIMainlink"].ToString()';
+    </script>
+    <script src="~/Scripts/master-theme.js"> </script>
+   
+</head>
+<body class="text-not-selectable">
+    <div ng-app="mainApp" class="master-layout">
+        <div class="master-top-header">
+            <div class="master-logo"></div>
+            <div class="master-all-module-links">              
+                <ul class="view-menu">
+                    <li class="master_link dashboard dashboard-msehover classMouseHover"><div class="dashboard-logo"></div><div class="master_link_a" id="dashboard">DASHBOARD</div></li>               
+                    <li class="master_link reports reports-msehover classMouseHover"><div class="reports-logo"></div><div class="master_link_a" id="report">REPORTS</div>@*@Html.ActionLink("REPORTS", "Index", "Report")*@</li>
+                    <li class="master_link tables tables-msehover classMouseHover"><div class="tables-logo"></div><div class="master_link_a" id="table">TABLES</div>@*@Html.ActionLink("TABLES", "Index", "Table")*@</li>
+                    <li class="master_link charts charts-msehover classMouseHover"><div class="charts-logo"></div><div class="master_link_a" id="chart">CHARTS</div>@*@Html.ActionLink("CHARTS", "Index", "Chart" )*@</li>
+                    <li class="master_link analyses analyses-msehover classMouseHover"><div class="analysis-logo"></div><div class="master_link_a" id="analyses">ADD'L CAPABILITIES</div>@*@Html.ActionLink("ANALYSIS", "Index", "Snapshot")*@</li>                  
+                </ul>
+            </div>    
+            <div class="master-settings">
+                <div class="classMouseHover home-logo home-logo-msehover dynpos"></div>
+                <div id="Help" class="help-logo help-logo-msehover classMouseHover dynpos"></div>
+                <div class="exl-logo exl-logo-msehover classMouseHover dynpos"></div>
+                <div class="classMouseHover pdf-logo pdf-logo-msehover dynpos"></div>      
+                <div class="classMouseHover ppt-logo ppt-logo-msehover dynpos"></div>          
+                <div class="settings-logo settings-logo-msehover classMouseHover dynpos" id="seting-sprite"></div>
+            </div>
+       </div>
+        <div class="master-content">
+          
+            @RenderBody()
+        </div>
+
+        <div class="loader" style="display:none;"></div>
+        <div class="transparentBG" style="display:none;"></div>
+        <div class="transparentBGforAlert" style="display:none;"></div>
+        <div class="confirmBoxBG" style="display:none;"></div>
+        <div class="transparentBGHigh"></div>
+        <div class="transparentBredCrumBG" style="display:none;"></div>
+        <div class="ShowStatDetails" style="display: none;">
+            <div>
+                <div class="outer_circle"><div class="table-stat-sigfncegrenimg"></div></div>
+                <div>
+                    Significantly Higher with 95% confidence interval
+                </div>
+            </div>
+            <div>
+                <div class="outer_circle"><div class="table-stat-sigfnceredimg"></div></div>
+                <div>
+                    Significantly Lower with 95% confidence interval
+                </div>
+            </div>
+        </div>
+
+        <div id="MouseHoverBigDiv" style="display: none;">
+            <div class="ContainerClass">
+                <div class="HeadingText">
+                    <div class="mouseOverImageTitleBottom"></div>
+                </div>
+
+                <div class="TextContainer"></div>
+            </div>
+        </div>
+        <div id="MouseHoverSmallDiv" style="display: none;">
+            <div class="ContainerClass">
+                <div class="HeadingTextsmall" style="height: auto;">
+                    <div class="mouseOverImageTitleBottom" style="margin-top: 27px;"></div>
+                </div>
+
+                <div class="TextContainersmall"></div>
+            </div>
+        </div>
+        <div id="MouseHoverSmallerDiv" style="display: none;">
+            <div class="topleftimage"></div>
+            <div class="leftbottomimage"></div>
+            <div class="toprightimage"></div>
+            <div class="centerdivdark">
+                <div class="mousehoversmallpopuptext"></div>
+            </div>
+        </div>
+        <div id="MouseHoverExtraSmallDiv" style="display: none;">
+            <div class="topleftimage"></div>
+            <div class="leftbottomimage"></div>
+            <div class="toprightimage"></div>
+            <div class="centerdivlight">
+                <div class="mousehoversmallpopuptext"></div>
+            </div>
+        </div>
+        
+        <div class="export-excel-popup popup_css" style="display:none;">
+            <div class="stat-topdiv"><div class="stat-topband topband"></div><div class="stat-clsebtnExel"></div></div>           
+            <div class="excel-tabsdiv content_css">
+                <div class="stat-closediv popup_css_header">
+                    <div class="stat-heading heading_text">EXPORT TO EXCEL</div>
+                </div>
+                <div class="excel-tabslist content_css">
+                    <div class="excel-tabs"><div class="tab-checkbox"></div><div class="tab-name"></div></div>
+                </div>
+                <div class="excel-btnsdiv">
+                    <div class="stat-submtdiv excel-buttons">
+                        <div class="stat-submt excel-okbtn"> Export</div>
+                        <div class="stat-cancel excel-cancelbtn">Cancel</div>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+
+        <div class="view-report-ppup" style="display:none">
+            <div class="view-report-clsbtndiv">
+                <div class="view-clsbtn"></div>
+            </div>
+            <div class="view-pre-btn"> </div>
+            <div class="view-preview-img"> </div>
+            <div class="view-next-btn"> </div>
+        </div>
+        <div class="loaderExportExcel" style="display:none;"></div>
+        <div class="transparentBGExportExcel" style="display:none;"></div>
+        <div class="show-message-container" style="display:none">
+            <div class="alert-message-close"></div>
+            <div class="alert-message">Some text to be displayed</div>
+        </div>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = Dine.Utility.Constants.ToolTitlePrefix + " Establishment DeepDive";
+    Layout = "~/Views/Shared/_AnalysesLayout.cshtml";
+}
+<style type="text/css">
+    .timperiodpittrend {
+        display: none;
+    }
+    .submodule-border-bottom, .submodules-options {
+        display:none !important;
+    }
+</style>
+@*<script src="~/Scripts/analyses_establishment_deepdive.js"></script>*@
+@System.Web.Optimization.Scripts.Render("~/bundle/janalysesestdeepdive");

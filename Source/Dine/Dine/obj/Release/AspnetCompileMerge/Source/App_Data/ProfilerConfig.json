@@ -1,0 +1,95 @@
+{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "Timeperiod",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": "timeperiod_img",
+        "IsTimePeriod": true,
+        "HideTrend": false,
+        "Database": {
+          "Table": "vw_Timeperiod",
+          "PrimaryKey": "TimeperiodValue",
+          "DisplayTextColumnName": "DisplayText",
+          "ParentPrimaryKey": null,
+          "ParentText": "PeriodType",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": " order by rn"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 2,
+        "Label": "Establishment",
+        "IsMultiSelect": true,
+        "IsRequired": true,
+        "Image": "establishment_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Establishment",
+          "PrimaryKey": "EstablishmentId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 4,
+        "Label": "Measures",
+        "IsMultiSelect": true,
+        "IsRequired": true,
+        "Image": "measure_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Measures_CorrespondenceMap",
+          "PrimaryKey": "MeasureId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 3,
+        "Label": "Demographic Filters",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "demograhicFitr_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

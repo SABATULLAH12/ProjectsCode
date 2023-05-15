@@ -1,0 +1,33 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 4,
+        "Label": "FREQUENCY",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimFrequency",
+          "PrimaryKey": "FrequencyId",
+          "DisplayTextColumnName": "FrequencyName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

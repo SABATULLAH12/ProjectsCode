@@ -1,0 +1,1457 @@
+﻿@import url('analyses.css');
+body, html {
+    /*overflow: hidden;*/
+}
+
+.red_bar {
+    margin-top: 32px;
+    height: 21px;
+    margin-left: -50px;
+    background-color: #EB1F2A;
+    z-index: 34;
+    /* opacity: 0.8; */
+    border-bottom: 2px #EB1F2A solid;
+    border-top: 1px #EB1F2A solid;
+}
+
+.analyses-toplayer {
+    display: none;
+    width: 100%;
+    height: 30px;
+    float: left;
+    position: relative;
+    margin-top: 7px;
+    z-index: 3;
+}
+
+#chart-visualisation {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.domain {
+    display:none;
+}
+
+.analyses-bottomlayer {
+    /*height: 456px;*/
+    height: calc(100% - 115px);
+    width: 100%;
+    float: left;
+    display: none;
+    /*margin-left: 1.5%;*/
+    background: rgba(255,255,255,.3);
+    border: 1px solid #BBBDBF;
+}
+
+.analyses-widget {
+    width: 32.5%;
+    border: solid 1px;
+    border-radius: 5px;
+    float: left;
+    margin: 1px;
+    height: 300px;
+    overflow: auto;
+}
+
+table.widget-table, .widget-table td, .widget-table th {
+    border: solid 1px;
+    border-collapse: collapse;
+}
+
+table.widget-table {
+    width: 100%;
+    height: 100%;
+}
+
+.widget-table tr::alternate {
+    background-color: #d5d0d0;
+}
+
+/*Start Widgets*/
+/*Table*/
+.widget-tbl, .widget-tbl td {
+    border: solid 1px;
+    border-collapse: collapse;
+}
+
+.widget-tbl {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+}
+
+/*Chart*/
+/*End Widgets*/
+.submodules {
+    width: 100%;
+    height: 30.671875px;
+    float: left;
+    border-top: #5f5c5e 1px solid;
+}
+
+.submodules-options {
+    display: block;
+    float: left;
+    /* height: 84%; */
+    width: 100%;
+    margin-left: 0%;
+    text-align: center;
+    /* background-color: rgb(28,28,28); */
+    color: white;
+    position: relative;
+    z-index: 6;
+    background: linear-gradient(to top, rgba(64,64,64,1), rgba(45,43,45,1));
+    height: 200px;
+    opacity: 0.95;
+}
+
+    .submodules-options > ul {
+        border-top: 3px solid #ea1f2a;
+        height: 97%;
+        width: 100%;
+        padding: 0px;
+        margin-top: -3px;
+        list-style: none;
+    }
+
+        .submodules-options > ul li {
+            float: left;
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+        }
+
+.link_items {
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: left;
+    font-size: 13.2px;
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    /* color: #d0d2d3; */
+    /* font-size: 16px; */
+    color: #ffffff;
+    font-weight: normal;
+    border-bottom: 1px dashed #ffffff;
+    width: 300px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+}
+
+.submodules-options-link a {
+    text-transform: capitalize;
+}
+
+.link_hover:hover {
+    background: transparent;
+}
+.link_hover .diner_heading {
+    left:52%;
+}
+.link_hover .diner_subheading {
+       left:52.7%;
+}
+.list_content {
+    text-align: left;
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    top: 61px;
+    right: 5px;
+    background-color: transparent;
+    color: #d0d2d3;
+    width: 290px;
+    height: 60px;
+    box-shadow: none;
+}
+
+.submodules-band {
+    margin-left: 75%;
+}
+
+.analysis-logo {
+    background-position: -239px 2px;
+}
+
+.master-lft-ctrl {
+    /*display:none;*/
+}
+
+.master-leftpanel {
+    padding-top: 25px;
+}
+
+/*Main Dropdown*/
+
+.submodules-options-link {
+    padding: 0px;
+    width: 100%;
+    /*height: 30%;*/
+    height:45%;
+    display: flex;
+    align-items: center;
+}
+
+.adv-fltr-top {
+    display: none;
+}
+
+.adv-fltr-details {
+    /*height: 80%;*/
+    width: 98.9%;
+    margin-left:1.5%;
+}
+/*Chart/Table types*/
+.measure-text {
+    position: absolute;
+    left: 32.5%;
+    float: left;
+    width: 35%;
+    margin-top: 0.2%;
+    height: 98%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    background-image: url(../images/Sprite-Shadow_Vertical_fliped.svg);
+    background-position: 50% -9px;
+    background-repeat-x: no-repeat;
+    z-index: 0;
+}
+
+.chart-types {
+    width: 9%;
+    height: 100%;
+    float: right;
+    margin-left: 3px;
+    margin-right: -15px;
+}
+
+.scatterplot-chart, .table-R, .table-analyses {
+    float: left;
+    margin-right: 5px;
+    background: url('../Images/sprite.svg?3') no-repeat;
+    margin-top: 8px;
+    cursor: pointer;
+    padding-right: 5px;
+    background-size: 3123.67px 981.59px;
+}
+
+.scatterplot-chart {
+    background-position: -543px -408px;
+    width: 21px;
+    height: 22px;
+    /*border-right: 1px dashed #777;*/
+}
+.tbl-dta-metricsHding {
+    font-size: 11px;
+    font-weight: bold;
+}
+.table-R {
+    background-position: -643px -408px;
+    width: 24px;
+    height: 22px;
+    /*border-right: 1px dashed #777;*/
+}
+
+.table-analyses {
+    background-position: -743px -408px;
+    width: 25px;
+    height: 22px;
+}
+
+/*Tree Grid Data*/
+
+.tble-frequecnyHeding {
+}
+
+.tble-frequecnyTxt {
+    border-bottom: 1px solid #da1f27;
+    font-size: 15px;
+    color: #000;
+}
+
+.tble-heading-txt {
+    background: #000;
+    opacity: .1;
+    border-bottom: #000 1px solid;
+    font-size: 15px;
+    color: #000;
+    height: 31px;
+}
+
+
+.table-data {
+    font-size: 13.2px;
+    font-weight: normal;
+    width: 96%;
+    height: 95%;
+    float: left;
+    margin-left: 2%;
+    color: #000;
+}
+/*.tbl-hdr {
+    width: 100%;
+    height: 10%;
+    float: left;
+}*/
+.tble-tr {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+
+.tbl-dta-freq-band {
+    height: 12%;
+    float: left;
+    border-bottom: 1px solid #da1f27;
+    width: 97%;
+}
+
+.tbl-dta-freq-bandtp {
+    height: 97%;
+    width: 3%;
+    float: left;
+    background-color: #da1f27;
+}
+
+.tbl-dta-metrics {
+    width: 100%;
+    height: 7%;
+    float: left;
+    margin-top: 1%;
+}
+
+.tbl-dta-metricsHding {
+    font-size: 13.2px;
+    /*width: 500px;
+    height: 100%;*/
+    float: left;
+    background: rgba(0,0,0,.1);
+    border-bottom: #656565 1px solid !important;
+    font-weight: normal;
+}
+
+.tbl-dta-metricsHding-Pding {
+    /*font-size: 1vw;*/
+    width: 100%;
+    height: 98%;
+    float: left;
+    /* border-bottom: #656565 1px solid; */
+    font-weight: normal;
+    text-align: center;
+}
+
+
+.tbl-dta-rows {
+    text-align: left;
+    min-height: 25px;  
+    display:flex;
+}
+#scrollableTableAnalyses .tbl-dta-rows { 
+    display:flex;
+    min-height: 25px;
+}
+.tbl-dta-col {
+    width: 350px;
+    /*height: 81%;*/
+    float: left;
+    /*border-bottom: #a8a8a8 1px dotted;*/
+}
+
+.tbl-dta-rowscolr {
+    width: 250px;
+    background: rgba(115,171,255,.15);
+    border-bottom: #a8a8a8 0px dotted !important;
+    /* padding-top: 7px; */
+    /*height: 80%;*/
+    cursor: pointer;
+    float: left;
+}
+
+    .tbl-dta-rowscolr > div {
+        font-size: 12.5px !important;
+        font-weight:bold;
+    }
+
+.tbl-shadow {
+    width: 0px;
+    margin: 0 auto;
+    background-color: lightgray;
+    height: 100%;
+    /*box-shadow: 1px 0px 12px 2px lightgray;*/
+}
+
+.tbl-data-text {
+    width: 70%;
+    float: left;
+    height: 80%;
+    margin-left: 4%;
+    text-align: left !important;
+    margin-top: 1%;
+}
+
+.border {
+    margin-top: 25px!important;
+}
+
+.btmcir {
+        float: right!important;
+    margin-top: -3px!important;
+}
+
+.btmcir_content {
+    margin-top: -2px!important;
+}
+
+.tbl-data-brderbtm {
+    width: 20px;
+    height: 4px;
+    background: #73abff;
+    margin-top: 21px !important;
+    border-top-right-radius: 36px;
+    /* text-align: center; */
+    /* padding-left: 5%; */
+    /*float: left;*/
+}
+
+.tbl-dta-demoflter {
+    width: 82%;
+    float: left;
+    font-size: 11px;
+    height: 100%;
+    text-transform: uppercase;
+}
+
+.tbl-data-brderbtmblk {
+    width: 20px;
+    height: 4px;
+    background: #000000;
+    /*margin-top: 21px;*/
+    border-top-right-radius: 36px;
+    /* text-align: center; */
+    /* padding-left: 5%; */
+    position: relative;
+    bottom: calc(-100% - -3px);
+    float: left;
+}
+
+.tbl-data-text-align {
+    margin-left: 31%;
+    width: 50%;
+    float: left;
+    height: 97%;
+    text-align: left !important;
+}
+
+.tbl-data-btmbrd1 {
+    width: 99.5%;
+    float: left;
+    border-bottom: #a8a8a8 1px dotted;
+    margin-top: -1px;
+    /*margin-top: 5px;*/
+}
+
+.tbl-data-btmbrd {
+    width: 98.8%;
+    float: left;
+    border-bottom: #a8a8a8 1px dotted;
+    /*margin-top: 5px;*/
+}
+
+.tbl-btm-circle {
+    border-radius: 2px;
+    height: 3px;
+    width: 3px;
+    float: left;
+    margin-top: -2px;
+    background-color: #A8A8A8;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.tbl-algn {
+    text-align: center;
+    font-size: 12.5px;
+    /*/* display: flex; */
+    /* align-items: center; */
+    position: relative;
+    padding: 0 !important;
+    height: 25px !important;
+    /* vertical-align: middle;
+}*/
+}
+
+.fontForMetrics {
+    font-size: 11px;
+}
+
+.tbl-algn-left {
+    margin-left: 20px;
+    text-align: inherit;
+    font-size: 12.5px;
+}
+
+.analyses-statlayer,.cross-diner-statlayer {
+    height: auto;
+    width: calc(100% - 50px);
+    float: left;
+    font-size: 9.5px;
+    background-color: #CACACA;
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    overflow: auto;
+}
+.cross-diner-statlayer {
+    height:14px;
+}
+.est_sampleSize {
+    float: left;
+    padding: 1px 2px;
+}
+
+.tbl-dta-freq {
+    width: 100%;
+    height: 92%;
+    float: left;
+    border-bottom: 1px solid #da1f27;
+}
+
+.tbl-data-freqbdr {
+    width: 20px;
+    height: 4px;
+    /* height: 90%; */
+    /*border-bottom: 3px solid #da1f27;*/
+    float: left;
+    background-color: #da1f27;
+    /* margin-left: -1px; */
+    margin-top: 25px;
+    border-top-right-radius: 36px;
+}
+
+.tbl-data-freqtxt {
+    width: 90%;
+    float: left;
+    margin-top: 11px;
+    margin-left: 8px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.tbl-emptyrow {
+    /*height: 5%;*/
+    height: 5px;
+    width: 100%;
+    float: left;
+}
+
+.dataHide {
+    display: none !important;
+}
+
+.dataShow {
+    /*display: block;*/
+}
+
+.corner-frame {
+    float: left;
+}
+
+.scrollable-rows-frame {
+    float: left;
+    overflow: hidden;
+}
+
+.scrollable-columns-frame {
+    overflow: hidden;
+}
+
+.scrollable-data-frame {
+    overflow: auto;
+}
+
+
+.container {
+    max-width: 400px;
+}
+
+.corner-frame table.data td:first-child, .corner-frame table.data th:first-child {
+    width: 300px;
+}
+
+.scrollable-rows-frame table.data td:first-child {
+    width: 296px;
+    height: 25px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+table.data th:nth-child(2n+1), table.data td:nth-child(2n+1) {
+    width: 296.9px;
+    /*height: 21px;*/
+    float: left;
+    /*padding-top: 8px;*/
+    min-height: 25px;
+    position:relative;
+    box-sizing:border-box;
+}
+
+.emptydiv {
+    min-width: 10px;
+}
+
+.scrollable-data-frame td.emptydiv:nth-child(2n), .scrollable-columns-frame th.emptydiv:nth-child(2n) {
+    min-width: 10px;
+    height: 25px;
+}
+
+.flexi-.table {
+    margin-left: 2%;
+    width: 96%;
+    float: left;
+}
+/*Tree Grid Data*/
+
+/*Fit view css*/
+.advance-filters {
+    height: 40px;
+}
+
+.adv-fltr-selection {
+    height: 35px;
+    z-index: 4;
+    /*margin-left : 42%;*/
+}
+/*Fit view css*/
+
+/*ScatterPlot tooltip*/
+.d3_tooltip {
+    position: fixed;
+    text-align: left;
+    width: auto;
+    height: auto;
+    padding: 10px 5px 5px 5px;
+    font: 10px sans-serif;
+    background: #fff;
+    border: 0px;
+    pointer-events: none;
+    border-radius: 1px;
+    box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.57);
+}
+
+.tooltip_header {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 0px;
+    left: 0px;
+    background-color: #f00;
+}
+/*ScatterPlot tooltip*/
+
+.label {
+    display: none;
+}
+
+/* Left-ctrl-next */
+.adv-fltr-sub-selection .lft-ctrl3 {
+    margin: 0 !important;
+    /* margin-left: 5.4% !important; */
+    top: 100% !important;
+    height: 313px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    min-width:294px;
+
+}
+
+.adv-fltr-sub-selection .lft-popup-col {
+    width: 263px;
+    height: 78%;
+}
+.adv-fltr-sub-selection .master-lft-ctrl[data-val="MEAL MISSION TRIP SEGMENT"] .lft-ctrl3 {
+    right: -0%;
+}
+/* Left-ctrl-next */
+
+/*Zoom section*/
+.zoom {
+    /*width: 50px;*/
+    width: 4.2%;
+    float: left;
+    height: 100%;
+    display: none;
+    margin-left: 86.4%;
+}
+
+.zoomBtn {
+    height: 81%;
+    margin: 2px 0px 0px 0px;
+    width: 46%;
+    cursor: pointer;
+    float: left;
+}
+
+.zoom-in {
+    background-color: rgba(230,230,230,1);
+    background-image: url(../Images/sprite.svg?3);
+    background-position: -635px -213px;
+    /* border-radius: 5px; */
+    border: 1px solid #A3A3A3;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+}
+
+.zoom-out {
+    background-image: url(../Images/sprite.svg?3);
+    background-position: -592px -213px;
+    background-color: #FF9933;
+    /* border-radius: 5px; */
+    border: 1px solid #A3A3A3;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+}
+/*Zoom Section end*/
+
+.dot_text {
+    font-size: 12px;
+    color: #656565;
+    font-weight: Normal;
+}
+
+.adv-fltr-showhide-sectn {
+    margin-top: -30px;
+    height:30px;
+}
+
+.adv-fltr-showhide {
+    position: absolute;
+    left: 89.6%;
+    top: -5%;
+}
+
+.adv-fltr-details {
+    position:relative;
+}
+ .adv-fltr-showhide-sectn {
+   position:relative;
+   background: linear-gradient(to bottom, rgba(247,249,249,1) 9%, rgba(204,204,204,1));
+}
+
+.adv-fltr-title {
+    margin-left: 3.7%;
+    z-index:6;
+}
+
+
+.null-error-popup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    min-width: 1250px;
+    min-height: 660px;
+    z-index: 9999;
+    background: rgba(100,100,100,0.3);
+    display: none;
+}
+
+.save-reportPopup {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 499px;
+    height: 200px;
+    float: left;
+    background: #F6F6F6;
+    z-index: 1003;
+    /*border-top: red 2px solid;
+    -webkit-box-shadow: -2px 1px 4px 8px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 1px 4px 8px rgba(0,0,0,0.75);
+    box-shadow: -2px 1px 4px 8px rgba(0,0,0,0.75);*/
+}
+
+.save-popup-btn {
+    position: relative;
+    left: 25%;
+    top: 5px;
+    width: 50%;
+    height: 50px;
+    float: left;
+    margin-top: 1%;
+}
+
+.save-proceed-btn {
+    height: 20px;
+    float: left;
+    width: 70px;
+    text-align: center;
+    border-radius: 4px;
+    margin-left: 25px;
+    padding-top: 5px;
+    margin-right: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.cancel-proceed-btn {
+    height: 20px;
+    float: left;
+    width: 90px;
+    text-align: center;
+    border-radius: 4px;
+    margin-left: 15px;
+    padding-top: 5px;
+    margin-right: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.save-popup-close {
+    float: right;
+    background: url('../Images/sprite.svg?3') no-repeat -922px -218px;
+    width: 25px;
+    height: 24px;
+    margin-top: -11px;
+    /* margin-left: -22px; */
+    margin-right: -11px;
+}
+
+.save-section {
+    height: 100%;
+    /* top: 0px; */
+    position: relative;
+    /* float: left; */
+    width: 100%;
+    z-index: -1;
+}
+
+.report-selection {
+    width: 100%;
+    height: 150px;
+}
+
+.lowSample-size-text {
+    text-align: center;
+    width: 100%;
+    height: 15px;
+}
+
+.proceed-data {
+    text-align: center;
+    width: 98%;
+    height: 160px;
+}
+
+.list-of-nulls {
+    width: 100%;
+    height: 101px;
+    overflow-y: auto;
+}
+
+.proceed-text {
+    width: 100%;
+    height: 15px;
+    margin-top: 5px;
+}
+
+.stat-closediv {
+    margin-top: 5px;
+        background-color: #393539;
+    border-bottom: 1px dashed lightgray;
+}
+
+.stat-heading {
+    font-size: 10pt;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+/*.temp {
+    color: white;
+    background: #393539;
+}*/
+
+
+.stat-cust-estabmt {
+    width: 70%;
+    text-align: left;
+}
+
+.stat-cust-dot {
+    /*margin-left: 40px;*/
+}
+
+.ppt-logo, .exl-logo {
+    visibility: visible;
+    display: block;
+}
+
+.corner-frame, .scrollable-columns-frame, .scrollable-rows-frame, .scrollable-data-frame {
+    background-color: rgb(237, 237, 238);
+}
+
+.font11 > div {
+    font-size: 12.5px !important;
+}
+
+.scrollableTableR{
+    background-color: rgb(237, 237, 238);
+}
+
+.data.corner-table{
+    margin-top:0!important;
+}
+
+.popup_css1 {
+    background: #393539;
+    color: white;
+    width: 500px;
+}
+
+.popup_css_header {
+    width: 96%;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background: #393539;
+    border-bottom: 1px dashed lightgray;
+}
+
+.popup1 {
+    border-bottom: 1px solid #666466;
+    width: 92%;
+    height:auto;
+    line-height: 17px;
+}
+.topband1 {
+    width: 489px;
+}
+
+.heading_text {
+    font-size: 18px;
+    font-weight: normal;
+    width: 100%;
+}
+
+.content_css {
+    margin-top: 10px;
+    margin-left: 18px;
+    height: 180px;
+    width: 510px;
+
+}
+
+.submit_cancel_btn {
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.tbl-data-expan-collapse {
+    width: 20px;
+    height: 100%;
+    float: left;
+    margin-top: -4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tbl-data-expan-collapse_hide {
+    background: url(../Images/sprite.svg?3) no-repeat -1510px -217px;
+    width: 16px;
+    height: 15px;
+    float: left;
+    /*margin-left: 3px;*/
+}
+
+.tbl-data-expan-collapse_show {
+        margin-top: 8px;
+    background: url(../Images/sprite.svg?3) no-repeat -1554px -217px;
+    width: 15px;
+    height: 15px;
+    float: left;
+    /*margin-left: 3px;*/
+}
+
+
+
+.scrollable-columns-table thead {
+        /*display: inline-block;*/
+}
+
+.data.scrollable-columns-table {
+    margin-top:0!important;
+}
+
+.data.scrollable-rows-table {
+    margin-top:0!important;
+}
+
+.data.scrollable-data-table {
+    margin-top:0!important;
+}
+
+
+#scrollableTableAnalyses {
+    width: 100% !important;
+}
+
+.tbl-algn.fontForMetrics.tbl-algn-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* margin: 0!important; */
+    padding: 0!important;
+    height: 25px!important;
+}
+
+.tbl_align_middle {
+    padding-top: 7px !important;
+    height: auto !important;
+    font-weight: bold;
+}
+
+.text_middle_header {
+    padding-top: 2px;
+    line-height: 11px;
+    vertical-align: -webkit-baseline-middle;
+    display: inline-flex;
+}
+
+.text_middle {
+    padding-top: 5px;
+    line-height: 11px;
+    vertical-align: -webkit-baseline-middle;
+    display: inline-flex;
+}
+
+.borderbtm {
+    margin-top: -3px !important;
+}
+
+.tbl-algn.fontForMetrics.tbl-algn-left .text_middle {
+    /*padding-top:0% !important;*/
+}
+
+.centerAlign {
+    z-index: 7;
+}
+
+.stat-custdiv {
+    height:auto;
+}
+.advance-filters .centerAlign {
+    white-space: nowrap;
+    height: 100%;
+    width: 100% !important;
+    position: absolute;
+    left: 44% !important;
+    transform: translateX(-50%);
+}
+td.tbl-dta-rowscolr .tbl-algn {
+    padding-left: 20px !important;
+}
+
+.analysis-foot-note {
+    font-size: 11px;
+    width: 100%;
+    height: 2%;
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+}
+.asterik1
+{
+    font-size:19px;
+    font-weight:bold;
+    margin-left:10px;
+}
+.asterik {
+}
+/*Cross Diner Frequency*/
+
+.Visits-box {
+    background: #EB1F2A;
+    cursor: pointer;
+    color: #ffffff;
+}
+.width-4 {
+    width:39.4%;
+}
+.right-skew-Visits:before {
+    border-bottom: 3px solid #EB1F2A;
+}
+.Visits-right-skew:before {
+    background: #EB1F2A;
+}
+.adv-fltr-top {
+    height: 35px;
+    width: 98.3%;
+    float: left;
+    margin-top: 31px;
+    margin-left: 1.2%;
+}
+.right-skew-Visits {
+    position: relative;
+    border-bottom: 3px solid #EB1F2A;
+    cursor:pointer;
+}
+
+/*.analyses-crossdinerFreqlayer .corner-frame table.data td:first-child, .corner-frame table.data th:first-child {
+    min-width:452px;
+    width:100%;
+
+}*/
+.analyses-crossdinerFreqlayer .tbl-dta-demoflter {
+    width: 91%;
+    float: left;
+    float: left;
+    height: 100%;
+    text-transform: uppercase;
+    margin-left: 6%;
+}
+.analyses-crossdinerFreqlayer .corner-table {
+    width:100%;
+}
+.analyses-crossdinerFreqlayer .scrollable-rows-frame table.data td:first-child {
+    min-width: 452px;
+    width:100%;
+    min-height: 26px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.middleAlignHeader {
+    position: relative;
+    top: 50%;
+    transform: translateY(-47%);
+}
+
+.analyses-crossdinerFreqlayer .tbl-dta-rowscolr {
+    width: 250px;
+    background: rgba(115,171,255,.15);
+    border-top: #73abff 1px solid;
+    cursor: pointer;
+    float: left;
+    /*position: relative;*/
+}
+.analyses-crossdinerFreqlayer .fontForMetrics {
+    font-size: 12.5px;
+    font-weight:normal !important;
+}
+.analyses-crossdinerFreqlayer .tbl-algn {
+    text-align: center;
+    font-size: 12.5px;
+    /* margin-top: 5px; */
+    height: 100%;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-weight:bold;
+    margin-top:1px;
+}
+.analyses-crossdinerFreqlayer .tbl-data-brderbtmblk {
+    width: 20px;
+    height: 4px;
+    background: #000000;
+    border-top-right-radius: 36px;
+    position: relative;
+    bottom: calc(-100% - -28px);
+    float: left;
+}
+.analyses-crossdinerFreqlayer .tbl-dta-rows {
+    text-align: left;
+    min-height: 27px;  
+}
+.analyses-crossdinerFreqlayer .tbl-algn.fontForMetrics.tbl-algn-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-width:430px;
+    padding: 0 !important;
+    min-height: 26px !important;
+    float: left;
+    justify-content: flex-start;
+}
+.metricParentName {
+    min-width: 88px;
+    width:25%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(228, 238, 239);
+    color: grey;
+    float: left;
+    padding: 0 !important;
+    height: 22px !important;
+    justify-content:space-evenly;
+    font-weight:bold;
+}
+
+.analyses-crossdinerFreqlayer .leftAlignTableText {
+    text-align:left;
+    float:left;
+    min-width:306px;
+    width:68%;
+    padding-top:2px;
+}
+.analyses-crossdinerFreqlayer .middleAlignHeader {
+    position: relative;
+    top: -46%;
+    transform: translateY(-47%);
+}
+.ischannel {
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    margin-left:14px;
+}
+.analyses-crossdinerFreqlayer .tbl-dta-rowscolr > div {
+    font-size: 12.5px !important;
+    font-weight: normal;
+}
+
+.issubchannel {
+    color: #000000;
+    font-weight: normal;
+    margin-left:14px;
+}
+.black {
+   color:#000000;
+   font-weight:normal;
+}
+.gray {
+    color: gray;
+    font-weight: normal;
+}
+.cross-dinner-centeralign {
+    width: 60%;
+    float: left;
+    margin-left: 32%;
+    text-transform: none;
+}
+.dataCRCS {
+    text-transform: uppercase;
+    height: 14%;
+    width: 100%;
+    overflow: hidden;
+    outline: none;
+}
+.WeeklyMonthlyQuarterly {
+    padding: 3px 0px 3px 20px;
+    /* margin-bottom: 2px; */
+    /* font-weight: bold; */
+    color: black;
+    border-top: 1px solid skyblue;
+    background-color: #D9E1EE;
+    border-bottom: 0px;
+}
+
+/*Excel Popup Start*/
+
+/* Excel To Popup*/
+.export-excel-popup {
+    /*background-color: #b62526;*/
+    width: 500px;
+    height: 322px;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-radius: 7px;
+    font-size: 12px;
+}
+.popup_css {
+    background: #393539;
+    color: white;
+    width: 550px;
+}
+
+.popup_css_header {
+    width: 96%;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background: #393539;
+    border-bottom: 1px dashed lightgray;
+}
+
+.popup1 {
+    border-bottom: 1px solid #666466;
+    width: 92%;
+    line-height: 17px;
+}
+.topband {
+    width: 550px;
+}
+
+.heading_text {
+    font-size: 18px;
+    font-weight: normal;
+    width: 100%;
+}
+
+.content_css {
+    margin-top: 10px;
+    margin-left: 18px;
+    height: 180px;
+    width: 510px;
+   /*background: #393539;*/
+}
+
+.submit_cancel_btn {
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+
+
+.excel-header {
+    height: 14px;
+    width: 364px;
+    float: left;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.excel-tabsdiv {
+    height: 280px;
+    float: left;
+    background: #f6f6f6;
+    width: 500px;
+    /*margin-left: 6px;
+    border-radius: 9px;*/
+}
+
+.excel-tabslist {
+    height: 206px;
+    width: 490px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 5px;
+    margin-left: 3px;
+    color: #000000;
+    /*font-weight: bold;*/
+}
+
+.excel-tabs {
+    width: 490px;
+    float: left;
+    height: 22px;
+}
+
+.excel-chkbox, .excel-chkbox1 {
+    width: 21px;
+    float: left;
+}
+
+.checkbox-excel {
+    cursor: pointer;
+}
+
+.excel-tab-name {
+    width: 306px;
+    float: left;
+    padding-top: 2px;
+}
+
+.excel-btnsdiv {
+    height: 30px;
+    float: left;
+    width: 350px;
+}
+
+.excel-okbtn {
+    min-width: 50px;
+    text-align: center;
+    /*color: #fff;*/
+    margin-left: 156px;
+    float: left;
+    /*padding: 3px;*/
+    background-color: #b62526;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.excel-cancelbtn {
+    min-width: 50px;
+    text-align: center;
+    /*color: #fff;*/
+    margin-left: 6px;
+    float: left;
+    background-color: #b62526;
+    float: left;
+    /*padding: 3px;*/
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.excel-selctall {
+    border: 1px solid #aaa;
+    width: 76px;
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+.top-line {
+    float: left;
+    border-top: 1px solid #000;
+}
+
+.checkbox-excel-selectall {
+    cursor: pointer;
+}
+/* Excel To Popup*/
+.export-excel-popup-cross {
+    /*background-color: #b62526;*/
+    width: 542px;
+    height: 226px;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-radius: 7px;
+    font-size: 12px;
+}
+.content_css-cross {
+    margin-top: 10px;
+    margin-left: 18px;
+    height: 151px;
+    width: 504px;
+   /*background: #393539;*/
+}
+.excel-tabsdiv-cross {
+    height: 181px;
+    float: left;
+    background: #393539;
+    width: 500px;
+    color: white;
+}
+.excel-tabslist-cross {
+    background: #393539;
+    color: white;
+}
+/*Excel Popup End*/
+
+/*Cross Diner Frequency*/

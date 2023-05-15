@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = @Dine.Utility.Constants.ToolTitlePrefix + "Chart";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script src="~/Scripts/html2canvas.js"></script>
+<div ng-controller="chartController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band"></div>
+        <div class="submodules-options">
+            <ul>
+                <li class="link_hover establishment_chart-msehover classMouseHover">
+                    <div class="link_items">ESTABLISHMENT<div class="downarrw"></div></div>
+                    <div class="list_content">
+                        <div class="submodules-options-link establishment-link-compare establishment-compare-chart-msehover classMouseHover">@Html.ActionLink("COMPARE ESTABLISHMENTS", "EstablishmentCompare", "Chart")</div>
+                        <div class="submodules-options-link establishment-link-deep-dive establishment-deep-dive-chart-msehover classMouseHover">@Html.ActionLink("ESTABLISHMENT DEEP DIVE", "EstablishmentDeepDive", "Chart")</div>
+                    </div>
+                </li>
+                <li class="link_hover beverage_chart-msehover classMouseHover">
+                    <div class="link_items">BEVERAGES<div class="downarrw"></div></div>
+                    <div class="list_content">
+                        <div class="submodules-options-link beverage-link-compare beverage-compare-chart-msehover classMouseHover">@Html.ActionLink("COMPARE BEVERAGES", "BeverageCompare", "Chart")</div>
+                        <div class="submodules-options-link beverage-link-deep-dive beverage-deep-dive-chart-msehover classMouseHover">@Html.ActionLink("BEVERAGE DEEP DIVE", "BeverageDeepDive", "Chart")</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="master-leftpanel">
+        @{Html.RenderPartial("_LeftPanel");}
+    </div>
+    <div class="master-content-area">
+        <div class="filter-info-panel">
+            <div class="filter-info-panel-elements"></div>
+            <div class="arrow_popup arrow_popup-msehover dynpos1 classMouseHover"><div class="downarrw arrw"></div></div>
+        </div>
+
+        @{Html.RenderPartial("_AdvancedFilter"); }
+
+        <div class="chart-toplayer">
+            <div class="comment-section">
+                <div class="comment-input">
+                    <input type="text" class="comment-text" placeholder="Add/View Comments" maxlength="200"  ng-model="commentText" />
+                </div>
+                <div class="comment-save-btn" ng-click="saveComment()">SAVE</div>
+                <div class="comment-cancel-btn" ng-click="commentCancelFunction()">CANCEL</div>
+                <div class="comment-max-chars">(Max of 200 characters)</div>
+            </div>       
+            <div class="storyboard-chartTypes">
+                <div class="save-edit-btn back-to-report" ng-click="navigateToStoryBoard()" style="display:none;">
+                    @*<div class="back-to-report-img"></div>*@
+                    <div class="back-img"></div>
+                    <div class="back-to-report-text">back to report</div>
+                </div>
+                <div class="comment-btn comment-btn-msehover classMouseHover">
+                    <div class="comment-text" ng-click="showCommentBox()">COMMENT</div>
+                </div>
+                <div class="save-edit-btn save-edit-btn-msehover classMouseHover">
+                    <div class="save-edit-text" ng-click="saveEditedSlide()">SAVE</div>
+                </div>
+                <div class="add-to-storyboard add-to-storyboard-msehover classMouseHover">
+                    <div class="storyboard-text" ng-click="showSaveReportPopup()">ADD TO STORYBOARD</div>
+                </div>
+                <div class="chart-types chart-types-msehover classMouseHover">
+                    @*<div class="col-chart chrt-typ" chart-type="col" ng-click="changingChartBasedOnMeasures(chartData,'col')"></div>*@
+                    <div class="pyramidwithchange-chart chrt-typ" chart-type="pyramidwithchange" ng-click="pyramidwithchange(chartData)"></div>
+                    <div class="pyramid-chart chrt-typ" chart-type="pyramid" ng-click="pyramid(chartData)"></div>
+                    <div class="column-chart chrt-typ" chart-type="column" ng-click="column(chartData)"></div>
+                    <div class="barwithchange-chart chrt-typ" chart-type="barchange" ng-click="barwithchange(chartData)"></div>
+                    <div class="bar-chart chrt-typ" chart-type="bar" ng-click="barChart(chartData)"></div>
+                    <div class="stackedcolumn-chart chrt-typ" chart-type="stackedcolumn" ng-click="StackedColumn(chartData)"></div>
+                    <div class="stackedbar-chart chrt-typ" chart-type="stackedbar" ng-click="StackedBar(chartData)"></div>
+                    <div class="trend-chart chrt-typ" chart-type="trend" ng-click="plotTrendChart(chartData)"></div>
+                    <div class="table-chart chrt-typ" chart-type="table" ng-click="plotTableChart(chartData)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="chart-measure-text" style="display:none;">
+            <div class="measure-text">Measure text</div>
+        </div>
+        <div class="chart-bottomlayer" style="height:437px">
+            <div id="chart-visualisation"></div>           
+            @*<div class="flexi-tablediv" style="display:none;">*@
+                <table id="flexi-table" class="data" cellpadding="0" cellspacing="0" style="display:none;"></table>
+            @*</div>*@
+        </div>
+        <div class="table-statlayer">
+            <ul>
+                <li>
+                    <div id="samplesize" style="">
+                        <ul style="margin:0;padding:0;">
+                            <li><div class="table-stat-text dynpos1 table-stat-text-msehover up classMouseHover">STAT TESTING VS. </div></li>
+                            <li><div class="table-stat dynpos1 up prev_period-msehover classMouseHover" ng-click="statTest($event)" id="table-prevsperiod">PREVIOUS PERIOD</div></li>
+                            <li><div class="table-stat activestat tot-Dine-msehover dynpos1 up classMouseHover" ng-click="statTest($event)" id="table-ttldine">TOTAL DINE</div></li>
+                            <li><div class="table-stat category-msehover dynpos1 up classMouseHover" ng-click="statTest($event)" id="table-categry" style="display:none">CATEGORY</div></li>
+                            <li><div class="table-stat custom_base-msehover dynpos1 up classMouseHover" ng-click="" id="table-custombse">CUSTOM BASE</div></li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li><div id="NoteSample" style="float:left;" class="table-stat-empty"><div class="samplesize-note">Note: </div> <div class="samplesize-text">Grey font = Low Sample (30-99), Blank = Sample < 30; NA = Not Applicable </div></div></li>
+                <li>
+                    <div class="stattest-sign">
+                        <ul>
+                            <li><div class="outer_circle"><div class="table-stat-sigfncegrenimg"></div></div></li>
+                            <li><div class="table-stat-sigfncpstve">Significantly Higher</div></li>
+                            <li><div class="outer_circle"><div class="table-stat-sigfnceredimg"></div></div></li>
+                            <li><div class="table-stat-sigfncnegve">Significantly Lower</div></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="stat-popup popup_css" style="display:none;">
+            <div class="stat-topdiv"><div class="stat-topband topband"></div><div class="stat-clsebtn"></div></div>
+            <div class="stat-closediv popup_css_header">
+                <div class="stat-heading heading_text">CUSTOM BASE</div>
+            </div>
+            <div class="stat-content content_css"></div>
+            <div class="stat-submtdiv">
+                <div class="stat-submt submit_cancel_btn custombaseSubmit" ng-click="custombaseSubmit()"> Submit</div>
+                <div class="stat-cancel submit_cancel_btn" ng-click="custombaseCancel()">Cancel</div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="save-reportPopup" style="display:none;">
+        <div class="save-popup-close" ng-click="closeSavePopup($event)"></div>
+        <div class="save-popup-heading">SAVE REPORTS</div>
+        <div class="save-section">
+            <div class="report-selection">
+                <div class="report-dropdown">
+                    <div class="save-text">SAVE TO REPORT</div>
+                    <div class="rpt-dropdown">
+                        <select ng-model="reportSelected"  ng-options="option.Name for option in reportList" class="select-rpt-dropdown" ng-change="reportListChange()">
+                        @*<option label="option.Name" value="option.Name" >{{option.Name}}</option>*@</select>
+                    </div>
+                </div>
+                <div class="create-btn" ng-click="showSaveAsPopup()"><span class="create-btn-txt">CREATE NEW REPORT</span></div>
+            </div>
+            <div class="save-popup-btn">
+                <div class="save-report-btn" ng-click="addSlideToReport(reportSelected.Id)">SAVE</div>
+                <div class="cancel-report-btn" ng-click="closeSavePopup()">CANCEL</div>
+            </div>
+        </div>
+    </div>
+    <div class="saveAsPopup" style="display:none;">
+        <div class="saveAsPopup-heading">CREATE NEW REPORT</div>
+        <div class="saveAsPopup-report">
+            <div class="saveAs-label">REPORT NAME</div>
+            <div class="report-input">
+                <input type="text" class="report-text" ng-model="reportName"/>
+            </div>
+            <div class="report-btn">
+                <div class="save-btn" ng-click="createReport()">SAVE</div>
+                <div class="cancel-btn" ng-click="hideSaveAsPopup()">CANCEL</div>
+            </div>
+        </div>
+    </div>  
+</div>
+@RenderBody()
+
+@System.Web.Optimization.Styles.Render("~/bundle/schart")
+@System.Web.Optimization.Scripts.Render("~/bundle/jchart")
+<script src="~/Scripts/chart.js"></script>
+@*<link href="~/Content/chart.css" rel="stylesheet" />*@
+<script type="text/javascript" defer async>
+    
+</script>

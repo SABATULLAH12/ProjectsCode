@@ -1,0 +1,34 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+         {
+        "OrderNumber": 1,
+        "Label": "Custom Base Advance Filters",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "demograhicFitr_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_P2PReport_Dashboard",
+          "PrimaryKey": "ID",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": "ParentId",
+          "ParentText": null,
+          "SelectableColumnName": "IsSelectable",
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading": "",
+          "IsSubHeadingID": "",
+          "WhereCondition": " Where ShowInTable=1 and ShowInDashboard=1 ORDER BY ToolOrderby"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

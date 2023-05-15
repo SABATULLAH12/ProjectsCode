@@ -1,0 +1,556 @@
+﻿@{
+    ViewBag.Title = Dine.Utility.Constants.ToolTitlePrefix + "Path To Purchase";
+    Layout = "~/Views/Shared/_DashBoardLayout.cshtml";
+}
+<style type="text/css">
+  .advance-filters, .time_of_day, .POST_VISIT, .POST_VISIT_UPPER_TEXT, .POST_VISIT_LOWER_TEXT {
+        display: none;
+    }
+
+    .pie_charts, .time_of_day, .POST_VISIT, .POST_VISIT_UPPER_TEXT, .POST_VISIT_LOWER_TEXT {
+        display: none;
+    }
+</style>
+<div class="dashboard-content">
+    <div id="p2p-dsbrd-BG" style="display:none;">
+    <object class="p2p-dsbrd-BG-4rds" style="background-color:#fff;"  data="../Images/P2PDashboardImages/Dine_BG V3.svg?v=23#svgView(preserveAspectRatio(none))" type="image/svg+xml"> </object>
+    </div>
+    <div class="pie_charts pie_roads_3_0"></div>
+    <div class="pie_charts pie_roads_3_1"></div>
+    <div class="pie_charts pie_roads_3_2"></div>
+    <div class="pie_charts pie_roads_4_0"></div>
+    <div class="pie_charts pie_roads_4_1"></div>
+    <div class="pie_charts pie_roads_4_2"></div>
+    <div class="pie_charts pie_roads_4_3"></div>
+    <div class="static_texts">
+        <div class="tod_container">
+            <div class="visit_text all_static_head_text est-text"><div class="vertical-align">Total Visit</div></div>
+            <div class="trip_text all_static_head_text">TRIP</div>
+            <div class="tod_text all_sub_head">TIME OF DAY</div>
+            <div class="meal_text all_static_head_text">MEAL</div>
+            <div class="pre_visit_text all_static_head_text">PRE-VISIT</div>
+            <div class="post_visit_text all_static_head_text">POST-VISIT</div>
+            <div class="order_summary_text all_sub_head">ORDER SUMMARY</div>
+        </div>
+    </div>
+    <div class="time_of_day time_of_day1">
+        <div class="tod_container">
+            <div class="per_text all_meric_per"><div class="vertical-align">13.3%</div></div>
+            <div class="text all_sub_head">MIDDLE OF NIGHT</div>
+            <div class="sig_text sig_text1 all_sig_text">-0.0%</div>
+        </div>
+    </div>
+
+    <div class="time_of_day time_of_day2">
+        <div class="tod_container">
+            <div class="per_text all_meric_per"><div class="vertical-align">13.3%</div></div>
+            <div class="text all_sub_head">LATE NIGHT</div>
+            <div class="sig_text sig_text2 all_sig_text">+0.1%</div>
+        </div>
+    </div>
+    <div class="time_of_day time_of_day3">
+        <div class="tod_container">
+            <div class="per_text all_meric_per"><div class="vertical-align">13.3%</div></div>
+            <div class="text all_sub_head">EVENING</div>
+            <div class="sig_text sig_text3 all_sig_text">-2.5%</div>
+        </div>
+    </div>
+    <div class="time_of_day time_of_day4">
+        <div class="tod_container">
+            <div class="per_text all_meric_per"><div class="vertical-align">13.3%</div></div>
+            <div class="text all_sub_head">AFTERNOON</div>
+            <div class="sig_text sig_text4 all_sig_text">+2.2%</div>
+        </div>
+    </div>
+    <div class="time_of_day time_of_day5">
+        <div class="tod_container">
+            <div class="per_text all_meric_per"><div class="vertical-align">13.3%</div></div>
+            <div class="text all_sub_head">MORNING</div>
+            <div class="sig_text sig_text5 all_sig_text">-1.1%</div>
+        </div>
+    </div>
+    <div class="Location_Prior_Images">
+        <div class="tod_container">
+            <div class="t_img"></div>
+        </div>
+    </div>
+    <div class="Location_Prior">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">LOCATION PRIOR TO VISIT</div>
+            <div class="t_per all_meric_per">11.1%</div>
+            <div class="text all_sub_text">Average</div>
+            <div class="t_sig_text all_sig_text">-1.1%</div>
+            <div class="t_lctn_plusicon plus_icon_click" data-val="Location Prior"></div>
+        </div>
+    </div>
+    <div class="Planning_Type">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">PLANNING</div>
+            <div class="p_img"></div>
+            <div class="p_pieChart"></div>
+            <div class="p_plusicon plus_icon_click" data-val="Planning Type"></div>
+            <div class="t_per all_meric_per">99.9%</div>
+            <div class="text all_sub_text">The decision was completely spur of the moment</div>
+            <div class="t_sig_text all_sig_text">-1.1%</div>
+        </div>
+    </div>
+    <div class="Companion_Detail">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">WHO WITH</div>
+            <div class="t_per all_meric_per"></div>
+            <div class="p_plusicon plus_icon_click" data-val="Companion Detail"></div>
+            <div class="text all_sub_text"></div>
+            <div class="t_sig_text all_sig_text"></div>
+        </div>
+    </div>
+    <div class="avg_dollar_spent">
+        <div class="tod_container">
+            <div class="avg_text all_sub_head">DOLLARS SPENT</div>
+            <div class="avg_per"><div class="vertical-align"></div></div>
+            <div class="text all_sub_text">Average Per Diner</div>
+            <div class="avg_sig_text all_sig_text"></div>
+        </div>
+    </div>
+    <div class="Mode_of_Transport">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">TRANSPORTATION</div>
+            <div class="p_plusicon plus_icon_click" data-val="Mode of Transport"></div>
+            <div class="p_vehicle_icon"></div>
+            <div class="t_per all_meric_per"></div>
+            <div class="text all_sub_text"></div>
+            <div class="t_sig_text all_sig_text"></div>
+        </div>
+    </div>
+    <div class="Average_Distance_Travelled">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">AVERAGE DISTANCE TRAVELLED OUT OF WAY</div>
+            <div class="t_per"></div>
+            <div class="text all_meric_per"><div class="vertical-align"></div></div>
+            <div class="miles_text"><div class="vertical-align">Miles</div></div>
+            <div class="t_sig_text all_sig_text"></div>
+        </div>
+    </div>
+    <div class="Distance_Travelled">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">TRAVELLED OUT OF THE WAY</div>
+            <div class="t_per all_meric_per"></div>
+            <div class="p_plusicon plus_icon_click" data-val="Distance Travelled" staticValue="yes"></div>
+            <div class="t_sig_text all_sig_text"></div>
+        </div>
+    </div>
+    <div class="Time_Spent">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">TIME SPENT</div>
+            <div class="t_per all_meric_per">11.1%</div>
+            <div class="text">16 – 20 Minutes</div>
+            <div class="t_sig_text all_sig_text">-1.1%</div>
+            <div class="t_plusicon plus_icon_click" data-val="Time Spent In Outlet"></div>
+        </div>
+    </div>
+    <div class="FB_Consumed FB_Consumed1">
+        <div class="tod_container">
+            <div class="img img1"></div>
+            <div class="per_text all_meric_per">0.0%</div>
+            <div class="text text1 all_sub_text">Beverage ONLY</div>
+            <div class="sig_text all_sig_text">0.0</div>
+        </div>
+    </div>
+    <div class="FB_Consumed FB_Consumed2">
+        <div class="tod_container">
+            <div class="img img2"></div>
+            <div class="per_text all_meric_per">0.0%</div>
+            <div class="text text2 all_sub_text">Food ONLY</div>
+            <div class="sig_text all_sig_text">0.0</div>
+        </div>
+    </div>
+    <div class="FB_Consumed FB_Consumed3">
+        <div class="tod_container">
+            <div class="img img3"></div>
+            <div class="per_text all_meric_per">0.0%</div>
+            <div class="text text3 all_sub_text">Food & Beverage</div>
+            <div class="sig_text all_sig_text">0.0</div>
+        </div>
+    </div>
+    <div class="Overall_Satisfaction">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">OVERALL SATISFACTION</div>
+            <div class="p_plusicon plus_icon_click" data-val="Overall Satisfaction (Top 2 Box)" staticValue="yes"></div>
+            <div class="t_per all_meric_per">0.0%</div>
+            <div class="text"><div class="sat all_sub_text">Satisfied</div><div class="t2b">(Top 2 Box)</div></div>
+            <div class="t_sig_text all_sig_text">0.0</div>
+        </div>
+    </div>
+    <div class="Trip_Activity">
+        <div class="tod_container">
+            <div class="t_text all_sub_head">OTHER ACTIVITIES</div>
+            <div class="t_per all_meric_per">0.0%</div>
+            <div class="p_plusicon plus_icon_click" data-val="Trip Activities" staticValue="yes"></div>
+            <div class="text all_sub_text">Primarily To Visit</div>
+            <div class="t_sig_text all_sig_text">0.0</div>
+        </div>
+    </div>
+    
+    @* Balloon Pie Chart Section div *@
+    <div class="ballon-chart-main">
+        <div class="ballon-chart-main-div">
+            <div class="bln-pie_chart-section">
+            </div>
+            <div class="bln-data-icon-sectn">
+                <div class="data-icondiv">
+                    <div class="data-icon"></div>
+                    <div class="data-text all_sub_head"></div>
+                </div>
+                <div class="dataval-sgnidiv">
+                    <div class="data-val all_meric_per">
+                    </div>
+                    <div class="data-sgnif all_sig_text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+   @* Balloon Pie Chart Section div *@
+    @* Meal Type Section *@
+    <div class="meal-maindiv">
+        <div class="meal-sectin meal-type0">
+            <div class="meal-type-val all_meric_per"><div class="vertical-align"></div></div>
+            <div class="meal-type-txt-chge">
+                <div class="meal-type-txt all_sub_head"></div>
+                <div class="meal-type-chge all_sig_text"></div>
+            </div>
+        </div>
+        <div class="meal-sectin meal-type1">
+            <div class="meal-type-val all_meric_per"><div class="vertical-align"></div></div>
+            <div class="meal-type-txt-chge">
+                <div class="meal-type-txt all_sub_head"></div>
+                <div class="meal-type-chge all_sig_text"></div>
+            </div>
+        </div>
+        <div class="meal-sectin meal-type2">
+            <div class="meal-type-val all_meric_per"><div class="vertical-align"></div></div>
+            <div class="meal-type-txt-chge">
+                <div class="meal-type-txt all_sub_head"></div>
+                <div class="meal-type-chge all_sig_text"></div>
+            </div>
+        </div>
+        <div class="meal-sectin meal-type3">
+            <div class="meal-type-val all_meric_per"><div class="vertical-align"></div></div>
+            <div class="meal-type-txt-chge">
+                <div class="meal-type-txt all_sub_head"></div>
+                <div class="meal-type-chge all_sig_text"></div>
+            </div>
+        </div>
+        <div class="meal-sectin meal-type4">
+            <div class="meal-type-val all_meric_per"><div class="vertical-align"></div></div>
+            <div class="meal-type-txt-chge">
+                <div class="meal-type-txt all_sub_head"></div>
+                <div class="meal-type-chge all_sig_text"></div>
+            </div>
+        </div>
+    </div>
+    @* Meal Type Section *@
+
+    @* Satisfaction Drivers *@
+    <div class="satifctn-drvrs">
+        <div class="satifctn-drvrs-hding all_sub_head"></div>
+        <div class="satifctn-drvrs-contnt">
+            <div class="content0">
+                <div class="satifctn-drvr_img"><div class="content_img img_0"></div></div>
+                <div class="satifctn-drvrs-text all_sub_text"></div>
+                <div class="satifctn-drvrs-val all_meric_per"></div>
+                <div class="satifctn-drvrs-change all_sig_text"></div>
+            </div>
+            <div class="content1">
+                <div class="satifctn-drvr_img"><div class="content_img img_1"></div></div>
+                <div class="satifctn-drvrs-text all_sub_text"></div>
+                <div class="satifctn-drvrs-val all_meric_per"></div>
+                <div class="satifctn-drvrs-change all_sig_text"></div>
+            </div>
+            <div class="content2">
+                <div class="satifctn-drvr_img"><div class="content_img img_2"></div></div>
+                <div class="satifctn-drvrs-text all_sub_text"></div>
+                <div class="satifctn-drvrs-val all_meric_per"></div>
+                <div class="satifctn-drvrs-change all_sig_text"></div>
+            </div>
+            <div class="content3">
+                <div class="satifctn-drvr_img"><div class="content_img img_3"></div></div>
+                <div class="satifctn-drvrs-text all_sub_text"></div>
+                <div class="satifctn-drvrs-val all_meric_per"></div>
+                <div class="satifctn-drvrs-change all_sig_text"></div>
+            </div>
+            <div class="content4">
+                <div class="satifctn-drvr_img"><div class="content_img img_4"></div></div>
+                <div class="satifctn-drvrs-text all_sub_text"></div>
+                <div class="satifctn-drvrs-val all_meric_per"></div>
+                <div class="satifctn-drvrs-change all_sig_text"></div>
+            </div>
+            <div class="content5">
+                <div class="satifctn-drvr_img"><div class="content_img img_5"></div></div>
+                <div class="satifctn-drvrs-text all_sub_text"></div>
+                <div class="satifctn-drvrs-val all_meric_per"></div>
+                <div class="satifctn-drvrs-change all_sig_text"></div>
+            </div>
+        </div>
+    </div>
+    @* Satisfaction Drivers *@
+
+    @* Establishment Image *@
+    <div class="establishmt_img_div" style="display:none;">
+        <div id="establishmt_img" class="establishmt_img"></div>
+    </div>
+    @* Establishment Image *@
+
+    <div class="OVERALL_SATISFACTION_CHRT"></div>
+    <div class="OTHER_ACTIVITIES_CHRT"></div>
+    <div class="TRAVELLED-OUT-OF-THE-WAY"></div>
+    @*<div class="POST_VISIT"><div class="post_visit_icon"></div></div>*@
+    <div class="POST_VISIT"><div id="post_visit_icon" class="post_visit_icon"></div></div>
+    <div class="POST_VISIT_UPPER_TEXT"><div class="post_visit_text1 all_sub_head">DESTINATION AFTER VISIT</div><div class="plus_icon plus_icon_click" data-val="Destination after Visit"></div></div>
+    <div id="plus_popup" class="popup1">
+        <div class="popup-content">
+           
+            <div class="popup-header-div">
+                <div class="popup-header-emptydiv"></div>
+                <div  class="popup-hdrtxt"> LOCATION PRIOR VISIT</div>
+                <div class="popup-band"></div>
+                <div class="popup-ppt">
+                    <div class="popup-imageppt"></div>
+                </div>
+                <div class="popup-hdrpdf">
+                    <div class="popup-imagepdf"></div>
+                </div>
+                <div class="popup-hdrclse">
+                    <div class="popup-imageclse"></div>
+                </div>
+            </div>
+            <div class="popup-hdr-shdwdiv">
+                <div class="popup-hdr-shdw"></div>
+            </div>
+            <div class="popup-hdr-stat-textdiv" style="display:none">
+                <div class="popup-hdr-stat-text">SHOW ON DASHBOARD</div>
+            </div>
+            <div class="popup-body">
+                @*<div class="bar-content-header">
+                    <div class="bar-content-main-div">
+                        <div class="bar-cntnt-radiodiv">
+                            <div id="radio-click" class="bar-cntnt-radioimg"></div>
+                        </div>
+                        <div class="bar-cntnt-metric-brdr"></div>
+                        <div class="bar-cntnt-metric-name">
+                        </div>
+                        <div class="bar-cntnt-metric-div">
+                            <div class="bar-cntnt-innerdiv">
+                                <div class="bar-cntnt-outer">
+                                <div class="bar-cntnt-inner">
+                                    <div class="bar-cnt-dash"></div>
+                                    <div class="bar-cnt-inner-metrc-percnt"></div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="bar-cntnt-metric-val">91.20%</div>
+                            <div class="bar-cntnt-brder"> </div>
+                            <div class="bar-cntnt-change-val">-3.5</div>
+                        </div>
+                    </div>
+                </div>*@
+
+                <div class="bar-content-header">
+                    <div class="bar-content-main-div">
+                        <div class="bar-content-main-divleft">
+                            <div class="bar-cntnt-radiodivleft">
+                                <div id="radio-click" class="bar-cntnt-radioimg"></div>
+                            </div>
+                            <div class="bar-cntnt-metric-brdr"></div>
+                            <div class="bar-cntnt-metric-name">
+                            </div>
+                            <div class="bar-cntnt-metric-val">91.20%</div>
+                            <div class="bar-cntnt-brder"> </div>
+                            <div class="bar-cntnt-change-val">-3.5</div>
+                        
+                        </div>
+                        <div class="bar-content-main-divright">
+                            <div class="bar-cntnt-radio-divright">
+                                <div id="radio-click" class="bar-cntnt-radioimg"></div>
+                            </div>
+                            <div class="bar-cntnt-metric-brdr"></div>
+                            <div class="bar-cntnt-metric-name">
+                            </div>
+                            <div class="bar-cntnt-metric-val">91.20%</div>
+                            <div class="bar-cntnt-brder"> </div>
+                            <div class="bar-cntnt-change-val">-3.5</div>
+
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>  
+            <div class="submit_popup_div">
+                <div class="submit_popup"><span class="inner_submit">Submit</span></div>
+            </div>   
+        </div>
+    </div>
+    <div class="popup-vertcl-brdrdiv" style="display:none">
+        <div class="popup-vertcl-brdr"></div>
+    </div>
+    <div class="POST_VISIT_LOWER_TEXT">
+        <div class="post_visit_text2">
+            <div class="post_visit_percent all_meric_per">XX%</div>
+            <div class="post_visit_value all_sig_text"></div>
+        </div>
+        <div class="post_visit_text2 location-aftr-dyn-txt">
+            <div class="post-visit-txt-dyn-txt all_sub_text"></div>
+        </div>
+       
+    </div>
+    @* Top Food & Beverage Iten  *@
+    <div class="food-n-bevge-main">
+        <div class="food-n-bevge-text">
+        <div class="txt all_sub_head">TOP FOOD & BEVERAGE ITEM</div></div>
+        <div class="food-n-bevge-content">
+            <div class="bevge-content">
+                <div class="bevg-img-plusicon">
+                    <div id="bevg-img" class="bevg-img">
+                        <div id="bevg-imgdiv" class="bevg-img"></div>
+                    </div>
+                    <div class="bevg-plusicon plus_icon_click" data-val="Beverage Item"></div>
+                </div>
+                <div class="bevg-metricval all_meric_per"></div>
+                <div class="bevg-change-sign all_sig_text"></div>
+                <div class="bevg-name all_sub_text"></div>
+            </div>
+            <div class="food-content">
+                <div class="food-img-plusicon">
+                    <div id="food-img" class="food-img">
+                        <div id="food-imgdiv" class="food-img"></div>
+                    </div>
+                    <div class="food-plusicon plus_icon_click" data-val="Food Item"></div>
+                </div>
+                <div class="food-metricval all_meric_per"></div>
+                <div class="food-change-sign all_sig_text"></div>
+                <div class="food-name all_sub_text"></div>
+            </div>
+        </div>
+    </div>
+    @* Top Food & Beverage Iten  *@
+
+    @* Occasional, Outlet & Overall Mood *@
+    <div class="occsn-oulet-Ovrll">
+        <div class="occsn-mot-main">
+            <div class="occsn-mot-txt-div">
+                <div class="occsn-mot-txt all_sub_head">OCCASION MOTIVATION</div>
+                <div class="occsn-plusicn plus_icon_click" data-val="Primary Occasion Motvation"></div>
+            </div>
+            <div class="occsn-img-metricvaldiv">
+                <div id="occsn-img">
+                    <div id="occsn-imgdiv" class="occsn-img"></div>
+                </div>
+                <div class="occsn-metrval-sign-mot">
+                    <div class="occsn-metricvaldiv-txt">
+                        <div class="occsn-metrival all_meric_per">55%</div>
+                        <div class="occsn-sign all_sig_text">+0.9</div>
+                    </div>
+                    <div class="occsn-metricnme all_sub_text">Motivation</div>
+                </div>
+            </div>
+        </div>
+        <div class="outlt-mot-main">
+            <div class="outlt-mot-txt-div">
+                <div class="outlt-mot-txt all_sub_head">OUTLET MOTIVATION</div>
+                <div class="outlt-plusicn plus_icon_click" data-val="Primary Outlet Motivation"></div>
+            </div>
+            <div class="outlt-img-metricvaldiv">
+                <div id="outlt-img">
+                    <div id="outlt-imgdiv" class="outlt-img"></div>
+                </div>
+                <div class="outlt-metrval-sign-mot">
+                    <div class="outlt-metricvaldiv-txt">
+                        <div class="outlt-metrival all_meric_per">89%</div>
+                        <div class="outlt-sign all_sig_text">-0.0%</div>    
+                    </div>
+                    <div class="outlt-metricnme all_sub_text">Motivation</div>
+                </div>
+            </div>
+        </div>
+        <div class="ovrl-mot-main">
+            <div class="ovrl-mot-txt-div">
+                <div class="ovrl-mot-txt all_sub_head">OVERALL MOOD</div>
+                <div class="ovrl-plusicn plus_icon_click" data-val="Primary Mood"></div>
+            </div>
+            <div class="ovrl-img-metricvaldiv">
+                <div id="ovrl-img">
+                    <div id="ovrl-imgdiv" class="ovrl-img"></div>
+                </div>
+                <div class="ovrl-metrval-sign-mot">
+                    <div class="ovrl-metricvaldiv-txt">
+                        <div class="ovrl-metrival all_meric_per">88%</div>
+                        <div class="ovrl-sign all_sig_text">+0.06%</div>
+                    </div>
+                    <div class="ovrl-metricnme all_sub_text">Postive Mood</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @* Occasional, Outlet & Overall Mood *@
+    
+    <div class="p2p-dsbrd-BG-3rds" id="3rds"></div>
+</div>
+@*Custom Base popup*@
+<div class="dashboard-custom-base">
+    <div class="mainCustomWrapper">
+        <!--additional filter(same left filter)-->
+        <section ng-repeat="fltr in subfilterCustomBase">
+            <!-- Filter Panel -->
+            <div class="master-lft-ctrl" data-val="{{fltr.Label}}" data-isdynamicfilter="{{fltr.IsFilterBasedOnOtherFilter}}" popup-type="advanceFilters">
+                <div class="lft-ctrl"></div>
+                <div class="lft-ctrl2">
+                    <div class="lft-ctrl-label" ng-switch="fltr.IsTimeperiod">
+                        <span>{{fltr.Label}}</span>
+                        <div ng-switch-when="true">
+                        </div>
+
+                    </div>
+                    <div class="lft-ctrl-next">
+                        <div class="fltr-img-hldr {{fltr.Image}}"></div>
+                        <div class="fltr-txt-hldr {{fltr.Image}}-text" data-val="{{fltr.Label}}">{{fltr.Label}}</div>
+                    </div>
+                    <div class="lft-ctrl-txt" style="{{fltr.IsMultiSelect==true?'height:50px': ''}}"></div>
+                </div>
+                <div class="lft-ctrl3" data-ismultiselect="{{fltr.IsMultiSelect}}" data-required="{{fltr.IsRequired}}" ng-switch="fltr.IsTimeperiod">
+                    <div class="lft-ctrl3-header"><span>X</span></div>
+                    <div class="custom-popup-header"><div class="custom-top-text"><span>CUSTOM BASE</span><br /><div class="small">(SELECTED ESTABLISHMENT WILL BE STAT TESTED AGAINST YOUR SELECTION)</div></div><div class="custom-top-btm-brdr"></div></div>
+                    <div class="lft-ctrl3-content" ng-switch-when="false">
+                        <div class="lft-popup-col{{paneldata.Level}} lft-popup-col" data-level="{{paneldata.Level}}" ng-repeat="paneldata in fltr.PanelPopup track by $index">
+                            <div class="popup-header">
+
+                                <div class="lft-popup-col-search" style="visibility:hidden">
+                                    <input type="text" name="search" id="{{'search-list-'+removeBlankSpace(fltr.Label)}}" class="search-list" placeholder="Search.." class="ui-autocomplete-input" autocomplete="off">
+                                    <div class="search-img"></div>
+                                </div>
+                                <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                            </div>
+                            <div class="lft-popup-ele" ng-repeat="panelelement in paneldata.Data track by $index">
+                                <span class="lft-popup-ele-label-img {{removeBlankSpace(panelelement.Text)}}_img"></span>
+                                <span class="lft-popup-ele-label" data-id="{{panelelement.ID}}" data-val="{{panelelement.Text}}" data-parent="{{panelelement.ParentID}}" data-isSelectable="{{panelelement.isSelectable==undefined?true:false}}">{{panelelement.Text}}</span>
+                                <span class="lft-popup-ele-next sidearrwdiv" ng-hide="panelelement.ChildCount == 0">
+                                    <span class="sidearrw"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-bottom-border"></div>
+                    <div class="custom-cancel-submit">
+                        <div class="custom-submit" ng-click="custom_submit()">
+                            <div class="custom-submit-inner"><div class="vertical-align">Submit</div></div>
+                        </div>
+                        <div class="custom-cancel" ng-click="custom_cancel()">
+                            <div class="vertical-align">Cancel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Filter Panel -->
+        </section>
+        <!--end additional filter-->
+    </div>
+</div>
+@*Custom Base popup*@
+<script src="~/Scripts/dashboard_demographic.js"></script>

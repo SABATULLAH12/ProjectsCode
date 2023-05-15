@@ -1,0 +1,16 @@
+﻿@model System.Collections.Generic.List<Dine.Models.Report.RSlide>
+
+@{
+    ViewBag.Title = Dine.Utility.Constants.ToolTitlePrefix + "Path To Purchase Report";
+    Layout = "~/Views/Shared/_ReportLayout.cshtml";
+}
+<style type="text/css">
+    .timperiodpittrend, .submodule-border-bottom, .submodules-options, .list_content, .link_hover {
+        display: none !important;
+    }
+</style>
+
+@*@System.Web.Optimization.Scripts.Render("~/bundle/jreport")*@
+<script src="~/Scripts/report_Diner.js"></script>
+<script src="~/Scripts/reportp2preport.js"></script>
+

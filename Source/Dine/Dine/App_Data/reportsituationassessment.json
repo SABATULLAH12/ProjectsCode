@@ -1,0 +1,107 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": true,
+    "ProcedureName": "USP_LeftPanel_SituationAssesmentReport",
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "Time Period",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": "timeperiod_img",
+        "IsTimePeriod": true,
+        "HideTrend": false,
+        "Database": {
+          "Table": "vw_Timeperiod",
+          "PrimaryKey": "TimeperiodValue",
+          "DisplayTextColumnName": "DisplayText",
+          "ParentPrimaryKey": null,
+          "ParentText": "PeriodType",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": " order by rn"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 2,
+        "Label": "Establishment",
+        "IsMultiSelect": true,
+        "IsRequired": true,
+        "Image": "establishment_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Establishment_SituationAssesmentReport ",
+          "PrimaryKey": "EstablishmentId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": "ParentId",
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+          "Colorcode": "Colorcode",
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading": "Indexname",
+          "IsSubHeadingID": "IndexID",
+          "ParentOfParent": "ParentOfParent",
+          "IsChannelFlag": "IsChannelFlag",
+          "IsImageriesFlag": "ImageryFlag",
+          "WhereCondition": " ORDER BY ToolOrderby"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 3,
+        "Label": "Competitors",
+        "IsMultiSelect": true,
+        "IsRequired": true,
+        "Image": "competitors_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Vw_OppourtunityAssement_Competitor",
+          "PrimaryKey": "EstablishmentId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+           "Colorcode": "Colorcode",
+          "TimeperiodYearBreakUp": null,
+           "ParentOfParent": "ParentOfParent",
+          "IsSubHeading": null,"IsSubHeadingID":null,
+          "WhereCondition": " ORDER BY ToolOrderby"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 4,
+        "Label": "Advance Filters",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "demograhicFitr_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_AdvanceFilter_SituationAssesmentReport ",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": "ParentId",
+          "ParentText": "ParentName",
+          "SearchName": "SearchName",
+          "SelectableColumnName": "IsSelectable",
+          "GuestOrVisitFilter": "GuestOrVisitFilter",
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": " ORDER BY ToolOrderby"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+      
+    ]
+  },
+  "Widgets": null
+}

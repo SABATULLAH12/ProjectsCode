@@ -1,0 +1,510 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html ng-app="mainApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Config</title>
+    <script type="text/ng-template" id="selFilterTemplate">
+        <td><a href="#" ng-value="x.Label" ng-click="moveTopFilter(this)">Top</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="moveDownFilter(this)">Down</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="deleteFilter(this)">X</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="editFilter(this)">Edit</a></td>
+        <td>{{x.OrderNumber}}</td>
+        <td>{{x.Label}}</td>
+        <td>{{x.IsMultiSelect}}</td>
+        <td>{{x.IsRequired}}</td>
+        <td>{{x.Image}}</td>
+        <td>{{x.IsTimePeriod}}</td>
+        <td>{{x.IsFilterBasedOnOtherFilter}}</td>
+        <td>{{x.HideTrend}}</td>
+        <td>{{x.Database.Table}}</td>
+        <td>{{x.Database.PrimaryKey}}</td>
+        <td>{{x.Database.DisplayTextColumnName}}</td>
+        <td>{{x.Database.ParentPrimaryKey}}</td>
+        <td>{{x.Database.ParentText}}</td>
+        <td>{{x.Database.WhereCondition}}</td>
+    </script>
+    <script type="text/ng-template" id="editFilterTemplate">
+        <td><a href="#" ng-value="x.Label" ng-click="moveTopFilter(this)">Top</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="moveDownFilter(this)">Down</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="deleteFilter(this)">X</a></td>
+        <td>
+            <a href="#" ng-value="x.Label" ng-click="updateFilter($index)">Update</a>
+            <a href="#" ng-value="x.Label" ng-click="cancelUpdate(this)">Cancel</a>
+        </td>
+        <td class='config-order-number-input'>{{toolModule.filterInfo.OrderNumber}}</td>
+        <td><input type="text" ng-model="toolModule.filterInfo.Label" value="x.Label" /></td>
+        <td><input type="checkbox" value="x.IsMultiSelect" ng-model="toolModule.filterInfo.IsMultiSelect" /></td>
+        <td><input type="checkbox" value="x.IsRequired" ng-model="toolModule.filterInfo.IsRequired" /></td>
+        <td><input type="text" ng-model="toolModule.filterInfo.Image" name="ImageClassName" /></td>
+        <td><input type="checkbox" value="x.IsTimePeriod" ng-model="toolModule.filterInfo.IsTimePeriod" /></td>
+        <td><input type="checkbox" value="x.IsFilterBasedOnOtherFilter" ng-model="toolModule.filterInfo.IsFilterBasedOnOtherFilter"/></td>
+        <td><input type="checkbox" value="x.HideTrend" ng-model="toolModule.filterInfo.HideTrend" /></td>
+        <td>
+            <input list="Table" name="Table" ng-model="toolModule.filterInfo.Database.Table" ng-change="chartOptionsTableChange()">
+            <datalist id="Table">
+                <option ng-repeat="y in chartOptions.Tables" value="{{y.Name}}"></option>
+            </datalist>
+        </td>
+        <td>
+            <input list="PrimaryKey" name="PrimaryKey" ng-model="toolModule.filterInfo.Database.PrimaryKey">
+            <datalist id="PrimaryKey">
+                <option ng-repeat="y in chartOptions.TableCols" value="{{y}}"></option>
+            </datalist>
+        </td>
+        <td>
+            <input list="DisplayTextColumnName" name="Table" ng-model="toolModule.filterInfo.Database.DisplayTextColumnName">
+            <datalist id="DisplayTextColumnName">
+                <option ng-repeat="y in chartOptions.TableCols" value="{{y}}"></option>
+            </datalist>
+        </td>
+        <td>
+            <input list="ParentPrimaryKey" name="Table" ng-model="toolModule.filterInfo.Database.ParentPrimaryKey">
+            <datalist id="ParentPrimaryKey">
+                <option ng-repeat="y in chartOptions.TableCols" value="{{y.Name}}"></option>
+            </datalist>
+        </td>
+        <td>
+            <input list="ParentPrimaryText" name="Table" ng-model="toolModule.filterInfo.Database.ParentText">
+            <datalist id="ParentPrimaryText">
+                <option ng-repeat="y in chartOptions.TableCols" value="{{y}}"></option>
+            </datalist>
+        </td>
+
+        <td><input type="text" value="x.Database.WhereCondition" ng-model="toolModule.filterInfo.Database.WhereCondition" /></td>
+    </script>
+
+    <script type="text/ng-template" id="selParamTemplate">
+        <td><a href="#" ng-value="x.Label" ng-click="moveTopContentParameter(this)">Top</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="moveDownContentParameter(this)">Down</a></td>
+        <td><a href="#" ng-click="deleteContentParameter(this)">X</a></td>
+        <td><a href="#" ng-click="editContentParameter(this)">Edit</a></td>
+        <td>{{x.FilterLabel}}</td>
+        <td>{{x.Format}}</td>
+        <td>{{x.DefaultValue}}</td>
+        <td>{{x.Prefix}}</td>
+        <td>{{x.Postfix}}</td>
+        <td>{{x.CustomPropertyLabel}}</td>
+    </script>
+
+    <script type="text/ng-template" id="editParamTemplate">
+        <td><a href="#" ng-value="x.Label" ng-click="moveTopContentParameter(this)">Top</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="moveDownContentParameter(this)">Down</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="deleteContentParameter(this)">X</a></td>
+        <td>
+            <a href="#" ng-value="x.Label" ng-click="updateContentParameter($index)">Update</a>
+            <a href="#" ng-value="x.Label" ng-click="cancelUpdateContentParameter()">Cancel</a>
+        </td>
+        <td>
+            <input list="cntcnfgchartfltrlbl" name="cntcnfgchartfltrlbl" ng-model="toolModule.parameterInfo.FilterLabel"
+                   ng-click="getFilterLabels()" />
+            <datalist id="cntcnfgchartfltrlbl"><option ng-repeat="x in chartOptions.FilterLabels" value="{{x}}"></option></datalist>
+        </td>
+        <td><input ng-model="toolModule.parameterInfo.Format" /></td>
+        <td><input ng-model="toolModule.parameterInfo.DefaultValue" /></td>
+        <td><input ng-model="toolModule.parameterInfo.Prefix" /></td>
+        <td><input ng-model="toolModule.parameterInfo.Postfix" /></td>
+        <td><input ng-model="toolModule.parameterInfo.CustomPropertyLabel" /></td>
+    </script>
+
+    <script type="text/ng-template" id="selWidgetTemplate">
+        <td><a href="#" ng-value="x.Label" ng-click="deleteWidget(this)">X</a></td>
+        <td><a href="#" ng-value="x.Label" ng-click="editWidgetContent(this)">Edit</a></td>
+        <td>{{x.WidgetName}}</td>
+        <td>{{x.Type}}</td>
+        <td>{{x.Name}}</td>
+    </script>
+    <script type="text/ng-template" id="editWidgetTemplate">
+        <td><a href="#" ng-value="x.Label" ng-click="deleteWidget(this)">X</a></td>
+        <td>
+            <a href="#" ng-value="x.Label" ng-click="UpdateWidgetContent($index)">Update</a>
+            <a href="#" ng-value="x.Label" ng-click="cancelWidgetUpdate()">Cancel</a>
+        </td>
+        <td><input type="text" ng-model=toolModule.widgetName ng-value="x.widgetName"></td>
+        <td><input type="text" ng-model=toolModule.widgetType name="widgetType" ng-value='x.widgetType'></td>
+        <td>
+            <input list="cntcnfgchartproc" name="cntcnfgchartproc" ng-model="toolModule.Procedure.Name" />
+            <datalist id="cntcnfgchartproc">
+                <option ng-repeat="y in chartOptions.ProcedureName" value="{{y}}"></option>
+            </datalist>
+        </td>
+    </script>
+
+</head>
+<body ng-controller="toolController">
+    <div class="configuration-form">
+        <div class="config-header"><span>Tool Configuration</span></div>
+        <div class="config-module">
+            <span>Select Module</span>
+            <div class="modules-text">
+                <div class="modules-label" data-ng-repeat="x in modules">
+                    <div class="module-input">
+                        <label>
+                            <input type="radio" ng-model="toolModule.module" name="moduleSelection" ng-value="x"
+                                   ng-click="getFilterInfo(this)">{{x}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr style="width: 100%;" />
+        <div class="config-filter-content">
+            <span class="config-filter-content-label">Config for:</span>
+            <div class="config-filter"></div>
+            <div class="config-filter-content-input">
+                <label>
+                    <input type="radio" ng-model="toolModule.configFor" ng-value="chart.Filter" name="radioSelection" />Filter
+                    Selection
+                </label>
+            </div>
+            <div class="config-content"></div>
+            <div class="config-filter-content-input">
+                <label ng-hide="toolModule.module=='Snapshot'">
+                    <input type="radio" ng-model="toolModule.configFor" ng-value="chart.Content" name="radioSelection" ng-hide="toolModule.module=='Snapshot'" />Content
+                    Area
+                </label>
+            </div>
+            <div class="config-filter-content-input">
+                <label ng-hide="toolModule.module!='Snapshot'">
+                    <input type="radio" ng-model="toolModule.configFor" ng-value="chart.Widgets" name="radioSelection" ng-show="toolModule.module=='Snapshot'" ng-hide="toolModule.module!='Snapshot'" />Widgets
+                </label>
+            </div>
+        </div>
+        @*  Widget Area/Snapshot*@
+        <fieldset ng-show="toolModule.configFor=='Widget'" ng-hide="toolModule.module!='Snapshot'||toolModule.widgetType==''||toolModule.configFor==''">
+            <legend>Widget Type</legend>
+            <section>
+                <div class="cnt-cnfg-ss-row" ng-repeat="x in widgets.widgetType">
+                    <div class="cnt-cnfg-ss-col"><label><input type="radio" ng-model=toolModule.widgetType name="widgetType" ng-value="x">{{x}}</label></div>
+                </div>
+                <div class="cnt-cnfg-ss-row">
+                    <div class="cnt-cnfg-ss-col"><label>Widget Name :</label><input type="text" ng-model=toolModule.widgetName ng-value="toolModule.widgetName"></div>
+                </div>
+            </section>
+        </fieldset>
+        @*End Widget Area/Snapshot*@
+        <!--Filter Chart/Table-->
+        <fieldset ng-show="toolModule.configFor=='Filter Selection'">
+            <legend>Filter Info</legend>
+            <section>
+                <div>
+                    <label>
+                        <input type="checkbox" ng-model="toolModule.IsFilterProcedure" checked="{{toolModule.IsFilterProcedure}}" />
+                        Is Filter From Procedure
+                    </label>
+                </div>
+                <div ng-show="toolModule.IsFilterProcedure">
+                    Procedure Name:
+                    <input list="filterProcedure" ng-model="toolModule.ProcedureName" name="filterProcedure" />
+                    <datalist id="filterProcedure">
+                        <option data-ng-repeat="x in chartOptions.ProcedureName" value="{{x}}">
+                    </datalist>
+                </div>
+            </section>
+            <hr style="width: 100%;" />
+            <div class="config-filter-info">
+                <div class="config-order-number">
+                    <div class="config-order-number-label">ID :</div>
+                    <div class="config-order-number-input">
+                        <label type="number" ng-model="toolModule.filterInfo.OrderNumber" name="OrderNumber">{{toolModule.filterInfo.OrderNumber}}</label>
+                    </div>
+                </div>
+                <div class="fltr-config-label">
+                    <div class="config-label-text">Label :</div>
+                    <div class="config-label-input">
+                        <input type="text" ng-model="toolModule.filterInfo.Label" ng-required="true" name="Label"
+                               value="" />
+                    </div>
+                </div>
+                <div class="config-multiselect">
+                    <div class="config-filter-label">MultiSelect</div>
+                    <div class="config-filter-input">
+                        <input type="checkbox" ng-model="toolModule.filterInfo.IsMultiSelect" name="IsMultiSelect"
+                               value="chartOptions.MultiSelect" checked="{{toolModule.filterInfo.IsMultiSelect}}" />
+                    </div>
+                </div>
+                <div class="config-required">
+                    <div class="config-filter-label">Required</div>
+                    <div class="config-filter-input">
+                        <input type="checkbox" ng-model="toolModule.filterInfo.IsRequired" name="IsRequired"
+                               value="chartOptions.Required" checked="{{toolModule.filterInfo.IsRequired}}" />
+                    </div>
+                </div>
+                <div class="config-timeperiod">
+                    <div class="config-filter-label">IsTimePeriod</div>
+                    <div class="config-filter-input">
+                        <input type="checkbox" ng-model="toolModule.filterInfo.IsTimePeriod" name="IsTimePeriod"
+                               value="chartOptions.IsTimePeriod" checked="{{toolModule.filterInfo.IsTimePeriod}}" />
+                    </div>
+                </div>
+                <div class="config-timeperiod">
+                    <div class="config-filter-label">IsFilterBasedOnOtherFilter</div>
+                    <div class="config-filter-input">
+                        <input type="checkbox" ng-model="toolModule.filterInfo.IsFilterBasedOnOtherFilter" name="IsFilterBasedOnOtherFilter"
+                               value="chartOptions.IsFilterBasedOnOtherFilter" checked="{{toolModule.filterInfo.IsFilterBasedOnOtherFilter}}" />
+                    </div>
+                </div>
+                <div class="config-image">
+                    <div class="config-filter-label">Image : </div>
+                    <div class="config-filter-input">
+                        <input type="text" ng-model="toolModule.filterInfo.Image" name="ImageClassName" />
+                    </div>
+                </div>
+            </div>
+            <fieldset>
+                <legend>Database Details</legend>
+                <div class="config-database">
+                    <div class="config-database-label">Configure Database:</div>
+                    <div class="config-db-table" ng-hide="toolModule.IsFilterProcedure">
+                        <div class="config-db-label">Table</div>
+                        <div class="config-db-input">
+                            <input list="Table" name="Table" ng-model="toolModule.filterInfo.Database.Table"
+                                   ng-change="chartOptionsTableChange()">
+                            <datalist id="Table">
+                                <option ng-repeat="x in chartOptions.Tables" value="{{x.Name}}"></option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="config-db-primary-key">
+                        <div class="config-db-label">Primary Key</div>
+                        <div class="config-db-input">
+                            <input list="PrimaryKey" name="PrimaryKey" ng-model="toolModule.filterInfo.Database.PrimaryKey">
+                            <datalist id="PrimaryKey">
+                                <option ng-repeat="x in chartOptions.TableCols" value="{{x}}"></option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="config-db-display-text">
+                        <div class="config-db-label">Display Text ColumnName</div>
+                        <div class="config-db-input">
+                            <input list="DisplayTextColumnName" name="DisplayTextColumnName" ng-model="toolModule.filterInfo.Database.DisplayTextColumnName">
+                            <datalist id="DisplayTextColumnName">
+                                <option ng-repeat="x in chartOptions.TableCols" value="{{x}}"></option>
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <div class="config-db-parent-primary-key">
+                        <div class="config-db-label">Parent PrimaryKey</div>
+                        <div class="config-db-input">
+                            <input list="ParentPrimaryKey" name="ParentPrimaryKey" ng-model="toolModule.filterInfo.Database.ParentPrimaryKey">
+                            <datalist id="ParentPrimaryKey">
+                                <option ng-repeat="x in chartOptions.TableCols" value="{{x}}"></option>
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <div class="config-db-parent-primary-key">
+                        <div class="config-db-label">Parent PrimaryText</div>
+                        <div class="config-db-input">
+                            <input list="ParentPrimaryText" name="ParentPrimaryText" ng-model="toolModule.filterInfo.Database.ParentText">
+                            <datalist id="ParentPrimaryText">
+                                <option ng-repeat="x in chartOptions.TableCols" value="{{x}}"></option>
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <div class="config-db-parent-primary-key">
+                        <div class="config-db-label">Where Condition</div>
+                        <div class="config-db-input">
+                            <input type="text" ng-model="toolModule.filterInfo.Database.WhereCondition" />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <input type="button" class="submit-btn" value="Add Filter" ng-click="addNewFilter()"
+                   ng-hide="" />
+            <div class="filter-table">
+                <table>
+                    <tr>
+                        <th colspan="4"></th>
+                        <th>ID</th>
+                        <th>Label</th>
+                        <th>MultiSelect</th>
+                        <th>Required</th>
+                        <th>Image</th>
+                        <th>TimePeriod</th>
+                        <th>FilterBasedOnOtherFilter</th>
+                        <th>HideTrend</th>
+                        <th>Table</th>
+                        <th>PrimaryKey</th>
+                        <th>DisplayText</th>
+                        <th>ParentPrimaryKey</th>
+                        <th>ParentText</th>
+                        <th>WhereCondition</th>
+                    </tr>
+                    <tbody>
+                        <tr ng-repeat="x in toolModule.Filters" ng-include="getTemplate(x,$index)"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        <!--End Filter Chart/Table-->
+        <!--Content Area Chart/Table-->
+        <fieldset ng-show="toolModule.configFor=='Content Area'||toolModule.widgetType!=''" ng-hide="toolModule.configFor=='Filter Selection'||toolModule.module==''||toolModule.widgetType==''||toolModule.configFor==''">
+            <legend>Output Configuration</legend>
+            <section>
+                <div class="cnt-cnfg-chart-content">
+                    <div class="cnt-cnfg-chart-row">
+                        <div class="cnt-cnfg-chart-col">
+                            <label>
+                                Is Procedure :
+                                <input type="checkbox" checked disabled="disabled" ng-model="toolModule.IsProcedure" />
+                            </label>
+                        </div>
+                        <div class="cnt-cnfg-chart-col">
+                            <label>Procedure Name :</label>
+                            <input list="cntcnfgchartproc" name="cntcnfgchartproc" ng-model="toolModule.Procedure.Name" />
+                            <datalist id="cntcnfgchartproc">
+                                <option ng-repeat="x in chartOptions.ProcedureName" value="{{x}}"></option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="cnt-cnfg-chart-row">
+                        <fieldset>
+                            <legend>Parameter Info</legend>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>Filter Label :</label>
+                                <input list="cntcnfgchartfltrlbl" name="cntcnfgchartfltrlbl" ng-model="toolModule.parameterInfo.FilterLabel"
+                                       ng-click="getFilterLabels()" />
+                                <datalist id="cntcnfgchartfltrlbl">
+                                    <option ng-repeat="x in chartOptions.FilterLabels" value="{{x}}"></option>
+                                </datalist>
+                            </div>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>Format :</label>
+                                <input ng-model="toolModule.parameterInfo.Format" />
+                            </div>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>DefaultValue :</label>
+                                <input ng-model="toolModule.parameterInfo.DefaultValue" />
+                            </div>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>Prefix :</label>
+                                <input ng-model="toolModule.parameterInfo.Prefix" />
+                            </div>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>Postfix :</label>
+                                <input ng-model="toolModule.parameterInfo.Postfix" />
+                            </div>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>CustomPropertyLabel :</label>
+                                <input ng-model="toolModule.parameterInfo.CustomPropertyLabel" />
+                            </div>
+
+                        </fieldset>
+                        <input type="button" class="submit-btn" value="Add Parameter" ng-click="addNewParameter()" />
+                    </div>
+                    <div class="cnt-cnfg-chart-row">
+                        <div class="filter-table">
+                            <table>
+                                <tr>
+                                    <th colspan="4"></th>
+                                    <th>Filter Label</th>
+                                    <th>Format</th>
+                                    <th>Default Value</th>
+                                    <th>Prefix</th>
+                                    <th>Postfix</th>
+                                    <th>Custom Property</th>
+                                </tr>
+                                <tr ng-repeat="x in toolModule.Procedure.Parameters" ng-include="getParamTemplate(x)"></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="cnt-cnfg-chart-row" ng-show="toolModule.module=='Chart'||toolModule.widgetType=='chart'" ng-hide="toolModule.module=='Table'||toolModule.widgetType!='chart'">
+                        <fieldset>
+                            <legend>Chart Config</legend>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>Series :</label>
+                                <input ng-model="toolModule.Procedure.SeriesColumn" />
+                            </div>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>X-Axis :</label>
+                                <input ng-model="toolModule.Procedure.XAxisColumn" />
+                            </div>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>Y-Axis :</label>
+                                <input ng-model="toolModule.Procedure.YAxisColumn" />
+                            </div>
+                            <div class="cnt-cnfg-chart-col">
+                                <label>Z-Axis :</label>
+                                <input ng-model="toolModule.Procedure.ZAxisColumn" />
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="cnt-cnfg-chart-row" ng-show="toolModule.module=='Table'||toolModule.widgetType=='table'">
+                        <div class="cnt-cnfg-chart-col">
+                            <label>Ignore Column Name :</label>
+                            <input type="text" ng-model="toolModule.IgnoreColumn.IgnoreColumnText" name="IgnoreColumn" />
+                            <input type="button" class="submit-btn" value="Add" ng-click="addColumnToIgnore()" />
+                        </div>
+                        <div class="cnt-cnfg-chart-col">
+                            <div class="cnt-cnfg-chart-col-list">
+                                <ul>
+                                    <li ng-repeat="x in toolModule.Procedure.IgnoreColumns">
+                                        {{x}}
+                                        <a href="#" ng-click="removeColumn($index)">X</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cnt-cnfg-chart-row" ng-show="toolModule.widgetType=='customized'" ng-hide="toolModule.module!='Snapshot'||toolModule.widgetType!='customized'">
+                    <fieldset>
+                        <legend>Widget Config</legend>
+                        <div class="cnt-cnfg-chart-col">
+                            <label>Value1 :</label>
+                            <input ng-model="toolModule.Procedure.SeriesColumn" />
+                        </div>
+                        <div class="cnt-cnfg-chart-col">
+                            <label>Value2 :</label>
+                            <input ng-model="toolModule.Procedure.XAxisColumn" />
+                        </div>
+                        <div class="cnt-cnfg-chart-col">
+                            <label>Value3 :</label>
+                            <input ng-model="toolModule.Procedure.YAxisColumn" />
+                        </div>
+                        <div class="cnt-cnfg-chart-col">
+                            <label>Value4 :</label>
+                            <input ng-model="toolModule.Procedure.ZAxisColumn" />
+                        </div>
+                    </fieldset>
+                </div>
+    </div>
+    </section>
+    <section ng-hide="toolModule.configFor!='Widget'||toolModule.widgetType==''" style="width: 95%;margin: 0 auto;">
+        <input type="button" class="submit-btn" value="Add Widget" ng-click="addNewWidget()" />
+        <div class="filter-table">
+            <table>
+                <tr>
+                    <th colspan="2"></th>
+                    <th>WidgetName</th>
+                    <th>WidgetType</th>
+                    <th>ProcedureName</th>
+
+                </tr>
+                <tbody>
+                    <tr ng-repeat="x in toolWidgets" ng-include="getWidgetTemplate(x)"></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    </fieldset>
+    <!--End Content Area/Table-->
+
+    <div class="submit">
+        <input type="button" class="submit-btn" value="Continue for Process configuration"
+               ng-click="submitConfig()" />
+    </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/tool-config.js"></script>
+    <link href="~/Content/config.css" rel="stylesheet" />
+</body>
+</html>

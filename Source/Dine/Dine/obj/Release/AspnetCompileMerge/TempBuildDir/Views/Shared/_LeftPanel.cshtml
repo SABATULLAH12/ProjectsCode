@@ -1,0 +1,94 @@
+﻿<!-- Selection Panel -->
+<div class="master-lft-ctrl timperiodpittrend timperiodpittrend-msehover classMouseHover" style="height:80px;" >
+    <div class="lft-ctrl-toggle">
+        <div class="lft-ctrl-toggle-text pit active lft-popup-tp-smnu lft-popup-tp-smnu-active" data-val="pit">POINT IN TIME</div>
+        <label class="pit-trend-switch">
+            <input type="checkbox" id="pit-toggle" data-val="pit"/>
+            <div class="pit-trend-slider round active"></div>
+        </label>
+        <div class="lft-ctrl-toggle-text trend lft-popup-tp-smnu" data-val="trend" ng-hide="fltr.HideTrend=='true'">TREND</div>
+    </div>
+</div>
+<section ng-repeat="fltr in filters track by $index" ng-init="initializeSearch()">
+    <!-- Filter Panel -->
+    <div class="master-lft-ctrl {{fltr.Label}}" data-val="{{fltr.Label}}" data-index="{{$index}}" data-isdynamicfilter="{{fltr.IsFilterBasedOnOtherFilter}}" >
+        <div class="lft-ctrl"></div>
+        <div class="lft-ctrl2 {{fltr.Label}}-msehover classMouseHover">
+            <div class="lft-ctrl-label" ng-switch="fltr.IsTimeperiod" >
+                <span>{{fltr.Label}}</span>
+                <div ng-switch-when="true">
+                </div>
+                
+            </div>
+            @*<div class="lft-ctrl-next">>></div>*@
+            <div class="lft-ctrl-next {{fltr.Image}}"></div>
+            <div class="lft-ctrl-txt" style="{{fltr.IsMultiSelect==true?'height:50px': ''}}"></div>
+        </div>
+        <div class="lft-ctrl3 lft-ctrl3heightperct Timeperiod-{{fltr.IsTimeperiod}}" data-ismultiselect="{{fltr.IsMultiSelect}}" data-required="{{fltr.IsRequired}}" ng-switch="fltr.IsTimeperiod">
+            <div class="lft-ctrl3-header"><span>X</span></div>
+            <div class="lft-ctrl3-content" ng-switch-when="false">              
+                <div class="lft-popup-col{{paneldata.Level}} lft-popup-col" data-level="{{paneldata.Level}}"  ng-repeat="paneldata in fltr.PanelPopup track by $index">
+                      <div class="popup-header">
+                          
+                          <div class="lft-popup-col-search" style="visibility:hidden;">
+                              <input type="text" name="search" id="{{'search-list-'+removeBlankSpace(fltr.Label)}}"  placeholder="Search.." class="ui-autocomplete-input search-list" autocomplete="off">
+                              <div class="search-img"></div>
+                          </div>
+                          <div class="lft-popup-col-selected-text">{{fltr.Label}}</div>
+                      </div>
+
+
+                    @*bind individual element start*@
+                    <div ng-if="$parent.$index <= limit" class="lft-popup-ele" ng-repeat="panelelement in paneldata.Data" child-count="{{panelelement.ChildCount}}" parent-of-parent={{panelelement.ParentOfParent}}>
+                        <span class="lft-popup-ele-label-img {{removeBlankSpace(panelelement.Text)}}_img {{panelelement.IsSubHeading == NULL? '':'isSubHeading_availalbe'}}"></span>
+                        <span class="lft-popup-ele-label {{panelelement.IsSubHeading == NULL? '':'isSubHeading_Width'}}" 
+                              data-id="{{panelelement.ID}}" data-val="{{panelelement.Text}}" data-parent="{{panelelement.ParentID}}" data-parent-search-name="{{panelelement.SearchName}}" data-parent-level="{{panelelement.IsSubHeading == NULL? '':panelelement.IsSubHeading}}" data-parent-id="{{panelelement.IsSubHeadingID == NULL? '':panelelement.IsSubHeadingID}}"
+                              parent-text="{{panelelement.ParentText}}" data-isSelectable="{{panelelement.IsSelectable==undefined?true:panelelement.IsSelectable}}">{{panelelement.Text}}</span>
+                        <span ng-class="{'lft-popup-ele-custom-tooltip-icon {{removeBlankSpace(panelelement.Text)}}_cRegion': ('{{panelelement.ParentText}}'  =='Geography' || '{{removeBlankSpace(panelelement.Text)}}'  =='albertsonssafeway_trade_areas' || '{{removeBlankSpace(panelelement.Text)}}'=='albertsonssafeway_corporate_net_trade_area' || '{{removeBlankSpace(panelelement.Text)}}' == 'heb_trade_areas' || '{{removeBlankSpace(panelelement.Text)}}' == 'heb_trade_area') && ('{{removeBlankSpace(panelelement.Text)}}' != 'total_us') }"></span>
+                        <span class="lft-popup-ele-next sidearrwdiv addLevel" ng-hide="panelelement.ChildCount == 0" data-id="{{panelelement.ID}}" show-all="{{panelelement.ShowAll}}">
+                            <span class="sidearrw"></span>
+                        </span>
+                    </div>
+                    @*bind individual element end*@
+
+                </div>
+            </div>
+            <div class="lft-ctrl3-content timeperiod_settings" ng-switch-when="true">
+                <div class="lft-popup-col-selected-text" style="width:304px;">{{fltr.Label}}</div>
+                <div class="padding"></div>
+                <div class="lft-popup-tp" ng-repeat="t in fltr.Time track by $index" data-val="{{t.Years}}">{{t.Interval}}</div>
+                
+                <div style="margin: 79px 0px 10px 30px;">
+                    <div id="slider-range"></div>
+                    <div id="slider-range-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Filter Panel -->
+    @*<hr />*@
+
+</section>
+
+<!-- Submit Panel -->
+<div class="master-lft-ctrl submt downloadall downloadall-msehover classMouseHover" style="height:78px;position:fixed;border-bottom:none;box-shadow:none;background-position:-275px -669px;">
+    <div class="master-btn lft-ctrl2" id="master-btn" ng-click="DownloadAll()" style="height: 85px;">@*<span>Submit</span>*@</div>
+    <div class="textdwnall" style="margin-top:-39px;height:20px;border-bottom:none;box-shadow:none;">DOWNLOAD ALL</div>
+</div>
+
+<div class="master-lft-ctrl1 submt custom_download custom_download-msehover classMouseHover" style="height:78px;position:fixed;width: 50px;bottom: 12%;border-bottom:none;box-shadow:none;background-position:-350px -669px;">
+    <div class="master-btn lft-ctrl2" id="master-btn CustomDownload" style="height: 85px;">@*<span>Submit</span>*@</div>
+    <div class="textcstm" style="margin-top:-39px;height:20px;border-bottom:none;box-shadow:none;">DOWNLOAD CUSTOM</div>
+</div>
+@* Save & Submit Button for Dashboard *@
+<div class="master-lft-ctrl submt SaveHide SaveHide-msehover classMouseHover" >
+<div class="master-btn lft-ctrl2 SaveImg" id="master-btn" ng-click="Save('in')"></div>
+</div>
+<div class="master-lft-ctrl submt SbmtHide SbmtHide-msehover classMouseHover">
+    <div class="master-btn lft-ctrl2" id="master-btn" ng-click="prepareContentArea('submit',$event)">@*<span>Submit</span>*@</div>   
+</div>
+@* Save & Submit Button  *@
+<!-- Submit Panel -->
+<div class="master-lft-ctrl" style="display:none;">
+    <div class="lft-ctrl2" id="master-clear"><span><a href="#" id="clearLeftPanel">Clear All</a></span></div>
+</div>

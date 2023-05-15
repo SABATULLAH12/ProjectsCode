@@ -1,0 +1,256 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "FREQUENCY",
+        "IsMultiSelect": false,
+        "IsRequired": false,
+        "Image": "frequency_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimFrequency",
+          "PrimaryKey": "FrequencyId",
+          "DisplayTextColumnName": "FrequencyName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": " Where IsEstModule = 1"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+        {
+        "OrderNumber": 2,
+        "Label": "DAYPART",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "day_part_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "where Metric = 'Daypart'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 3,
+        "Label": "DAY OF WEEK",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "dayofweek_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "where Metric = 'Day of the Week'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 4,
+        "Label": "Planning Type",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "plan_type_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading": null,
+          "IsSubHeadingID": null,
+          "WhereCondition": "WHERE Metric = 'Planning Type'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 5,
+        "Label": "Service Mode",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "service_mode_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading": null,
+          "IsSubHeadingID": null,
+          "WhereCondition": "WHERE Metric = 'Service Mode'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 6,
+        "Label": "Meal Type",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "meal_type_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading": null,
+          "IsSubHeadingID": null,
+          "WhereCondition": "WHERE Metric = 'Meal Type'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+       {
+        "OrderNumber": 12,
+        "Label": "Visit Type",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "visit_type_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": " WHERE Metric = 'Type of Visit'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+       {
+        "OrderNumber": 7,
+        "Label": "Outlet Segments",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "occasion_seg_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE Metric = 'Outlet Motivation Segments'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 8,
+        "Label": "FOOD ITEMS",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "fooditems_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading": null,
+          "IsSubHeadingID": null,
+          "WhereCondition": "WHERE Metric = 'Type of food consumed'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 9,
+        "Label": "Beverage Consumed",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "bevergage_con_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": " WHERE Metric = 'Beverage Consumed'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+       {
+        "OrderNumber": 8,
+        "Label": "Establishment",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "adv_establishmentfltr_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Establishment",
+          "PrimaryKey": "EstablishmentId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName":"IsSelectable",
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }   
+    ]
+  },
+  "Widgets": null
+}

@@ -1,0 +1,338 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "GENDER",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "gender_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] = 'Gender'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 2,
+        "Label": "AGE",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] = 'Age'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 3,
+        "Label": "Age-Gender",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE ParentName = 'Age-Gender'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 4,
+        "Label": "Race/Ethnicity",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE ParentName = 'Race/Ethnicity'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 5,
+        "Label": "HH Size",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE ParentName = 'HH Size - Total'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 6,
+        "Label": "HH Size -  Adults in HH",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] ='HH Size - Adults in HH'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 7,
+        "Label": "HH Size - Children in HH",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] ='HH Size - Children in HH'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 8,
+        "Label": "MARITAL STATUS",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] ='MARITAL STATUS'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 9,
+        "Label": "HH INCOME",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] ='HH INCOME'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 10,
+        "Label": "EMPLOYMENT STATUS NET",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] ='EMPLOYMENT STATUS NET'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 11,
+        "Label": "EMPLOYMENT STATUS DETAILED",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] ='EMPLOYMENT STATUS DETAILED'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 12,
+        "Label": "EDUCATION",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE [ParentName] ='Education'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 13,
+        "Label": "SOCIOECONOMIC",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": "WHERE [ParentName] ='Socioeconomic'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 14,
+        "Label": "HISPANIC ACCULTURATION",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": "WHERE [ParentName] ='Hispanic Acculturation'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 15,
+        "Label": "GEOGRAPHY",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": null,
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "WhereCondition": "WHERE [ParentName] ='Geography'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

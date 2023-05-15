@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = Dine.Utility.Constants.ToolTitlePrefix + "Dashboard";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div ng-controller="dashboardController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band"></div>
+        <div class="submodules-options">
+            <ul>
+                <li class="link_hover">
+                    <div class="link_items dashboard-demo dashboard-demo-msehover classMouseHover">@Html.ActionLink("Path To Purchase", "P2PDashboard", "DashBoard")</div>
+                </li>
+                <li class="link_hover">
+                    @*<div class="link_items dashboard-demog dashboard-demog-msehover classMouseHover">@Html.ActionLink("DEMOGRAPHICS", "Demographics", "DashBoard")</div>*@
+                    <div class="dashboard-demog dashboard-demog-msehover classMouseHover">DEMOGRAPHICS</div>
+                </li>
+                <li style="display:none;" class="link_hover">
+                    <div class="link_items dashboard-brandhealth dashboard-brandhealth-msehover classMouseHover">@Html.ActionLink("BRAND HEALTH", "BrandHealth", "DashBoard")</div>
+                </li>
+                <li style="display:none;" class="link_hover">
+                    <div class="link_items dashboard-visits dashboard-visits-msehover classMouseHover">@Html.ActionLink("VISITS", "Visits", "DashBoard")</div>
+                </li>
+            </ul>
+           
+        </div>
+    </div>
+    <div class="red_bar"></div>
+</div>
+
+
+
+@System.Web.Optimization.Scripts.Render("~/bundle/jdashboard")
+@System.Web.Optimization.Styles.Render("~/bundle/sdashboard")
+
+@*<script src="@Utils.ContentVersioned("~/Scripts/dashboard.js")"></script>
+<link href="@Utils.ContentVersioned("~/Content/dashboard.css")" rel="stylesheet" />*@

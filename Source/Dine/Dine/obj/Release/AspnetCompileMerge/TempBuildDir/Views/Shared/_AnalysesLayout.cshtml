@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = @Dine.Utility.Constants.ToolTitlePrefix + "ADD'L CAPABILITIES";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<div ng-controller="analysesController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band"></div>
+        <div class="submodules-options">
+            <ul>
+                <li class="link_hover">
+                    <div class="link_items">Diner Cross Dinning Analysis</div>
+                    <div class="list_content">
+                        <div class="submodules-options-link establishment-link-compare">@Html.ActionLink("Cross Diner Frequencies", "CrossDinerFrequencies", "Analyses")</div>
+                       
+                    </div>
+                </li>
+
+                <li class="link_hover">
+                    <div class="link_items">Correspondence Maps</div>
+                    <div class="list_content">
+                        <div class="submodules-options-link establishment-link-compare">@Html.ActionLink("Compare Establishments", "EstablishmentCompare", "Analyses")</div>
+                        <div class="submodules-options-link establishment-link-deep-dive">@Html.ActionLink("Establishment Deep Dive", "EstablishmentDeepDive", "Analyses")</div>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="submodule-border-bottom"></div>
+    </div>
+
+    <div class="master-leftpanel">
+        @{Html.RenderPartial("_LeftPanel");}
+    </div>
+
+    <div class="master-content-area">
+        <div class="filter-info-panel">
+            <div class="filter-info-panel-elements"></div>
+            <div class="arrow_popup arrow_popup-msehover dynpos1 classMouseHover"><div class="downarrw arrw"></div></div>
+        </div>
+        
+        @{Html.RenderPartial("_AdvancedFilter"); }
+
+        <div class="analyses-toplayer">
+            <div class="measure-text">CORRESPONDENCE ANALYSIS</div>
+            <div class="zoom">
+                <div class="zoom-out zoom-out-msehover dynpos1 zoomBtn classMouseHover" ng-click="zoomListener($event)"></div>
+                <div class="zoom-in zoom-in-msehover zoomBtn dynpos1 classMouseHover" ng-click="zoomListener($event)"></div>
+            </div>
+            <div class="chart-types">
+                <div class="scatterplot-chart scatterplot-chart-msehover chart-type classMouseHover" ng-click="plotScatterChart(fileName,1)"></div>
+                <div class="table-R table-R-msehover chart-type classMouseHover" ng-click="plotTableR(tableDataR)"></div>
+                <div class="table-analyses table-analyses-msehover chart-type classMouseHover" ng-click="plotTableAnalyses(tableData)"></div>
+            </div>
+        </div>
+        <div class="analyses-bottomlayer">
+            <div id="chart-visualisation"></div>
+            <table id="flexi-tableR" class="data" cellpadding="0" cellspacing="0" style="display:block;"></table>
+            <table id="flexi-tableAnalyses" class="data" cellpadding="0" cellspacing="0" style="display:block;"></table>
+        </div>
+        <div class="analyses-statlayer">
+        </div>
+        <div class="adv-fltr-top">
+                <div class="adv-fltr">
+                    <div class="adv-fltr-option">
+                        <div id="cross-Restaurants" class="right-skew-Visits box adv-fltr-label width-4 Visits-box Visits-right-skew" ng-click="plotRestrntsorRetailers(1)">
+                            <span class="ng-binding">Restaurants</span>
+                        </div>
+                        <div id="cross-Retailers" class="right-skew-Visits box adv-fltr-label width-4" ng-click="plotRestrntsorRetailers(0)">
+                            <span class="ng-binding">Retailers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="analyses-crossdinerFreqlayer">
+            <table id="flexi-table" class="data" cellpadding="0" cellspacing="0" style="display:none;"></table>
+        </div>
+        <div class="cross-diner-statlayer" style="display:none;">
+            <div class="cross-dinner-centeralign">
+                <div id="NoteSample" style="float:left;" class="table-stat-empty"><div class="samplesize-note">Note: </div> <div class="samplesize-text">Grey font = Low Sample (30-99), Blank = Sample < 30; NA = Not Applicable </div></div>
+            </div>
+        </div>
+    </div>
+    <div class="null-error-popup">
+        <div class="save-reportPopup popup_css1">
+            @*<div class="save-popup-close" ng-click="closeSavePopup()"></div>*@
+            <div class="stat-topdiv"><div class="stat-topband topband1"></div><div class="stat-clsebtn" ng-click="closeSavePopup()"></div></div>           
+            @*<div class="save-popup-heading">SAVE REPORTS</div>*@
+            <div class="save-section">
+                <div class="report-selection">
+                    @*<div class="lowSample-size-text">Sample size too low for the selected {{ComparisonPoint}}</div>*@
+                    <div class="stat-closediv">
+                        <div class="stat-heading">Sample size too low for the selected {{ComparisonPoint}}</div>
+                    </div>
+                    <div class="proceed-data">
+                        <div class="list-of-nulls">
+                        </div>
+                        <div class="proceed-text">Do you still want to proceed</div>
+                    </div>
+                </div>
+                <div class="save-popup-btn">
+                    <div class="stat-submt save-proceed-btn" ng-click="proceedClick()">PROCEED</div>
+                    <div class="stat-submt cancel-proceed-btn" ng-click="closeSavePopup()">CANCEL</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="export-excel-popup-cross popup_css" style="display:none;">
+        <div class="stat-topdiv"><div class="stat-topband topband"></div><div class="stat-clsebtnExel"></div></div>
+        <div class="excel-tabsdiv-cross content_css-cross">
+            <div class="stat-closediv popup_css_header">
+                <div class="stat-heading heading_text">EXPORT TO EXCEL</div>
+            </div>
+            <div class="excel-tabslist-cross content_css-cross">
+                <div class="excel-tabs"><div class="tab-checkbox"></div><div class="tab-name"></div></div>
+            </div>
+            <div class="excel-btnsdiv">
+                <div class="stat-submtdiv excel-buttons">
+                    <div class="stat-submt excel-okbtn"> Export</div>
+                    <div class="stat-cancel excel-cancelbtn">Cancel</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@RenderBody()
+@System.Web.Optimization.Styles.Render("~/bundle/sanalyses")
+@System.Web.Optimization.Scripts.Render("~/bundle/janalyses")
+
+@*<script src="@Utils.ContentVersioned("~/Scripts/analyses.js")"> </script>
+<link href="@Utils.ContentVersioned("~/Content/analyses.css")" rel="stylesheet" />*@

@@ -1,0 +1,10 @@
+2021-08-18 17:37:32,795 [21] ERROR  Application (null) (null) - System.Exception: Test exception
+   at Dine.BusinessLayer.ReportDine.updateStackChart(ISlide sld, DataTable tble, String selectedColorCode) in D:\DineProjects\Source\Dine\Dine\BusinessLayer\ReportDine.cs:line 8420
+2021-08-18 17:37:32,903 [21] DEBUG  Application (null) (null) -    at Dine.BusinessLayer.ReportDine.updateStackChart(ISlide sld, DataTable tble, String selectedColorCode) in D:\DineProjects\Source\Dine\Dine\BusinessLayer\ReportDine.cs:line 8420
+2021-08-18 17:37:32,904 [21] DEBUG  Application (null) (null) - Dine
+2021-08-18 17:37:32,906 [21] DEBUG  Application (null) (null) - Test exception
+2021-08-18 18:01:02,280 [35] ERROR  Application (null) (null) - System.Exception: Test exception
+   at Dine.BusinessLayer.ReportDine.updateStackChart(ISlide sld, DataTable tble, String selectedColorCode) in D:\DineProjects\Source\Dine\Dine\BusinessLayer\ReportDine.cs:line 8420
+2021-08-18 18:01:02,305 [35] DEBUG  Application (null) (null) -    at Dine.BusinessLayer.ReportDine.updateStackChart(ISlide sld, DataTable tble, String selectedColorCode) in D:\DineProjects\Source\Dine\Dine\BusinessLayer\ReportDine.cs:line 8420
+2021-08-18 18:01:02,307 [35] DEBUG  Application (null) (null) - Dine
+2021-08-18 18:01:02,309 [35] DEBUG  Application (null) (null) - Test exception

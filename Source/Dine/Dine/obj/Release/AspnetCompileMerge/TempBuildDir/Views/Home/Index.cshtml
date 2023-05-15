@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = @Dine.Utility.Constants.ToolTitlePrefix + "Index";
+        Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Styles.Render("~/bundle/theme")
+    @System.Web.Optimization.Scripts.Render("~/bundle/jlib")
+    <style type="text/css">
+        .ppt-logo {
+            visibility: hidden;
+            display:none;
+        }
+        .exl-logo {
+            display:none;
+        }
+        .red_bar {
+            margin-top: 32px;
+            height: 21px;
+            margin-left: -50px;
+            background-color: #EB1F2A;
+            z-index: 34;
+            border-bottom: 2px #EB1F2A solid;
+            border-top: 1px #EB1F2A solid;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div  class="master-view-content">
+       
+        <div class="submodules">
+            <div class="submodules-options">
+                <ul>
+                    <li class="link_hover">
+                        <div class="link_items">ESTABLISHMENT<div class="downarrw"></div></div>
+                        <div class="list_content">
+                            <div class="submodules-options-link establishment-link-compare">@Html.ActionLink("COMPARE ESTABLISHMENTS", "EstablishmentCompare", "Table")<div class="active-menu"></div></div>
+                            <div class="submodules-options-link establishment-link-deep-dive">@Html.ActionLink("ESTABLISHMENT DEEP DIVE", "EstablishmentDeepDive", "Table")</div>
+                        </div>
+                    </li>
+                    <li class="link_hover">
+                        <div class="link_items">BEVERAGES<div class="downarrw"></div></div>
+                        <div class="list_content">
+                            <div class="submodules-options-link beverage-link-compare">@Html.ActionLink("COMPARE BEVERAGES", "BeverageCompare", "Table")</div>
+                            <div class="submodules-options-link beverage-link-deep-dive">@Html.ActionLink("BEVERAGE DEEP DIVE", "BeverageDeepDive", "Table")</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="red_bar"></div>
+    </div>
+   
+    </body>
+
+    </html>

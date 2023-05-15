@@ -1,0 +1,55 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "FREQUENCY",
+        "IsMultiSelect": false,
+        "IsRequired": false,
+        "Image": "frequency_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimFrequency",
+          "PrimaryKey": "FrequencyId",
+          "DisplayTextColumnName": "FrequencyName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition":  " Where IsEstModule = 1"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 2,
+        "Label": "DEVICE USED",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "device_used_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "DimMeasure",
+          "PrimaryKey": "Id",
+          "DisplayTextColumnName": "MetricName",
+          "ParentPrimaryKey": null,
+          "ParentText": null,
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": "WHERE ColumnName = 'WhichDeviceUsed'"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

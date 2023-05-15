@@ -1,0 +1,106 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+      {
+        "OrderNumber": 1,
+        "Label": "Time Period",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": "timeperiod_img",
+        "IsTimePeriod": true,
+        "HideTrend": false,
+        "Database": {
+          "Table": "vw_Timeperiod",
+          "PrimaryKey": "TimeperiodValue",
+          "DisplayTextColumnName": "DisplayText",
+          "ParentPrimaryKey": null,
+          "ParentText": "PeriodType",
+          "SelectableColumnName": null,
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": " order by rn"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 2,
+        "Label": "Beverage",
+        "IsMultiSelect": false,
+        "IsRequired": true,
+        "Image": "beverage_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Beverage",
+          "PrimaryKey": "BeverageId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading": "Indexname",
+          "IsSubHeadingID": "IndexID",
+          "LevelId": "LevelId",
+          "ShowAll": "ShowInLevel",
+          "WhereCondition": " ORDER BY ToolOrderby"
+       
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 4,
+        "Label": "Metric Comparisons",
+        "IsMultiSelect": true,
+        "IsRequired": true,
+        "Image": "comparission_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Groups_Beverage",
+          "PrimaryKey": "MeasureId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading": null,
+          "IsSubHeadingID": null,
+          "SearchName": "SearchName",
+           "WhereCondition": " where Name not in ('Location from where Beverage was sourced','Location of purchase of beverage other than the outlet','Consideration of Another Establishment','Other Places Considered for the Visit') ORDER BY ToolOrderby"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      },
+      {
+        "OrderNumber": 3,
+        "Label": "Demographic Filters",
+        "IsMultiSelect": true,
+        "IsRequired": false,
+        "Image": "demograhicFitr_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Advancefilter_Table_Chart_CorresspondenceMap",
+          "PrimaryKey": "DemoId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName": "IsSelectable",
+          "TimeperiodYearBreakUp": null,
+          "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": " ORDER BY ToolOrderby"
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+
+      }
+    ]
+  },
+  "Widgets": null
+}

@@ -1,0 +1,2962 @@
+﻿body {
+    letter-spacing:0px;
+}
+.master-leftpanel {
+    height: calc(100% - 59px) !important;
+}
+.SaveImg {
+    background-position: -610px -669px !important;
+}
+#table-ttldine {
+    display: none;
+}
+.red_bar {
+    margin-top: 32px;
+    height: 21px;
+    margin-left: -50px;
+    background-color: #EB1F2A;
+    z-index: 34;
+    /* opacity: 0.8; */
+    border-bottom: 2px #EB1F2A solid;
+    border-top: 1px #EB1F2A solid;
+}
+.submodules-options > ul {
+    height: 20px;
+    box-sizing: border-box;
+}
+    .submodules-options > ul li {
+        float: left;
+        /*width: 96.3333%;*/
+        /*height: 76%;*/
+        width: 100%;
+        height: 29px;
+        /* height: 19.5px; */
+        box-sizing: border-box;
+        padding-top: 4%;
+        margin: 0;
+    }
+.submodules-options {
+    display: block;
+    margin-left: 19%;
+    width:13%;
+}
+.submodules-band {
+    margin-left: 24%;
+    margin-top: -0.42%;
+}
+.dashboard-master-content {
+    height: calc(100% - 45px);
+    width: 100%;
+    float: left;
+    margin: 24px 0 0 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: initial;
+}
+.dashboard-content {
+    height: 100%;
+    width: 100%;
+    float: left;
+    position:relative;
+    display:none;
+}
+
+.demographic {
+    background-image: url('../Images/P2PDashboard_BG.svg');
+}
+.brandhealth {
+    background-image: url('../Images/BrandHealth_Dashboard.jpg');
+}
+.visits {
+     background-image: url('../Images/Visits_Dashboard.jpg');
+}
+.dashboard-logo {
+    background-position: -440px 2px;
+}
+/*.exl-logo {
+    display:block;
+}*/
+.pdf-logo, .ppt-logo {
+    display:block;
+}
+.submt {
+    bottom:2%;
+}
+.SaveHide {
+    display: inline-block !important;
+    bottom: 14%;
+    top: 68%;
+}
+.pit {
+    text-transform:initial;
+    margin-top:20%;
+}
+.trend {
+    text-transform:initial;
+}
+.pit-trend-switch {
+    margin-top:-23%;
+}
+#p2p-dsbrd-BG {
+    width:100%;
+    height:100%;
+    float:left;
+}
+.p2p-dsbrd-BG-4rds {
+    /*background: url('../Images/P2PDashboardImages/P2P_4rds.svg#svgView(preserveAspectRatio(none)') no-repeat;*/
+    height: 100%;
+    width: 100%;
+    float: left;
+    background-size: cover;
+    background-position: center;
+}
+/*.master-top-header {
+    height:7%;
+}*/
+.master-leftpanel {
+    width:50px;
+}
+.loadDashboard {
+    width:100%;
+    height:100%;
+    float:left;
+    position:relative;
+}
+.load-img {
+    width:11%;
+    height:20%;
+    float:left;
+    position:absolute;
+}
+.PieChart {
+    height: 100%;
+    /*border-top-left-radius: 50%;
+    border-top-right-radius: 50%;*/
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 0;
+}
+.static_texts {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+    .static_texts .trip_text {
+        position: absolute;
+        left: 72.4%;
+        top: 2.8%;
+        font-size: 1.1vw;
+        display: none;
+        font-weight: bold;
+    }
+    .static_texts .visit_text {
+        /* position: absolute; */
+        width: 25.17%;
+        height: 5%;
+        left: 42.1%;
+        top: 38%;
+        text-align: center;
+        font-size: 1.1vw;
+        display: none;
+        font-weight: bold;
+    }
+    /*.static_texts .visit_text.total_visit {
+        left: 51%;
+    }*/
+    .static_texts .tod_text {
+        position: absolute;
+        left: 4.2%;
+        top: 7.9%;
+        font-size: 0.8vw;
+        display: none;
+        font-weight: bold;
+    }
+    .static_texts .meal_text {
+        position: absolute;
+        left: 20.2%;
+        top: 40.2%;
+        font-size: 1.1vw;
+        display: none;
+        font-weight: bold;
+    }
+    .static_texts .pre_visit_text {
+        position: absolute;
+        left: 3%;
+        top: 2%;
+        font-size: 1.1vw;
+        display: none;
+        font-weight: bold;
+    }
+    .static_texts .post_visit_text {
+        position: absolute;
+        left: 86.3%;
+        top: 64.2%;
+        font-size: 1.1vw;
+        display: none;
+        font-weight: bold;
+    }
+    .static_texts .order_summary_text {
+        position: absolute;
+        left: 4.6%;
+        top: 41.5%;
+        font-size: 0.75vw;
+        display: none;
+        font-weight: bold;
+    }
+.pie_charts {
+    width: 2.5%;
+    height: 6%;
+    position: absolute;
+    top: 53.35%;
+    left: 68%;
+}
+
+.pie_roads_3_0, .pie_roads_4_0 {
+    top: 38.455%;
+}
+.pie_roads_3_1 {
+    top: 50.044%;
+}
+.pie_roads_4_1 {
+    top: 45.3304%;
+}
+.pie_roads_4_2 {
+    top: 53.44%;
+}
+.pie_roads_4_3, .pie_roads_3_2 {
+    top: 61.85%;
+}
+
+.tod_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.time_main {
+    height: 150px;
+    width: 237px;
+    float: left;
+}
+.time_submain {
+    margin: 0px;
+    padding: 1%;
+    height: 100%;
+    width: 100%;
+    background-image: url('../Images/P2PDashboardImages/P2P_Planning_Pie_Chart_Bg.svg');
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 6;
+}
+.Time_Spent {
+    width: 11%;
+    height: 6%;
+    position: absolute;
+    top: 78%;
+    left: 5%;
+     display: none; 
+}
+    .Time_Spent .t_text {
+        bottom: 94%;
+        width: 48%;
+        height: auto;
+        position: absolute;
+        left: 46%;
+        font-size: 0.7vw;
+        font-weight: bold;
+    }
+    .Time_Spent .t_per {
+        top: 9%;
+        width: 19%;
+        height: auto;
+        position: absolute;
+        left: 45%;
+        font-size: 1.1vw;
+        font-weight: bold;
+    }
+    .Time_Spent .text {
+        top: 16%;
+        width: 28.5%;
+        height: 86%;
+        position: absolute;
+        text-align: center;
+        left: 7%;
+        font-family: chivo-bold;
+        font-size: .61em;
+        float: left;
+    }
+.timespent_val {
+        font-size: 1.36em;
+    width: 100%;
+    height: 46%;
+    float: left;
+    text-align: center;
+}
+.timespent_min {
+    width: 100%;
+    float: left;
+    height: 30%;
+    font-size: 7px;
+    font-size: .88em;
+}
+    .Time_Spent .t_sig_text {
+        top: 26%;
+        width: 19%;
+        height: 33%;
+        position: absolute;
+        left: 75%;
+        font-size: 0.6vw;
+        font-style:italic;
+    }
+.t_plusicon {
+    top: -22%;
+    width: 7%;
+    height: 28%;
+    position: absolute;
+    left: 90%;
+    background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+    background-repeat: no-repeat;
+}
+.Companion_Detail {
+    width: 9%;
+    height: 9%;
+    position: absolute;
+    top: 20%;
+    left: 42.5%;
+    display: none;
+}
+    .Companion_Detail .t_text {
+        bottom: 61.5%;
+        width: 67%;
+        height: auto;
+        position: absolute;
+        left: 6%;
+        font-size: 0.8vw;
+        font-weight: bold;
+    }
+    .Companion_Detail .text {
+        position: absolute;
+        font-size: 0.6vw;
+        font-weight: bold;
+        width: 95%;
+        height: 60%;
+        /*top: 72%;*/
+        top: 76%;
+        left: 5%;
+        text-transform: none;
+    }
+    .Companion_Detail .t_per {
+        position: absolute;
+        font-size: 1.1vw;
+        font-weight: bold;
+        top: 39.6%;
+        left: 6%;
+        width: 24%;
+        height: 32%;
+    }
+    .Companion_Detail .t_sig_text {
+        position: absolute;
+        top: 50%;
+        left: 48%;
+        font-size: 0.6vw;
+        width: 20%;
+        height: 24%;
+        font-style:italic;
+    }
+    .Companion_Detail .p_plusicon {
+        top: 15%;
+        width: 8%;
+        height: 21%;
+        position: absolute;
+        left: 55%;
+        font-size: 0.8vw;
+        font-weight: bold;
+        background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
+.Planning_Type {
+    width: 9%;
+    height: 9%;
+    position: absolute;
+    top: 4.7%;
+    left: 42.5%;
+    display: none;
+}
+    .Planning_Type .p_plusicon {
+        top: 37%;
+        width: 8%;
+        cursor:pointer;
+        height: 21%;
+        position: absolute;
+        left: 51%;
+        font-size: 0.8vw;
+        font-weight: bold;
+        background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
+    .Planning_Type .t_text {
+        bottom: 39%;
+        width: 67%;
+        height: auto;
+        position: absolute;
+        left: 4%;
+        font-size: 0.8vw;
+        font-weight: bold;
+    }
+    .Planning_Type .text {
+        position: absolute;
+        font-size: 0.5vw;
+        font-weight: bold;
+        width: 93%;
+        height: 60%;
+        /*top: 94%;*/
+        top: 97%;
+        left: 5%;
+        text-transform:none;
+    }
+    .Planning_Type .t_per {
+        position: absolute;
+        font-size: 1.1vw;
+        font-weight: bold;
+        top: 63%;
+        left: 5%;
+        width: 32%;
+        height: 32%;
+    }
+    .Planning_Type .t_sig_text {
+        position: absolute;
+        top: 74%;
+        left: 48%;
+        font-size: 0.6vw;
+        width: 20%;
+        height: 24%;
+        font-style:italic;
+    }
+    .Planning_Type .p_img {
+        position: absolute;
+        top: 32%;
+        left: -30%;
+        width: 31.3%;
+        height: 82%;
+        background-image: url('../Images/P2PDashboardImages/P2P_Planning_0.svg');
+        background-repeat: no-repeat;
+        display:none;
+    }
+    /*Time Pie Chart*/
+    .Planning_Type .p_pieChart {
+        height: 100%;
+        width: 44%;
+        position: absolute;
+        left: -42%;
+        top: 31%;
+        display: inline;
+        float: left;
+    }
+.timePieChart {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 2%;
+    left: 0%;
+    z-index: 0;
+}
+.Location_Prior {
+    width: 11%;
+    height: 9%;
+    position: absolute;
+    top: 8%;
+    left: 27%;
+    display: none;
+}
+.Location_Prior_Images {
+    width: 9.3%;
+    height: 20.3%;
+    position: absolute;
+    top: 8.3%;
+    left: 18%;
+}
+    .Location_Prior_Images .t_img {
+        width: 100%;
+        height: 100%;
+        bottom: -1.5%;
+        display: none;
+        position: absolute;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-image: url(../Images/P2PDashboardImages/P2P_Lctn_Home.svg);
+        background-repeat: no-repeat;
+    }
+        .Location_Prior_Images .t_img.Home {
+            left: 6%;
+            background-image: url(../Images/P2PDashboardImages/P2P_Lctn_Home.svg);
+        }
+        .Location_Prior_Images .t_img.The_gym_or_fitness_center {
+            height: 54%;
+            left: 0%;
+            background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Gym.svg');
+        }
+        .Location_Prior_Images .t_img.Work_or_job_site, .t_img.Somewhere_else {
+            height: 90%;
+            left: 5%;
+            background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Work.svg');
+        }
+        .Location_Prior_Images .t_img.Store {
+            height: 81%;
+            left: 5%;
+            background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Store.svg');
+        }
+        .Location_Prior_Images .t_img.Somewhere_else {
+            height:90%;
+        }
+        .Location_Prior_Images .t_img.Someone_else_s_home {
+            height:90%;
+        }
+        .Location_Prior_Images .t_img.An_entertainment_venue {
+            height: 95%;
+            left: 7%;
+            background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Entermnt.svg');
+        }
+        .Location_Prior_Images .t_img.School {
+            height: 71%;
+            left: 5%;
+            background-image: url('../Images/P2PDashboardImages/P2P_Lctn_School.svg');
+        }
+        .Location_Prior_Images .t_img.A_church_or_place_of_worship {
+            height: 100%;
+            bottom: -1.5%;
+            left: 15%;
+            background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Church.svg');
+        }
+        .Location_Prior_Images .t_img.Restaurant {
+            height: 52%;
+            bottom: 2%;
+            left: 6%;
+            background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Restaurant.svg');
+        }
+.Location_Prior .t_text {
+    bottom: 30%;
+    width: 54.4%;
+    height: auto;
+    position: absolute;
+    left: 3%;
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+.Location_Prior .text {
+    position: absolute;
+    /*top: 101.7%;*/
+    top: 106%;
+    width: 80%;
+    height: 24%;
+    left: 3.5%;
+}
+    .Location_Prior .t_per {
+        position: absolute;
+        font-size: 1.1vw;
+        font-weight: bold;
+        top: 71%;
+        left: 3%;
+        width: 24%;
+        height: 32%;
+    }
+    .Location_Prior .t_sig_text {
+        position: absolute;
+        top: 85%;
+        left: 40%;
+        font-size: 0.6vw;
+        width: 20%;
+        height: 24%;
+        font-style:italic;
+    }
+.t_lctn_plusicon {
+    width: 8%;
+    height: 19%;
+    position: absolute;
+    top: 49%;
+    left: 58.6%;
+    cursor: pointer;
+    background-position-y: bottom;
+    background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+    background-repeat: no-repeat;
+}
+.Trip_Activity {
+    width: 11%;
+    height: 11%;
+    position: absolute;
+    top: 38%;
+    left: 83%;
+    display: none;
+}
+    .Trip_Activity .p_plusicon {
+        top: 12%;
+        width: 6%;
+        height: 16%;
+        position: absolute;
+        left: 67%;
+        font-size: 0.8vw;
+        font-weight: bold;
+        background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
+    .Trip_Activity .t_text {
+        bottom: 71%;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 0%;
+        font-size: 0.8vw;
+        font-weight: bold;
+    }
+    .Trip_Activity .text {
+        position: absolute;
+        top: 61%;
+        left: 31%;
+        font-size: 0.6vw;
+        font-weight: bold;
+        width: 70%;
+        height: 30%;
+    }
+    .Trip_Activity .t_per {
+        position: absolute;
+        font-size: 1.1vw;
+        font-weight: bold;
+        top: 32%;
+        left: 29%;
+        width: 48%;
+        height: 30%;
+        text-align:left;
+    }
+    .Trip_Activity .t_sig_text {
+        position: absolute;
+        top: 42%;
+        left: 60%;
+        font-size: 0.6vw;
+        width: 48%;
+        height: 30%;
+    }
+.Overall_Satisfaction {
+    width: 12%;
+    height: 16%;
+    position: absolute;
+    top: 82%;
+    right: 63%;
+    display: none;
+}
+    .Overall_Satisfaction .p_plusicon {
+        bottom: 81%;
+        width: 8.9%;
+        height: 10.8%;
+        position: absolute;
+        left: 76%;
+        font-size: 0.8vw;
+        font-weight: bold;
+        background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
+    .Overall_Satisfaction .t_text {
+        bottom: 80.5%;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: -7%;
+        font-size: 0.8vw;
+        font-weight: bold;
+    }
+    .Overall_Satisfaction .text {
+        position: absolute;
+        top: 60%;
+        left: 39%;
+        width: 48%;
+        height: 30%;
+    }
+        .Overall_Satisfaction .text .sat {
+            text-transform: none;
+            font-size: 0.7em;
+            font-weight: normal;
+        }
+        .Overall_Satisfaction .text .t2b {
+            font-style: italic;
+            text-transform: none;
+            font-size: 0.5em;
+            text-align: left;
+        }
+    .Overall_Satisfaction .t_per {
+        position: absolute;
+        font-size: 1.1vw;
+        font-weight: bold;
+        top: 40%;
+        left: 39%;
+        width: 48%;
+        height: 30%;
+        text-align: left;
+    }
+    .Overall_Satisfaction .t_sig_text {
+        position: absolute;
+        top: 48%;
+        left: 70%;
+        font-size: 0.6vw;
+        width: 48%;
+        height: 30%;
+    }
+
+    .Average_Distance_Travelled {
+    width: 11%;
+    height: 12%;
+    position: absolute;
+    top: 9%;
+    left: 79%;
+    display: none; 
+}
+    .Average_Distance_Travelled .p_plusicon {
+        top: -33%;
+        width: 7%;
+        height: 14%;
+        position: absolute;
+        left: 57%;
+        font-weight: bold;
+        background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
+        .Average_Distance_Travelled .t_text {
+            bottom: 116%;
+            width: 79%;
+            height: auto;
+            position: absolute;
+            left: 8%;
+            font-size: 0.8vw;
+            font-weight: bold;
+        }
+        .Average_Distance_Travelled .text {
+            position: relative;
+            font-size: 0.65em;
+            font-weight: bold;
+            color: #ffffff;
+            left: 14.5%;
+            font-family: 'chivo-bold';
+            text-align: center;
+            width: 37.3%;
+            height: 21%;
+            top: 8%;
+        }
+        .Average_Distance_Travelled .miles_text {
+            position: relative;
+            font-size: 0.65em;
+            font-weight: bold;
+            color: #ffffff;
+            left: 14.5%;
+            /* font-family: 'chivo-bold'; */
+            text-align: center;
+            width: 37.3%;
+            height: 15.2%;
+            top: 11%;
+            text-transform: initial;
+        }
+    .Average_Distance_Travelled .t_per {
+        position: absolute;
+        font-size: 1.1vw;
+        font-weight: bold;
+        top: 82%;
+        left: 2%;
+        width: 48%;
+        height: 30%;
+    }
+    .Average_Distance_Travelled .t_sig_text {
+        position: absolute;
+        top: 92%;
+        left: 37%;
+        font-size: 0.6vw;
+        width: 48%;
+        height: 30%;
+        font-style:italic;
+    }
+.Distance_Travelled {
+    width: 11%;
+    height: 12%;
+    position: absolute;
+    top: 15%;
+    left: 72%;
+    display: none;
+}
+    .Distance_Travelled .p_plusicon {
+        top: -51%;
+        width: 7%;
+        height: 14%;
+        position: absolute;
+        left: 57%;
+        font-weight: bold;
+        background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
+    .Distance_Travelled .t_text {
+        bottom: 135%;
+        width: 52%;
+        height: auto;
+        position: absolute;
+        left: 5%;
+        font-size: 0.8vw;
+        font-weight: bold;
+    }
+    .Distance_Travelled .text {
+        position: absolute;
+        font-size: 0.65em;
+        font-weight: bold;
+        color: #ffffff;
+        left: 18%;
+        font-family: 'chivo-bold';
+        text-align: left;
+        width: 48%;
+        height: 30%;
+        top: -3%;
+    }
+    .Distance_Travelled .miles_text {
+        position: absolute;
+        font-size: 0.65em;
+        font-weight: bold;
+        color: #ffffff;
+        left: 15%;
+        /* font-family: 'chivo-bold'; */
+        text-align: left;
+        width: 37%;
+        height: 41%;
+        top: 13%;
+        text-transform: initial;
+    }
+    .Distance_Travelled .t_per {
+        position: absolute;
+        font-size: 1.1vw;
+        font-weight: bold;
+        top: -30%;
+        left: 32%;
+        width: 48%;
+        height: 30%;
+        text-align:left;
+    }
+    .Distance_Travelled .t_sig_text {
+        position: absolute;
+        top: 0%;
+        left: 33%;
+        font-size: 0.6vw;
+        width: 48%;
+        height: 30%;
+        font-style: italic;
+    }
+.Mode_of_Transport {
+    width: 11%;
+    height: 7%;
+    position: absolute;
+    top: 25%;
+    left: 82.3%;
+    display:none;
+}
+    .Mode_of_Transport .p_vehicle_icon {
+        top: -134%;
+        width: 55%;
+        height: 96%;
+        position: absolute;
+        left: 25%;
+        background-position-x: center;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+    }
+        .Mode_of_Transport .p_vehicle_icon.Personal_Vehicle {
+            background-image: url(../Images/P2PDashboardImages/P2P_Transportaion_Car.svg);
+        }
+        .Mode_of_Transport .p_vehicle_icon.Cab__Car_Service,.p_vehicle_icon.Cab__Car_Service {
+            background-image: url('../Images/P2PDashboardImages/P2P_Transportaion_Cab.svg');
+        }
+        .Mode_of_Transport .p_vehicle_icon.Public_Transportation {
+            background-image: url('../Images/P2PDashboardImages/P2P_Transportaion_Bus.svg');
+        }
+        .Mode_of_Transport .p_vehicle_icon.Other {
+            background-image: url('../Images/P2PDashboardImages/P2P_Transportaion_Other.svg');
+        }
+        .Mode_of_Transport .p_vehicle_icon.Walked {
+            background-image: url('../Images/P2PDashboardImages/P2P_Transportaion_Walked.svg');
+        }
+    .Mode_of_Transport .p_plusicon {
+        bottom: 47%;
+        width: 6%;
+        height: 27%;
+        position: absolute;
+        left: 72%;
+        font-size: 0.8vw;
+        font-weight: bold;
+        background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
+    .Mode_of_Transport .t_text {
+        bottom: 46%;
+        position: absolute;
+        left: 7%;
+        height: auto;
+        width: 65%;
+        font-size: 0.8vw;
+        font-weight: bold;
+    }
+    .Mode_of_Transport .t_sig_text {
+        position: absolute;
+        left: 48%;
+        top: 70%;
+        font-size: 0.6vw;
+    }
+    .Mode_of_Transport .t_per {
+        position: absolute;
+        left: 8%;
+        top: 56%;
+        font-size: 1.1vw;
+        font-weight: bold;
+    }
+    .Mode_of_Transport .text {
+        position: absolute;
+        left: 8%;
+        top: 100%;
+        font-size: 0.65vw;
+        font-weight: bold;
+    }
+.avg_dollar_spent {
+    width: 12.4%;
+    height: 8%;
+    position: absolute;
+    top: 64%;
+    left: 5.3%;
+    display: none;
+}
+    .avg_dollar_spent .avg_text {
+        width: 40%;
+        height: auto;
+        position: absolute;
+        bottom: 43%;
+        left: 2.5%;
+        font-weight: bold;
+        font-size: 0.7vw;
+    }
+    .avg_dollar_spent .avg_per {
+        height: 48%;
+        width: 17.8%;
+        position: absolute;
+        top: 25%;
+        color: #ffffff;
+        text-align: center;
+        left: 52.7%;
+        font-weight: bold;
+        font-size: 0.75em !important;
+        position: relative;
+    }
+    .avg_dollar_spent .text {
+        height: auto;
+        width: 40%;
+        position: absolute;
+        top: 66%;
+        left: 3%;
+        font-weight: bold;
+        font-size: 0.65vw;
+        text-transform: initial;
+    }
+    .avg_dollar_spent .avg_sig_text {
+        height: auto;
+        width: 16%;
+        position: absolute;
+        top: 79%;
+        left: 56%;
+        font-size: 0.65vw;
+        font-style: italic;
+    }
+
+.avg_dollar_spent .all_sub_text {
+    left:2% !important;
+}
+.FB_Consumed {
+    width: 10%;
+    height: 6%;
+    position: absolute;
+    top: 44.35%;
+    left: 5.3%;
+    display:none;
+}
+    .FB_Consumed .img {
+        width: 20%;
+        height: 82%;
+        top: 0%;
+        left: 0%;
+        background-position-y: bottom;
+        background-image: url('../Images/P2PDashboardImages/Dine_Order Summary Beverage ONLY.svg');
+        background-repeat: no-repeat;
+    }
+.FB_Consumed2 {
+    top:49.7%;
+}
+.FB_Consumed3 {
+    top:55.6%;
+}
+.FB_Consumed .img1 {
+    position: absolute;
+    width: 14%;
+    height: auto;
+    left: 7%;
+    bottom: 16%;
+}
+.FB_Consumed .img2 {
+    position: absolute;
+    width: 29%;
+    left: 2%;
+    height: auto;
+    bottom: 19%;
+    background-image: url('../Images/P2PDashboardImages/Dine_Order Summary Food ONLY.svg');
+}
+.FB_Consumed .img3 {
+    width: 28%;
+    height: auto;
+    position: absolute;
+    left: 2%;
+    bottom: 16%;
+    background-image: url('../Images/P2PDashboardImages/Dine_Order Summary Food & Beverage.svg');
+}
+.FB_Consumed .per_text {
+    width: 30%;
+    height: auto;
+    position: absolute;
+    bottom: 13.35%;
+    font-size: 1vw;
+    text-align: center;
+    font-weight: bold;
+    left: 67%;
+}
+.FB_Consumed .text {
+    width: 41%;
+    height: auto;
+    position: absolute;
+    bottom: 24%;
+    left: 23.3%;
+    font-size: 0.6vw;
+    font-weight: bold;
+    text-transform: none;
+}
+    .FB_Consumed .text2 {
+        left: 34.3%;
+        width:20%;
+    }
+.FB_Consumed .text3 {
+    left: 32.3%;
+}
+.FB_Consumed .sig_text {
+    width: 19%;
+    height: auto;
+    position: absolute;
+    top: 91.35%;
+    left: 74.3%;
+    font-size: 0.68vw;
+    font-style: italic;
+}
+.plus_icon_click {
+    cursor:pointer;
+}
+.time_of_day {
+    width: 13.4%;
+    height: 3.3%;
+    position: absolute;
+    top: 81.35%;
+    left: 4.3%;
+    display:none;
+}
+.time_of_day .per_text {
+    width: 24.4%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    text-align:center;
+    font-size: 1.1vw;
+    color:white;
+    font-weight:bold;
+}
+    .time_of_day .text {
+        width: 65%;
+        height: auto;
+        position: absolute;
+        bottom: 33%;
+        left: 26.5%;
+        font-weight: bold;
+        font-size: 0.7vw;
+    }
+    .time_of_day .sig_text {
+        width: 15.4%;
+        height: auto;
+        position: absolute;
+        bottom: 36%;
+        color: black;
+        font-size: 0.623vw;
+        font-style: italic;
+    }
+    .time_of_day .sig_text1 {
+        left: 91%;
+    }
+    .time_of_day .sig_text2 {
+        left: 79.5%;
+    }
+    .time_of_day .sig_text3 {
+        left: 67.5%;
+    }
+    .time_of_day .sig_text4 {
+        left: 68.5%;
+    }
+    .time_of_day .sig_text5 {
+        left: 63.5%;
+    }
+.time_of_day1 {
+    top:9.6%;
+}
+.time_of_day2 {
+    top: 13.35%;
+}
+.time_of_day3 {
+    top: 17.1%;
+}
+.time_of_day4 {
+    top: 20.9%;
+}
+.time_of_day5 {
+    top: 24.6%;
+}
+.OVERALL_SATISFACTION_CHRT {
+    width: 4%;
+    height: 9%;
+    position: absolute;
+    top: 86.35%;
+    left: 24%;
+}
+.OTHER_ACTIVITIES_CHRT {
+    width: 2.5%;
+    height: 6%;
+    position: absolute;
+    top: 42%;
+    left: 83%;
+}
+.TRAVELLED-OUT-OF-THE-WAY {
+    width: 2.5%;
+    height: 6%;
+    position: absolute;
+    top: 11.4%;
+    left: 72.3%;
+}
+/*Start Charts CSS @PKR*/
+.main {
+    float: left;
+    width: 2.5%;
+    height: 6%;
+}
+.submain {
+    height: 100%;
+    width: 100%;
+    /*border-top-left-radius: 50%;
+    border-top-right-radius: 50%;*/
+    position: relative;
+}
+.p_submain {
+    margin: 0px;
+    padding: 0px;
+    height: 102%;
+    width: 102%;
+    background-image: url('../Images/Dine_visit_pie chart_Bg.svg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 6;
+}
+.ballonPieChart {
+    height: 96%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    width: 94%;
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    z-index: 0;
+}
+/*End Charts CSS @PKR*/
+
+.POST_VISIT {
+    width: 10%;
+    height: 20%;
+    float: left;
+    position: absolute;
+    left: 76%;
+    top: 70.2%;
+}
+
+.post_visit_icon {
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+
+.home_icon, .someone_elses_home{
+    background-image: url(../Images/P2PDashboardImages/P2P_Lctn_Home.svg);
+}
+
+.church_icon {
+    background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Church.svg');
+}
+
+.entertainment_icon {
+    background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Entermnt.svg');
+}
+
+.gym_icon {
+    background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Gym.svg?9');
+}
+
+.restaurant_icon {
+    background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Restaurant.svg');
+}
+
+.school_icon {
+    background-image: url('../Images/P2PDashboardImages/P2P_Lctn_School.svg');
+}
+
+.store_icon {
+    background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Store.svg');
+}
+
+.work_icon, .somewhere_else  {
+    background-image: url('../Images/P2PDashboardImages/P2P_Lctn_Work.svg');
+}
+
+.POST_VISIT_UPPER_TEXT {
+    width: 8.5%;
+    height: 4%;
+    /* float: left; */
+    position: absolute;
+    left: 86.3%;
+    top: 78.8%;
+}
+
+.plus_icon {
+    float: left;
+    width: 16%;
+    height: 42%;
+    top: 63%;
+    right: 18%;
+    position: absolute;
+    /* margin-top: 12%; */
+    background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    cursor: pointer;
+}
+
+.popup1 {
+    display: none;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999999;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(241, 242, 242, 1) 100%);
+    border-style: Solid;
+    border-color: #FFFFFF;
+    border-width: 3px;
+    width: 713px;
+    height: 568px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    /*border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);*/
+    width: 100%;
+    height: 100%;
+}
+
+.popup-header-div {
+    height: 36px;
+    width: 100%;
+    float: left;
+}
+.popup-hdrtxt {
+    height: 100%;
+    width: 76%;
+    float: left;
+    text-align: center;
+    color: #414042;
+    font-family: 'Chivo-Bold';
+    font-size: 20px;
+    margin-top: 8px;
+    margin-left:6%;
+}
+.onlyforPie {
+    width: 53% !important;
+}
+.popup-vertcl-brdrdiv {
+    width: 17px;
+    height: 430px;
+    position: fixed;
+    bottom: 0;
+    left: -15px;
+    margin: auto;
+    right: 0;
+    top: -5px;
+    z-index: 999999999;
+}
+.popup-vertcl-brdr {
+        background-image: url(../Images/P2PDashboardImages/Dashbrd_Popup/v_shadow.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    /* margin-top: 40%; */
+    float: left;
+    width: 20px;
+    /* margin-left: 40%; */
+    z-index: 1000000;
+    /*margin-top: 29%;*/
+}
+.popup-band {
+    width: 92px;
+    height: 3px;
+    position: absolute;
+    background-color: #A0A0A0;
+    margin-top: 36px;
+    margin-left: 301px;
+}
+.popup-hdrpdf {
+    height:100%;
+    width:5%;
+    float:left;
+}
+.popup-imagepdf {
+    height: 33px;
+    width: 35px;
+    float: left;
+    margin-top: 0px;
+    background-image: url('../Images/P2PDashboardImages/pdf.svg');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-left: 0px;
+}
+.popup-ppt {
+    width: 4%;
+    float: left;
+    height: 100%;
+}
+.popup-imageppt {
+    height: 33px;
+    width: 35px;
+    float: left;
+    margin-top: 0px;
+    background-image: url(../Images/P2PDashboardImages/ppt.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-left: 0px;
+}
+.popup-hdrclse {
+    height:100%;
+    width:4%;
+    float:left;
+}
+.popup-imageclse {
+    height: 26px;
+    width: 30px;
+    float: left;
+    margin-top: 3px;
+    background-image: url(../Images/P2PDashboardImages/Dashbrd_Popup/close_icon.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-left: 0px;
+}
+.popup-hdr-shdw {
+    height:2%;
+    width:100%;
+    float:left;
+     background-image: url(../Images/P2PDashboardImages/Dashbrd_Popup/header_shadow.svg);
+    background-repeat: no-repeat;
+}
+.popup-hdr-shdwdiv {
+    width: 100%;
+    height: 10px;
+    float: left;
+}
+.popup-hdr-shdw {
+    height: 100%;
+    width: 100%;
+    float: left;
+    background-image: url(../Images/P2PDashboardImages/Dashbrd_Popup/header_shadow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.popup-hdr-stat-textdiv {
+    width:100%;
+    height:20px;
+    float:left;
+}
+.onlyfor-without-rdobtns {
+    margin-left:2% !important;
+    width:0px !important;
+}
+.topfdbrder {
+    width:90%;
+    border:1px solid;
+}
+.topfdbrderinner {
+    margin-left:1px;
+}
+.popup-hdr-stat-text {
+    width: 90%;
+    height: 100%;
+    float: left;
+    margin-left: 2%;
+    color: #58595B;
+    font-family: 'Chivo-Bold';
+}
+.popup-body {
+    height: 72%;
+    width: 98%;
+    float: left;
+    float: left;
+    margin: 0;
+    overflow-y: auto;
+}
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    /* font-weight: bold; */
+    background-color: black;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    height: 27px;
+    width: 27px;
+    text-align: center;
+    line-height: 1;
+    color: white;
+    cursor: pointer;
+    top: calc(0% - 13.5px);
+    right: calc(0% - 13.5px);
+    position: absolute;
+}
+
+/*.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}*/
+
+.text1 {
+    height: 100%;
+    width: 50%;
+    float: left;
+    font-weight: bold;
+}
+
+.text2 {
+    height: 100%;
+    width: 50%;
+    float: left;
+    font-weight: bold;
+}
+
+.popup-header1 {
+    background-color: lightgrey;
+    color: black;
+    margin: 0 auto;
+    width: 99%;
+    height: 10%;
+    line-height: 2;
+    text-align: center;
+}
+.content-header {
+    position: relative;
+    height: 14%;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.3em;
+    font-family: 'Chivo-Bold';
+    color: #414042;
+}
+.bar-content-header {
+    height: 100%;
+    width: 100%;
+    /*margin-bottom: 1%;*/
+    overflow-y: auto;
+}
+.bar-content-main-div {
+    width: 100%;
+    height: 39px;
+    float: left;
+}
+.bar-content-main-divleft {
+    width: 100%;
+    height: 39px;
+    float: left;
+}
+.bar-content-main-divleft:nth-child(2n + 1) {
+    background-color:rgba(88,89,91,.06);
+}
+
+.bar-content-left {
+    width:50%;
+    height:39px;
+    float:left;
+}
+
+.bar-cntnt-radiodiv {
+    width:7%;
+    height:100%;
+    float:left;
+}
+.bar-cntnt-radiodivleft {
+    width: 10%;
+    height: 39px;
+    float: left;
+}
+.bar-cntnt-radioimg {
+    width: 30px;
+    height: 18px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 30px;
+    background-image: url(../Images/P2PDashboardImages/Dashbrd_Popup/radio_btn.svg);
+    background-repeat: no-repeat;
+    cursor:pointer;
+}
+.popup-header-emptydiv {
+    width:5%;
+    height:100%;
+    float:left;
+}
+.barcntntradioactiveimg {
+    width:30px;
+    height: 18px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 30px;
+    background-image: url('../Images/P2PDashboardImages/Dashbrd_Popup/radio_btn_active.svg');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.marginforradiotop {
+    margin-left: 9px;
+    width: 50%;
+    height: 17px;
+}
+.onlyforPie {
+    width:56%;
+}
+.onlyforpie-metricname {
+    width: 41% !important;
+}
+.bar-cntnt-metric-name {
+   width: 34%;
+    height: 74%;
+    float: left;
+    margin-top: 9px;
+    margin-left: 7px;
+    font-family: Chivo-Regular;
+    font-size: 14px;
+    color: #58595B;
+    text-transform: initial;
+    text-align:left;
+}
+.top-fditem-lnehght {
+    font-size:12px;
+    margin-top: 10px;
+    width:58%;
+}
+/*.bar-cntnt-metric-div:first-child {
+    
+}*/
+.backgn-clr {
+   background-color: rgba(88,89,91,.06);
+}
+.bar-cntnt-metric-div {
+    width: 52%;
+    height: 100%;
+    float: left;
+    margin-left: 1.8%;
+    border-left: 1px solid rgba(88,89,91,.06);
+}
+.bar-cntnt-innerdiv {
+    width: 74%;
+    height: 100%;
+    float: left;
+}
+.bar-cntnt-inner {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.bar-cntnt-outer {
+    height: 100%;
+    position: relative;
+}
+.bar-cnt-inner-dashdiv {
+    border-style: Dashed;
+    border-color: rgba(79, 79, 79, 0.5);
+    border-width: 1px;
+    float: left;
+    margin-top: 18px;
+    width: 100%;
+    position: absolute;
+}
+.bar-cnt-inner-metrc-percnt {
+    width: 64%;
+    height: 22px;
+    position: absolute;
+    top: 0%;
+    float: left;
+    text-align: right;
+    color: #fff;
+    margin-top: 8px;
+    line-height: 0.9em;
+    background-color: #F15F2E;
+    z-index: 100000;
+}
+.bar-cnt-left-metrc-val-brdr {
+    width: 1px;
+    height: 44%;
+    float: left;
+    margin-top: 10px;
+    margin-left: 2px;
+    background: rgba(79, 79, 79, 0.5);
+    box-shadow: 1px 0px 7px #888888;
+}
+
+
+.bar-cntnt-metric-val {
+   width: 11%;
+    color: #58595B;
+    height: 60%;
+    margin-top: 10px;
+    text-align: center;
+    float: left;
+    font-size: 14px;
+}
+.bar-cntnt-metric-brdr {
+    width: 1px;
+    height: 44%;
+    float: left;
+    margin-top: 10px;
+    margin-left: 3%;
+    background: #BAB9B9;
+}
+.bar-cntnt-brder {
+    width: 2px;
+    height: 44%;
+    float: left;
+    margin-top: 10px;
+    opacity: 0.5;
+    background: #BAB9B9;
+}
+.topfdbrdr {
+    margin-left:1px;
+}
+.bar-cntnt-change-val {
+    width: 13%;
+    height: 60%;
+    float: left;
+    font-size: 14px;
+    font-family: Chivo-Regular;
+    margin-top: 10px;
+    text-align:center;
+}
+.topfditemchange {
+    margin-top: 10px;
+    width: 11%;
+    margin-left: 3px;
+}
+.marginforradiotop {
+    margin-left:10px;
+}
+.bar-content-header .half {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+    .bar-content-header .half.two {
+        position:relative;
+    }
+        .radio-click {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            /*top: calc(55% - 8px);*/
+            left: 8px;
+            background-image: url('../Images/P2PDashboardImages/Dine_popup_radio_button.svg');
+            background-repeat: no-repeat;
+        }
+           .two .active {
+                background-image: url('../Images/P2PDashboardImages/Dine_popup_radiobutton_clected.svg')!important;
+                background-repeat: no-repeat;
+                
+            }
+
+           .inner_submit {
+    /* height: auto; */
+    /* width: auto; */
+    margin-left: 45%;
+}
+.submit_popup_div {
+    width:100%;
+    height:30px;
+    float:left;
+    margin-top:9px;
+}
+.submit_popup {
+    background: linear-gradient(0deg, rgba(65, 64, 66, 1) 0%, rgba(128, 130, 133, 1) 100%);
+    width: 97px;
+    height: 27px;
+    float: left;
+    margin-left: 42%;
+    border-radius: 12px 12px 12px 12px;
+}
+
+.inner_submit {
+    font-family: Chivo-Bold;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    cursor: pointer;
+    margin-left: 0px;
+    padding-top: 6px;
+    height: 20px;
+    width: 97px;
+    float: left;
+}
+    .bar-content-header .top {
+        display:block;
+        float:left;
+        width:100%;
+    }
+
+    .shift_down {
+    position: absolute;
+    /* top: 36%; */
+    bottom: 0;
+}
+        .bar-content-header .top.one {
+            height: 57%;
+            font-size: .8em;
+            line-height: 1.2em;
+            width: 90%;
+            font-family:Chivo-Regular;
+                margin-left: 2%;
+                position: relative;
+        }
+
+        .one_right {
+            height: 57%;
+            font-size: .8em;
+            line-height: 1.2em;
+            width: 80%;
+            font-family:Chivo-Regular;
+        }
+
+        .bar-content-header .top.two {
+            height:43%;
+            position:relative;
+        }
+            .bar-content-header .top.two .inner {
+                width: 90%;
+                height: 100%;
+                float: left;
+                position:relative;
+            }
+                .bar-content-header .top.two .inner .metric_val {
+                    width: 95%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0%;
+                    float: left;
+                    text-align: right;
+                    color: #fff;
+                    line-height: 0.9em;
+                    background-color:#414042;
+                        margin-left: 0.5px;
+                }
+                    .bar-content-header .top.two .inner .metric_val div {
+                        position: absolute;
+                        right: 0;
+                        top: calc(50% - 6px);
+                        font-family: Chivo-Bold;
+                    }
+            .bar-content-header .top.two .outer {
+                width: 19%;
+                height: 12px;
+                float: right;
+                position: absolute;
+                font-size: 0.75em;
+                font-family: Chivo-LightItalic;
+                right: 0;
+                top: calc(50% - 6px);
+            }
+    .bar-content-header .bar-containers {
+        width:100%;
+        height:10%;
+        float:left;
+    }
+.sub-content-header1 {
+        bottom: 5px;
+        position: absolute;
+    height: auto;
+    width: 49%;
+    float: left;
+    margin-left: 1%;
+}
+.second_down {
+    /* height: 10px; */
+    font-size: 0.5em;
+}
+.sub-content-header2 {
+        bottom: -13px;
+        position: absolute;
+    height: auto;
+    width: 49%;
+    float: left;
+    margin-left: 50%;
+}
+
+
+.popup-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.post_visit_text1 {
+    font-weight: bold;
+    font-size: .7vw;
+    text-transform: uppercase;
+    color: #414042;
+    width: 65%;
+    height: auto;
+    bottom: -5%;
+    /* margin-top: 5.4%; */
+    float: left;
+    position: absolute;
+}
+
+.POST_VISIT_LOWER_TEXT {
+    width: 8.5%;
+    height: 5%;
+     float: left; 
+    position: absolute;
+    left: 86.5%;
+    top: 83.3%;
+}
+
+.post_visit_text2 {
+    float: left;
+    width: 64%;
+    height: 59%;
+}
+.location-aftr-dyn-txt {
+    width:100%;
+    height:87%;
+    float:left;
+}
+.post-visit-txt-dyn-txt {
+    width:100%;
+    height:100%;
+    float:left;
+}
+.post_visit_percent {
+    font-size: 1vw;
+    font-weight: bold;
+    width: 61%;
+    float: left;
+}
+
+.post_visit_name {
+    font-size: .6vw;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.post_visit_value {
+    float: left;
+    font-size: .6vw;
+    /* margin-top: 10%; */
+    /* margin-left: 21%; */
+    width: 21%;
+    /* height: 100%; */
+    margin-top: 6%;
+}
+.test {
+    width: 10%;
+    height: 10%;
+    float: left;
+    position: absolute;
+    left: 30%;
+    background: red;
+    background-image: url(../Images/P2PDashboardImages/P2P_Icons.svg);
+    background-repeat: no-repeat;
+    background-position: 9% 29%;
+}
+
+/*Ballon Pie Chart and Values with Text Section Added by Bramhanth(30-05-2017)*/
+.ballon-chart-main {
+    width:10%;
+    height:34%;
+    float:left;
+    position:absolute;
+    left: 68%;
+    top: 35%;
+}
+.ballon-chart-main-div {
+    height: 25%;
+    width: 100%;
+    float: left;
+    position: absolute;
+}
+.bln-pie_chart-section {
+    width: 24%;
+    height: 100%;
+    float: left;
+}
+.bln-data-icon-sectn {
+    width: 75%;
+    height: 100%;
+    float: left;
+}
+
+.data-icondiv {
+    width: 100%;
+    height: 50%;
+    float: left;
+}
+.dataval-sgnidiv {
+    width: 96%;
+    margin-left: 4%;
+    height: 50%;
+    float: left;
+}
+.data-icon {
+    width: 27.8%;
+    height: 100%;
+    float: left;
+    font-size: 1vw;
+    font-weight: bold;
+    background-image: url('../Images/P2PDashboardImages/P2P_Icons.svg');
+    background-repeat:no-repeat;
+    background-position:center;
+}
+ .data-val {
+    width: 48%;
+    height: 100%;
+    float: left;
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+.data-text {
+    margin-top: 12%;
+    width: 63.2%;
+    height: auto;
+    float: left;
+    font-weight: bold;
+    font-size: .7vw;
+    text-transform: uppercase;
+    color: #414042;
+    left: 52%;
+    position: absolute;
+    bottom: 55%;
+}
+.data-sgnif {
+    width: 49%;
+    height: 53%;
+    float: left;
+    font-style: italic;
+    font-size: .6vw;
+    margin-top: 6%;
+}
+.road_3_0, .road_4_0 {
+    top: 7%;
+}
+.road_3_1 {
+    top: 41%;
+}
+.road_4_1 {
+    top: 28%;
+}
+.road_4_2 {
+    top: 52%;
+}
+.road_3_2, .road_4_3 {
+    top: 76%;
+}
+
+
+
+.green {
+   color:#009444 !important;
+}
+.red {
+    color:#ed1c24;
+}
+.Delivery_img {
+    width: 21%;
+    margin-top: 0%;
+    margin-left: 4%;
+    background-position-y: bottom;
+    background-image: url(../Images/P2PDashboardImages/P2P_Delivery.svg);
+}
+.Take-Out_img {
+    margin-top: 0%;
+    margin-left: 4%;
+    background-position-y: bottom;
+    background-image: url(../Images/P2PDashboardImages/P2P_Take_Out.svg);
+}
+.Drive-Thru_img {
+    margin-top: -1%;
+    margin-left: 4%;
+    background-position-y: bottom;
+    background-image: url(../Images/P2PDashboardImages/P2P_Drive_Thru.svg);
+}
+.Dine-In_img {
+    margin-top: -3%;
+    margin-left: 4%;
+    background-position: bottom;
+    background-image: url(../Images/P2PDashboardImages/P2P_Dine_In.svg);
+}
+/*Ballon Pie Chart and Values with Text Section Added by Bramhanth(30-05-2017)*/
+
+/*Meal Type Section Added by Bramhanth(31-05-2017)*/
+.meal-maindiv {
+    width: 11%;
+    height: 19%;
+    float: left;
+    position: absolute;
+    left: 20.2%;
+    top: 45%;
+}
+.meal-sectin {
+    width: 100%;
+    height: 20%;
+    float: left;
+    position: relative;
+}
+.meal-type-val {
+    width: 31%;
+    height: 75%;
+    float: left;
+    margin-top: 1%;
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: #fff !important;
+    text-align: center;
+    position: relative;
+}
+.meal-type-txt-chge {
+    width: 66%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.meal-type-txt {
+    width: 100%;
+    height: auto;
+    float: left;
+    font-size: .7vw;
+    font-weight: bold;
+    margin-left: 4%;
+    /* margin-top: 2%; */
+    bottom: 48%;
+    position: absolute;
+}
+.meal-type-chge {
+    width: 97%;
+    float: left;
+    height: 50%;
+    font-size: .6vw;
+    /* margin-top: 3%; */
+    margin-left: 5%;
+    font-style: italic;
+    position: absolute;
+    top: 66%;
+}
+.meal-type0 {
+    top: 0%;
+}
+.meal-type1 {
+    top:1%;
+}
+.meal-type2 {
+    top:1%;
+}
+.meal-type3 {
+    top: 2%;
+}
+.meal-type4 {
+    top: 3%;
+}
+/*Meal Type Section Added by Bramhanth(31-05-2017)*/
+
+/*Satisfaction Drivers Added by Bramhanath(01-06-2017)*/
+.satifctn-drvrs {
+    width: 29.5%;
+    height: 17%;
+    float: left;
+    position: absolute;
+    left: 40.3%;
+    top: 81.6%;
+    display: none;
+}
+.satifctn-drvrs-hding {
+    width: 94%;
+    height: auto;
+    float: left;
+    font-size: .67vw;
+    font-weight: bold;
+    /* margin-top: 2.5%; */
+    margin-left: 2.5%;
+    position: absolute;
+    bottom: 79%;
+}
+.satifctn-drvrs-contnt {
+    width: 100%;
+    height: 76%;
+    float: left;
+    top: 21%;
+    position: absolute;
+}
+.content0, .content1, .content2, .content3, .content4, .content5 {
+    width: 16.44%;
+    height: 100%;
+    float: left;
+}
+/*.content0, .content2 {
+    margin-left: 4%;
+}
+.content1, .content3 {
+    margin-left: 0%;
+}
+.content4 {
+    margin-left: 2%;
+}
+.content5 {
+    margin-left: 3%;
+}*/
+.satifctn-drvr_img {
+    width: 100%;
+    height: 40%;
+    float: left;
+    margin-top: 8%;
+}
+.satifctn-drvrs-text {
+    /*width: 85%;
+    float: left;
+    height: 10%;
+    font-weight: bold;
+    font-size: .6vw;
+    margin-left: 14%;
+    text-transform: initial;*/
+    width: 100%;
+    text-align: center !important;
+    float: left;
+    height: 10%;
+    font-weight: bold;
+    font-size: .6vw;
+    /* margin-left: 14%; */
+    text-transform: initial;
+}
+/*.content1 .satifctn-drvrs-val {
+    margin-left: 15%;
+}
+.content1 .satifctn-drvrs-change {
+    margin-left: 9%;
+}
+.content3 .satifctn-drvrs-val {
+   margin-left:19%;
+}
+.content3 .satifctn-drvrs-change {
+    margin-left: 15%;
+}
+.content4 .satifctn-drvrs-val {
+   margin-left:24%;
+}
+.content4 .satifctn-drvrs-change {
+    margin-left: 20%;
+}
+.content5 .satifctn-drvrs-val {
+    margin-left: 8%;
+}
+.content5 .satifctn-drvrs-change {
+    margin-left: 5%;
+}*/
+.satifctn-drvrs-val {
+    width: 100%;
+    float: left;
+    height: 17%;
+    font-size: 1vw;
+    font-weight: bold;
+    /* margin-left: 5px; */
+    text-align: center !important;
+}
+.satifctn-drvrs-change {
+    width: 100%;
+    float: left;
+    height: 9%;
+    font-size: .5vw;
+    text-align: center !important;
+    margin-top: 7%;
+    font-style:italic;
+}
+.content_img {
+    /*width: 100%;
+    height: 100%;
+    float: left;*/
+    width: 100%;
+    height: 90%;
+    /* box-sizing: border-box; */
+    /* padding-top: 10%; */
+    float: left;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+.img_0 {
+    /*width: 100%;
+    height: 100%;
+    float: left;*/
+    background-image: url(../Images/P2PDashboardImages/P2P_Food.svg);
+    /*background-repeat:no-repeat;
+    margin-left:9%;*/
+}
+.img_1 {
+    /*width: 40%;
+    height: 100%;
+    float: left;*/
+    background-image: url(../Images/P2PDashboardImages/P2P_Beverages.svg);
+    bac/*kground-repeat: no-repeat;
+    margin-left: 59%;*/
+}
+.img_2 {
+    /*width: 96%;
+    margin-top: 20%;
+    height: 83%;
+    margin-left: 17%;
+    float: left;*/
+    background-image: url(../Images/P2PDashboardImages/P2P_Value.svg);
+    /*background-repeat: no-repeat;*/
+}
+.img_3 {
+    /*width: 100%;
+    height: 100%;
+    float: left;*/
+    background-image: url(../Images/P2PDashboardImages/P2P_Cleanliness.svg);
+    /*background-repeat: no-repeat;
+    margin-left: 56%;*/
+}
+.img_4 {
+    /*width: 100%;
+    height: 69%;
+    float: left;*/
+    background-image: url(../Images/P2PDashboardImages/P2P_Atmosphere.svg);
+    /*background-repeat: no-repeat;
+    margin-top: 23%;
+    margin-left: 54%;*/
+}
+.img_5 {
+    /*width: 100%;
+    height: 100%;
+    float: left;*/
+    background-image: url(../Images/P2PDashboardImages/P2P_Service.svg);
+    /*background-repeat: no-repeat;
+    margin-left: 37%;*/
+}
+
+.establishmt_img_div {
+    width: 7%;
+    height: 12%;
+    position: absolute;
+    left: 43.5%;
+    top: 51%;
+}
+#establishmt_img {
+    width: 94%;
+    height: 100%;
+    float: left;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    margin-left: 1%;
+}
+.applebees_img {
+     background-image: url('../Images/P2PDashboardImages/Establishment_Items/applebees_Logo.svg');
+}
+/*Satisfaction Drivers Added by Bramhanath(01-06-2017)*/
+
+/*Font size consistency @PKR*/
+/*.all_meric_per {
+    font-size:1.17vw !important;
+    font-family: 'Chivo-Bold';
+}
+.all_sig_text {
+    font-size: 0.55vw !important;
+    font-style: italic !important;
+}
+.all_static_head_text {
+    font-size: 1.17vw !important;
+    font-weight: bold;
+    font-family: 'Chivo-Black';
+}
+.all_sub_head {
+    font-size: 0.74vw !important;
+    font-weight: bold !important;
+    font-family: 'chivo-bold';
+    color: #414042 !important;
+    line-height: 0.7vw;
+}
+.all_sub_text {
+    font-family: 'Chivo-Regular' !important;
+    font-size: 0.65vw !important;
+    line-height: 0.57vw !important;
+    color: #414042 !important;
+    font-weight: normal !important;
+    text-transform: none !important;
+}*/
+.all_meric_per {
+    font-size: 1.17em !important;
+    font-family: 'Chivo-Bold';
+    color: #414042;
+    text-align: left;
+}
+.all_sig_text {
+    font-size: 0.7em !important;
+    font-style: italic !important;
+    text-align: left;
+}
+.all_static_head_text {
+    font-size: 1.17em !important;
+    font-weight: bold;
+    font-family: 'Chivo-Black';
+    color: #414042 !important;
+}
+.all_sub_head {
+    font-size: 0.73em !important;
+    font-weight: bold !important;
+    font-family: 'chivo-bold';
+    color: #414042 !important;
+    line-height: 1em;
+    text-align: left;
+}
+.all_sub_text {
+    font-family: 'Chivo-Regular' !important;
+    font-size: 0.78em !important;
+    line-height: 0.9em !important;
+    color: #414042 !important;
+    font-weight: normal !important;
+    text-transform: none !important;
+    text-align: left;
+}
+/*Font size consistency @PKR*/
+/*Satisfaction Drivers Added by Bramhanath(01-06-2017)*/
+
+/*Top Food And Beverage Item Added by Bramhanath(05-06-2017)*/
+.food-n-bevge-main {
+    width: 11%;
+    height: 24%;
+    float: left;
+    position: absolute;
+    left: 31.2%;
+    top: 38%;
+    display:none;
+}
+.food-n-bevge-text {
+    width: 85%;
+    height: 24%;
+    float: left;
+    position: relative;
+}
+    .food-n-bevge-text .txt {
+        font-size: 0.8vw;
+        font-weight: bold;
+        margin-left: 6%;
+        /* margin-top: 5%; */
+        position: absolute;
+        bottom: 19%;
+    }
+.food-n-bevge-content {
+       width: 100%;
+    height: 75%;
+    float: left;
+}
+.bevge-content, .food-content {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.bevg-img-plusicon, .food-img-plusicon {
+    width: 100%;
+    height: 44%;
+    float: left;
+}
+.food-plusicon {
+    width: 12%;
+    height: 22%;
+    float: left;
+    margin-left: 4%;
+    background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+    background-repeat: no-repeat;
+    margin-top: 38%;
+}
+.bevg-plusicon {
+    width: 16%;
+    height: 21%;
+    margin-top: 38%;
+    margin-left: 3%;
+    float: left;
+    background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+    background-repeat: no-repeat;
+}
+#bevg-img {
+    width: 49%;
+    height: 97%;
+    margin-left: 24%;
+    float: left;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+#food-img {
+    width: 64%;
+    height: 87%;
+    margin-top: 8%;
+    margin-left: 11%;
+    float: left;
+}
+#bevg-imgdiv, #food-imgdiv {
+    width: 100%;
+    height: 100%;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+}
+.bevg-metricval, .food-metricval {
+    width: 98%;
+    float: left;
+    height: 18%;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: bolder;
+}
+.food-metricval {
+    width:90%;
+}
+.bevg-change-sign, .food-change-sign {
+    float: left;
+    height: 10%;
+    width: 86%;
+    text-align: center;
+    font-size: .51vw;
+    font-style: italic;.food-plusicon
+}
+.food-change-sign {
+     width:80%;
+}
+.bevg-name, .food-name {
+    width: 100%;
+    height: 26%;
+    padding-right: 3px;
+    padding-left: 3px;
+    box-sizing: border-box;
+    font-size: .55vw;
+    float: left;
+    text-align: center;
+    word-break: break-word;
+    font-weight: bold;
+    text-transform: initial;
+}
+/*Top Food And Beverage Item Added by Bramhanath(05-06-2017)*/
+
+/* Occasional, Outlet & Overall Mood Added by Bramhanath(05-06-2017)*/ 
+.occsn-oulet-Ovrll {
+    width: 12%;
+    height: 25%;
+    float: left;
+    left: 59%;
+    top: 4.3%;
+    position: absolute;
+    display:none;
+}
+.occsn-mot-main {
+    width: 100%;
+    height: 32%;
+    float: left;
+}
+.outlt-mot-main {
+    width: 100%;
+    height: 33%;
+    float: left;
+}
+.occsn-metrval-sign-mot, .outlt-metrval-sign-mot, .ovrl-metrval-sign-mot {
+    width: 73%;
+    height: 100%;
+    float: left;
+}
+.outlt-mot-main {
+    margin-top: 0.9%;
+}
+.ovrl-mot-main {
+    margin-top: .6%;
+}
+.ovrl-mot-main {
+    width: 100%;
+    height: 33%;
+    float: left;
+}
+.occsn-mot-txt-div, .outlt-mot-txt-div, .ovrl-mot-txt-div {
+    width:100%;
+    height:35%;
+    float:left;
+    position: relative;
+}
+
+.occsn-mot-txt, .outlt-mot-txt, .ovrl-mot-txt {
+    width: 80%;
+    height: auto;
+    float: left;
+    font-size: .8vw;
+    font-weight: bold;
+    margin-left: 5%;
+    position: absolute;
+    bottom: 5%;
+    /* margin-top: 2.8%; */
+}
+.occsn-mot-txt {
+    bottom:6%;   
+}
+.outlt-mot-txt {
+    width: 70%;
+}
+.ovrl-mot-txt {
+    width: 53%;
+}
+.occsn-plusicn, .outlt-plusicn, .ovrl-plusicn {
+    width: 12%;
+    height: 59%;
+    float: left;
+    cursor: pointer;
+    /* margin-top: 2.3%; */
+    top: 29%;
+    left: 80%;
+    position: absolute;
+    background-image: url(../Images/P2PDashboardImages/Dine_blue_cross.svg);
+    background-repeat: no-repeat;
+}
+.occsn-img-metricvaldiv, .outlt-img-metricvaldiv, .ovrl-img-metricvaldiv {
+    width:100%;
+    height:65%;
+    float:left;
+}
+.occsn-img, .outlt-img, .ovrl-img, #outlt-img, #occsn-img, #ovrl-img {
+    width: 21%;
+    height: 72%;
+    float: left;
+    margin-top: 3%;
+    background-repeat: no-repeat;
+    margin-left: 3%;
+}
+
+.occsn-img, #occsn-imgdiv {
+    width: 100%;
+    background-image: url(../Images/P2PDashboardImages/Dine_Occasion_Motivation.svg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+.outlt-img, #outlt-imgdiv {
+    /*margin-left: 7%;*/
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-image: url('../Images/P2PDashboardImages/Dine_Outlet_Motivation.svg');
+}
+.where_i_could_get_something_quick_img {
+}
+
+.ovrl-img, #ovrl-imgdiv {
+    width: 100%;
+    background-image: url(../Images/P2PDashboardImages/Dine_Overall_Mood_Motivation.svg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+.occsn-metricvaldiv-txt, .outlt-metricvaldiv-txt, .ovrl-metricvaldiv-txt {
+    width: 100%;
+    height: 55%;
+    float: left;
+}
+.occsn-metrival, .outlt-metrival, .ovrl-metrival {
+    width: 36%;
+    height: 100%;
+    float: left;
+    font-size: 1vw;
+    font-weight: bolder;
+}
+.occsn-metricnme, .outlt-metricnme, .ovrl-metricnme {
+    width: 100%;
+    font-size: .6vw;
+    height: 76%;
+    float: left;
+    text-transform: initial;
+}
+.occsn-sign, .outlt-sign, .ovrl-sign {
+    width: 25%;
+    height: 45%;
+    float: left;
+    font-size: .6vw;
+    font-style: italic;
+    margin-top: 6%;
+}
+/* Occasional, Outlet & Overall Mood Added by Bramhanath(05-06-2017)*/ 
+
+.samplesize-note {
+    width: 20px;
+    float: left;
+    height: 11px;
+    font-weight: bold;
+    background-image: url('../Images/P2PDashboardImages/Dine_grey cross.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#samplesize, #NoteSample {
+    margin-right: 164px;
+}
+
+.est-text {
+    position: relative !important;
+}
+/*Custom Base Start*/
+.dashboard-custom-base {
+    /*display: none;
+    position: fixed;
+    height: 500px;
+    min-width: 280px;
+    max-width: calc(100% - 100px);
+    width: 278px;
+    left: 50px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    z-index: 1010;*/
+    /*display: none;
+    position: fixed;
+    height: 100%;
+    /* min-width: 280px; */
+    /* max-width: calc(100% - 100px); */ /*
+    width: calc(100% - 130px);
+    left: 50px;
+    top: -17.2%;
+    transform: translate(0%, -50%);
+    z-index: 1010;*/
+    display: none;
+    position: absolute;
+    height: 0%;
+    /* min-width: 280px; */
+    /* max-width: calc(100% - 100px); */
+    width: calc(100% - 130px);
+    left: 50px;
+    top: 0px;
+    /* transform: translate(0%, -50%); */
+    z-index: 1010;
+}
+
+.mainCustomWrapper {
+    height:0px;
+    width:0px;
+}
+    .mainCustomWrapper .lft-ctrl3 {
+        /*margin-top: 50% !important;
+        transform: translate(0%, -50%);
+        top:29.49%;
+        left: 5%;*/
+        /* margin-top: 50% !important; */
+        /* transform: translate(0%, -50%); */
+        top: auto;
+        bottom: -645px;
+        left: 5%;
+    }
+.custom-popup-header {
+    width: 100%;
+    height: 10%;
+    position: relative;
+    text-align: center;
+}
+.custom-top-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 70%;
+}
+.mainCustomWrapper .lft-ctrl3 .popup-header {
+    top: -1%;
+}
+.custom-top-btm-brdr {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 10%;
+    border-bottom: 1px solid #222;
+    box-shadow: 0px 1px 0 rgba(98,98,98,.5);
+}
+.mainCustomWrapper .lft-ctrl3-content {
+   height:80%; 
+}
+.mainCustomWrapper .lft-popup-col {
+    height: 83%;
+}
+.custom-cancel-submit {
+    position: absolute;
+    bottom: 0%;
+    width: calc(100% - 23px);
+    height: 7%;
+    float: left;
+    text-align: center;
+}
+    .custom-cancel-submit .custom-cancel {
+        position: relative;
+        margin-right: 10px;
+        float: right;
+        width: 50px;
+        height: 22px;
+        font-size: 10px;
+        box-shadow: 0px 3px 0px rgba(198, 197, 196, 0.5);
+        cursor: pointer;
+        color: #FFFFFF;
+        text-shadow: 0.5px 0.5px 2px rgba(33, 30, 30, 0.7);
+    }
+    .custom-cancel-submit .custom-submit {
+        position: relative;
+        float: right;
+        background: linear-gradient(0deg, rgba(152, 29, 32, 1) 0%, rgba(218, 32, 40, 1) 91.94%);
+        width: 62px;
+        height: 22px;
+        font-size: 10px;
+        color: #FFFFFF;
+        text-shadow: 0.5px 0.5px 2px rgba(33, 30, 30, 0.7);
+        box-shadow: 0px 3px 0px rgba(198, 197, 196, 0.5);
+        cursor: pointer;
+    }
+.custom-top-text .small {
+    font-size: 10px;
+    line-height:10px;
+}
+.custom-bottom-border {
+    position: absolute;
+    bottom: 9%;
+    width: calc(100% - 10px);
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid #222;
+    box-shadow: 0px 1px 0 rgba(98,98,98,.5);
+}
+.custom-submit-inner {
+    height:100%;
+    width: 100%;
+    position: relative;
+    box-shadow: 1px 1px 2px rgba(35, 31, 32, 0.5);
+}
+.mainCustomWrapper .lft-popup-col1 .lft-popup-ele {
+    height: 85px;
+    width: 120px;
+    position: relative;
+    margin: auto;
+    border: 1px solid #666466;
+    margin-top: 8%;
+}
+.mainCustomWrapper .lft-popup-col1 .lft-popup-ele-label-img {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -70%);
+}
+.mainCustomWrapper .lft-popup-col1 .lft-popup-ele-label {
+    position: absolute;
+    width: 90%;
+    height: 30%;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+}
+.mainCustomWrapper .lft-popup-col1 .lft-popup-ele-next {
+   position: absolute;
+    width: 27px;
+    height: 85px;
+    text-align: center;
+    left: 120%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+}
+/*Custom Base Start*/
+
+.dashboard-custom-base .nicescroll-cursors {
+    background-color: #fff !important;
+}
+.Custom_Base_topdiv_element .filter-info-panel-txt-del {
+    display: none;
+}
+
+/*Css For popups*/
+.null-error-popup .save-reportPopup {
+        height: 200px;
+}
+.null-error-popup .report-selection {
+    height: 35px;
+}
+.null-error-popup .list-of-nulls {
+height:0px;
+}
+.null-error-popup .stat-closebtn {
+    display:none;
+}
+.null-error-popup .proceed-text {
+    position: relative;
+    left: 3%;
+    width: 50%;
+    height: 50px;
+    float: left;
+    font-size: 9px;
+    width: 100%;
+    height: 15px;
+    margin-top: 7px;
+}
+
+.popup_css {
+    background: #393539;
+    color: white;
+    width: 500px;
+}
+
+.popup_css_header {
+    width: 96%;
+    padding-bottom: 5px;
+    height: 25px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background: #393539;
+    border-bottom: none;
+}
+
+.popup1 {
+    border-bottom: 1px solid #666466;
+    /*width: 92%;*/
+    line-height: 17px;
+}
+.topband {
+    width: 100%;
+}
+
+.heading_text {
+    font-size: 12.5px;
+    /*text-transform: none;*/
+    font-weight: normal;
+    width: 100%;
+    line-height: 16px;
+    padding-bottom: 10px;
+    /* box-sizing: border-box; */
+    border-bottom: 1px dashed #fff;
+}
+
+.content_css {
+    margin-top: 10px;
+    margin-left: 18px;
+    height: 163px;
+    width: 510px;
+}
+
+.submit_cancel_btn {
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.stat-popup .proceed-text {
+    width: 100%;
+    height: 15px;
+    font-size: 9px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 7px;
+}
+.save-popup-btn {
+    left: 50%;
+    top: 70%;
+    width: 70px;
+    transform: translateX(-50%);
+    position:absolute;
+}
+.stat-topdiv {
+    width: 100%;
+}
+.cancel-proceed-btn,.save-proceed-btn {
+    width:70px;
+    margin-left:-5px;
+}
+
+.list-of-low-SS {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 42%;
+}
+    .list-of-low-SS .ind-item {
+        display: block;
+        float: left;
+        width: 100%;
+        height: 30px;
+        font-size: 12px;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+.save-popup-btn.useDirectionally {
+    top: 55% !important;
+}
+.null-error-popup .save-reportPopup.useDirectionally {
+    height: 110px !important;
+}
+/*Css For popups*/
+
+.sampleSizeNote {
+    padding-top: 2px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,49 @@
+2021-04-22 12:26:34,512 [8] DEBUG  Application (null) (null) - SP :USP_SituationAssesmentReport_CoreGuest_Demographics
+
+2021-04-22 12:26:34,574 [8] DEBUG  Application (null) (null) - param :12MMT Dec 2019,12 MMT,,488|521|534|580|525|578|471|390|544|553,6,1
+
+2021-04-22 12:26:36,933 [8] DEBUG  Application (null) (null) - 
+ Sp executed 
+
+2021-04-22 12:26:36,942 [6] DEBUG  Application (null) (null) - Sp number 0
+
+2021-04-22 12:26:39,641 [7] DEBUG  Application (null) (null) - SP :USP_SituationAssesmentReport_CoreGuest_HEC
+
+2021-04-22 12:26:39,642 [7] DEBUG  Application (null) (null) - param :12MMT Dec 2019,12 MMT,,488|521|534|580|525|578|471|390|544|553,6,1
+
+2021-04-22 12:26:39,644 [7] DEBUG  Application (null) (null) - 
+ Sp executed 
+
+2021-04-22 12:26:39,647 [7] DEBUG  Application (null) (null) - Sp number 2
+
+2021-04-22 12:26:39,650 [10] DEBUG  Application (null) (null) - SP :USP_SituationAssesmentReport_CoreGuest_Digitalpage
+
+2021-04-22 12:26:39,653 [10] DEBUG  Application (null) (null) - param :12MMT Dec 2019,12 MMT,,488|521|534|580|525|578|471|390|544|553,6,1
+
+2021-04-22 12:26:41,083 [10] DEBUG  Application (null) (null) - 
+ Sp executed 
+
+2021-04-22 12:26:41,086 [6] DEBUG  Application (null) (null) - Sp number 2
+
+2021-04-22 12:26:41,270 [8] DEBUG  Application (null) (null) - SP :USP_SituationAssesmentReport_CoreGuest_DinerSegments
+
+2021-04-22 12:26:41,272 [8] DEBUG  Application (null) (null) - param :12MMT Dec 2019,12 MMT,,488|521|534|580|525|578|471|390|544|553,6,1
+
+2021-04-22 12:26:42,015 [8] DEBUG  Application (null) (null) - 
+ Sp executed 
+
+2021-04-22 12:26:42,019 [6] DEBUG  Application (null) (null) - Sp number 3
+
+2021-04-22 12:26:42,080 [7] DEBUG  Application (null) (null) - SP :USP_SituationAssesmentReport_CoreGuest_AttitudinalStatements
+
+2021-04-22 12:26:42,083 [7] DEBUG  Application (null) (null) - param :12MMT Dec 2019,12 MMT,,488|521|534|580|525|578|471|390|544|553,6,1
+
+2021-04-22 12:26:44,055 [7] DEBUG  Application (null) (null) - 
+ Sp executed 
+
+2021-04-22 12:26:44,072 [6] DEBUG  Application (null) (null) - Sp number 4
+
+2021-04-22 12:26:44,559 [7] DEBUG  Application (null) (null) - SP :USP_SituationAssesmentReport_CoreGuest_Geography
+
+2021-04-22 12:26:44,561 [7] DEBUG  Application (null) (null) - param :12MMT Dec 2019,12 MMT,,488|521|534|580|525|578|471|390|544|553,6,1
+

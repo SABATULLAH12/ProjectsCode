@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = Dine.Utility.Constants.ToolTitlePrefix + "Situation Assessment Report";
+    Layout = "~/Views/Shared/_ReportLayout.cshtml";
+}
+<style type="text/css">
+    .timperiodpittrend, .submodule-border-bottom, .submodules-options, .list_content, .link_hover {
+        display: none !important;
+    }
+    
+</style>
+<link href="~/Content/reportsituation.css" rel="stylesheet" />
+@*<script src="~/Scripts/report_Diner.js"></script>
+    <script src="~/Scripts/reportdinerreport.js"></script>*@
+@System.Web.Optimization.Scripts.Render("~/bundle/jreportdiner")
+@System.Web.Optimization.Scripts.Render("~/bundle/jreportsituation")
+@System.Web.Optimization.Styles.Render("~/bundle/sreportsituation")
+@*<script src="@Utils.ContentVersioned("~/Scripts/report_Diner.js")"></script>
+    <script src="@Utils.ContentVersioned("~/Scripts/reportdinerreport.js")"></script>*@
+
+<style type="text/css">
+    .slidename {
+        margin-top: 9px;
+        margin-left: 5px;
+        float: left;
+    }
+
+    .chkboximg {
+        margin-top: 7px;
+    }
+    .diner-statlayer, .custom_download, .downloadall, .benchmark_img {
+    display: none !important;
+}
+</style>

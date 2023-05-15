@@ -1,0 +1,295 @@
+﻿html, body {
+    height: 100%;
+    min-height: 600px;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    font-family: Calibri;
+    font-size: 1vw;
+}
+
+label {
+    padding-right: 0.2%;
+}
+
+.configuration-form {
+    min-height: 75%;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.config-header {
+    font-size: 1.8vw;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    text-align: center;
+    bordeR: black solid 2px;
+}
+
+.config-module {
+    float: left;
+    margin: 8px;
+    font-size: 1.3vw;
+    width: 93%;
+}
+
+    .config-module span {
+        float: left;
+        width: 30%;
+    }
+
+
+.modules-text {
+    float: left;
+    width: 67%;
+}
+
+.modules-label {
+    float: left;
+    width: 20%;
+}
+
+
+.config-filter-content {
+    margin-left: 2%;
+    font-size: 1.3vw;
+    float: left;
+    width: 93%;
+    margin-bottom: 1%;
+}
+
+.config-filter-content-label {
+    margin-right: 2%;
+    float: left;
+    width: 10%;
+}
+
+.config-filter {
+    float: left;
+    width: 15%;
+}
+
+.config-content {
+    float: left;
+    width: 13%;
+}
+
+.config-filter-content-input {
+    float: left;
+    margin-right: 5%;
+}
+
+.config-procedure-detail {
+    float: left;
+    width: 93%;
+    height: 6%;
+    font-size: 1.3vw;
+    margin-left: 2%;
+}
+
+.config-procedure {
+    float: left;
+    width: 17%;
+}
+
+.config-procedure-label {
+    float: left;
+    width: 55%;
+}
+
+.config-procedure-input {
+    float: left;
+}
+
+.config-procedure-name {
+    width: 39%;
+    float: left;
+}
+
+.config-procedure-name-input {
+    width: 60%;
+    height: 25px;
+    float: left;
+}
+
+    .config-procedure-name-input select {
+        width: 90%;
+        height: 23px;
+    }
+
+.config-filter-info {
+    float: left;
+    width: 93%;
+}
+
+.config-order-number {
+    float: left;
+    width: 150px;
+    margin-left: 2%;
+}
+
+.config-order-number-label {
+    float: left;
+    margin-left: 2%;
+}
+
+.config-order-number-input input[type="number" i] {
+    float: left;
+    width: 30px;
+    margin-left: 5px;
+}
+
+.config-label {
+    float: left;
+}
+
+.fltr-config-label {
+    float: left;
+    width: 225px;
+}
+
+.config-label-text {
+    float: left;
+    margin-right: 5px;
+}
+
+.config-label-input {
+    float: left;
+}
+
+.config-multiselect, .config-required, .config-image, .config-timeperiod {
+    float: left;
+    min-width: 125px;
+}
+
+.config-filter-label {
+    float: left;
+}
+
+.config-filter-input {
+    float: left;
+}
+
+.config-database {
+    float: left;
+    width: 93%;
+    margin: 0 auto;
+}
+
+.config-db-table, .config-db-primary-key, .config-db-display-text, .config-db-parent-primary-key {
+    width: 50%;
+    float: left;
+    margin-top: 5px;
+}
+
+.config-db-label {
+    width: 160px;
+    float: left;
+}
+
+.config-db-input {
+    float: left;
+    width: 50%;
+    margin-left: 4%;
+}
+
+    .config-db-input select {
+        float: left;
+        width: 90%;
+        height: 23px;
+    }
+
+
+/*Config table*/
+.filter-table {
+    width: 100%;
+    overflow: auto;
+}
+
+    .filter-table table {
+        width: 100%;
+        height: auto;
+    }
+
+    .filter-table td, .filter-table th, .filter-table table {
+        border: solid 1px;
+        border-collapse: collapse;
+        font-size: .9vw;
+    }
+/*end config table*/
+
+.submit-btn {
+    float: right;
+    margin: 2px;
+}
+
+/*Chart/Table content area*/
+.cnt-cnfg-chart-content {
+    display: inline-block;
+    width: 100%;
+    /*height: 100%;*/
+}
+
+.cnt-cnfg-chart-row {
+    display: inline-block;
+    width: 100%;
+    /*height: 100%;*/
+}
+
+.cnt-cnfg-chart-col {
+    min-width: 350px;
+    line-height: 30px;
+}
+
+    .cnt-cnfg-chart-col, .cnt-cnfg-chart-col label, .cnt-cnfg-chart-col input {
+        float: left;
+    }
+
+        .cnt-cnfg-chart-col label {
+            min-width: 130px;
+            text-align: right;
+        }
+
+        .cnt-cnfg-chart-col input {
+            margin-top: 8px;
+        }
+
+.cnt-cnfg-chart-col-list {
+    min-height: 10px;
+    max-height: 100px;
+    float: left;
+    width: 60%;
+    overflow: auto;
+    border: black solid 1px;
+    margin-top: 10px;
+}
+
+    .cnt-cnfg-chart-col-list ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+        .cnt-cnfg-chart-col-list ul li {
+        }
+/*end Chart/Table content area*/
+/* snapshot widget area*/
+
+.cnt-cnfg-ss-row {   
+    float:left;
+}
+.cnt-cnfg-ss-col {
+    float: left;
+    min-width: 105px;
+}
+.cnt-cnfg-ss-col label{
+    float:left;
+    padding-right: 0;
+
+}
+.cnt-cnfg-ss-col input{
+    float:left;
+}
+
+/* end snapshot widget area*/

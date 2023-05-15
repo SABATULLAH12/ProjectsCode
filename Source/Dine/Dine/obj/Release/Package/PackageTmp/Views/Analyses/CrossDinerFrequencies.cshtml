@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CrossDinerFrequencies";
+    Layout = "~/Views/Shared/_AnalysesLayout.cshtml";
+}
+<style type="text/css">
+    .timperiodpittrend {
+        display: none;
+    }
+
+    .submodule-border-bottom, .submodules-options {
+        display: none !important;
+    }
+
+    .ppt-logo {
+        visibility: hidden;
+        display: none;
+    }
+
+    .adv-fltr-top {
+        display: none;
+    }
+</style>
+<h2>CrossDinerFrequencies</h2>
+@*<script src="~/Scripts/analyses_crossdinerfreqcy.js"></script>*@
+@System.Web.Optimization.Scripts.Render("~/bundle/janalysescrssfrqcncy");
+

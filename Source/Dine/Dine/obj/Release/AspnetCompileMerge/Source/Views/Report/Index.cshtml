@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = Dine.Utility.Constants.ToolTitlePrefix + "Report";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<div ng-controller="reportController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band"></div>
+        <div class="submodules-options">
+            <ul>
+                <li class="link_hover">
+                    <div class="link_items standard_report_link standard_report_link-msehover classMouseHover">Standard Reports</div>
+                    <div class="list_content">
+
+                        
+                    <div class="submodules-options-link report-link-dinereport report-link-dinereport-msehover classMouseHover">@Html.ActionLink("Path To Purchase Report", "P2PReport", "Report")</div>@*@Html.ActionLink("Dine Reports", "DineReport", "Report")*@
+                    <div class="submodules-options-link report-link-summaryreport report-link-summaryreport-msehover classMouseHover">@Html.ActionLink("Diner Report", "DinerReport", "Report")</div>@*@Html.ActionLink("Summary Reports", "SummaryReport", "Report")*@@*<a href="#">Diner Report</a>*@
+    </div>
+                </li>
+                <li class="link_hover">
+                    <div class="link_items storyboard_link storyboard_link-msehover classMouseHover">@Html.ActionLink("Saved Reports", "Story", "StoryBoard")</div>
+                </li>
+            </ul>
+        </div>
+        <div class="submodule-border-bottom"></div>
+    </div>
+    <div class="red_bar"></div>
+    </div>
+ @System.Web.Optimization.Styles.Render("~/bundle/sreport")
+<script src="~/Scripts/report_Diner.js"></script>

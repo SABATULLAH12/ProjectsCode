@@ -1,0 +1,33 @@
+﻿{
+  "IsProcedure": true,
+  "Procedure": null,
+  "Filter": {
+    "IsFilterProcedure": false,
+    "ProcedureName": null,
+    "Filters": [
+        {
+        "OrderNumber": 1,
+        "Label": "Custom Base",
+        "IsMultiSelect": false,
+        "IsRequired": false,
+        "Image": "establishment_img",
+        "IsTimePeriod": false,
+        "HideTrend": false,
+        "Database": {
+          "Table": "Master_Establishment",
+          "PrimaryKey": "EstablishmentId",
+          "DisplayTextColumnName": "Name",
+          "ParentPrimaryKey": null,
+          "ParentText": "ParentName",
+          "SelectableColumnName":"IsSelectable",
+          "TimeperiodYearBreakUp": null,
+           "IsSubHeading":null,"IsSubHeadingID":null,
+          "WhereCondition": null
+        },
+        "IsFilterBasedOnOtherFilter": false,
+        "Parameters": null
+      }
+    ]
+  },
+  "Widgets": null
+}

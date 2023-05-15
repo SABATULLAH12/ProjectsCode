@@ -1,0 +1,2064 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{38B948D3-63A5-4B2F-9796-A9E25031A75A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dine</RootNamespace>
+    <AssemblyName>Dine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aq.Plugin.AsposeExport, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Aq.Plugin.AsposeExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Aq.Plugin.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Aq.Plugin.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="AQ.Security.Cryptography, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\AQ.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="AQ.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AQ.Utilities.1.0.0\lib\net40\AQ.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AQLogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\AQLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="AqUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\AqUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Slides, Version=15.6.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Aspose.Slides.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.80.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ClosedXML.0.80.1\lib\net40-client\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="dotless.Core, Version=1.5.2.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\dotless.1.5.2\lib\dotless.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="iSHOP.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\iSHOP.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=3.13.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Office.Interop.PowerPoint.15.0.4420.1017\lib\net20\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Practices.EnterpriseLibrary.2008.4.1\lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Practices.EnterpriseLibrary.2008.4.1\lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Practices.EnterpriseLibrary.2008.4.1\lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Practices.EnterpriseLibrary.2008.4.1\lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Practices.EnterpriseLibrary.2008.4.1\lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Practices.EnterpriseLibrary.2008.4.1\lib\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Practices.ObjectBuilder.dll.3.1.0\lib\2.0\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Practices.EnterpriseLibrary.2008.4.1\lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\SpaceTool\Source\Src\Spacetool\Spacetool\Libraries\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\packages\MicrosoftOfficeCore.15.0.0\lib\net35\Office.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RserveCLI2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\RserveCLI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Stats, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Stats.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=2.2.1.39233, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Svg.2.3.0\lib\net35\Svg.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Dataflow.4.9.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization.Less, Version=1.3.0.0, Culture=neutral, PublicKeyToken=9b7581e0240fe480, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Web.Optimization.Less.1.3.4\lib\net40\System.Web.Optimization.Less.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Content\bootstrap-select.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chart.css" />
+    <Content Include="Content\Common.css" />
+    <Content Include="Content\config.css" />
+    <Content Include="Content\home.css" />
+    <Content Include="Content\insightsmeeting.css" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\master-theme.css" />
+    <Content Include="Content\report.css" />
+    <Content Include="Content\analyses.css" />
+    <Content Include="Content\reportsituation.css" />
+    <Content Include="Content\storyboard.css" />
+    <Content Include="Content\table.css" />
+    <Content Include="Content\tablescroller.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\dashboard.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\BrandHealth_Dashboard.jpg" />
+    <Content Include="Images\Coke_Dine_BG.jpg" />
+    <Content Include="Images\coke_logo.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_1Person HHS BarChart Bg_grey.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_1Person HHS BarChart Bg_white.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_2Person HHS BarChart Bg_grey.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_2Person HHS BarChart Bg_white.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_3Person HHS BarChart Bg_grey.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_3Person HHS BarChart Bg_white.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Affluent Home Icon.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Age_PiChart_Bg.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Age_PiChart_Icon.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Average Monthly Channel Visits Bg.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Diner Attitudes BarChart Bg.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Diner Attitudes BarChart left Shadow.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Female.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Gender_PiChart_Bg.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_HouseHold Income Icon1.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_HouseHold Income Icon2.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Male_Icon.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Middle Class Home Icon.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Occupation BarChart Bg.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Occupation BarChart Left Shadow.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Shadow.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Single low Income Home Icon.svg" />
+    <Content Include="Images\Demog\P2P Dashboard elements_Strugglers Home Icon.svg" />
+    <Content Include="Images\Demog_Dashboard.jpg" />
+    <Content Include="Images\Dine Logo_Colour-01.png" />
+    <Content Include="Images\Dine Logo_Colour-01.svg" />
+    <Content Include="Images\DINE-loader.gif" />
+    <Content Include="Dinefavicon.ico" />
+    <Content Include="Images\Dine360 Loader.gif" />
+    <Content Include="Images\DineLogo.png" />
+    <Content Include="Images\DineLogo1.png" />
+    <Content Include="Images\DinerReportsStaticImages\1.png" />
+    <Content Include="Images\DinerReportsStaticImages\10.png" />
+    <Content Include="Images\DinerReportsStaticImages\11.png" />
+    <Content Include="Images\DinerReportsStaticImages\12.png" />
+    <Content Include="Images\DinerReportsStaticImages\13.png" />
+    <Content Include="Images\DinerReportsStaticImages\14.png" />
+    <Content Include="Images\DinerReportsStaticImages\15.png" />
+    <Content Include="Images\DinerReportsStaticImages\16.png" />
+    <Content Include="Images\DinerReportsStaticImages\17.png" />
+    <Content Include="Images\DinerReportsStaticImages\18.png" />
+    <Content Include="Images\DinerReportsStaticImages\19.png" />
+    <Content Include="Images\DinerReportsStaticImages\2.png" />
+    <Content Include="Images\DinerReportsStaticImages\20.png" />
+    <Content Include="Images\DinerReportsStaticImages\21.png" />
+    <Content Include="Images\DinerReportsStaticImages\22.png" />
+    <Content Include="Images\DinerReportsStaticImages\23.png" />
+    <Content Include="Images\DinerReportsStaticImages\24.png" />
+    <Content Include="Images\DinerReportsStaticImages\25.png" />
+    <Content Include="Images\DinerReportsStaticImages\26.png" />
+    <Content Include="Images\DinerReportsStaticImages\27.png" />
+    <Content Include="Images\DinerReportsStaticImages\28.png" />
+    <Content Include="Images\DinerReportsStaticImages\29.png" />
+    <Content Include="Images\DinerReportsStaticImages\3.png" />
+    <Content Include="Images\DinerReportsStaticImages\30.png" />
+    <Content Include="Images\DinerReportsStaticImages\31.png" />
+    <Content Include="Images\DinerReportsStaticImages\32.png" />
+    <Content Include="Images\DinerReportsStaticImages\33.png" />
+    <Content Include="Images\DinerReportsStaticImages\34.png" />
+    <Content Include="Images\DinerReportsStaticImages\35.png" />
+    <Content Include="Images\DinerReportsStaticImages\36.png" />
+    <Content Include="Images\DinerReportsStaticImages\37.png" />
+    <Content Include="Images\DinerReportsStaticImages\38.png" />
+    <Content Include="Images\DinerReportsStaticImages\39.png" />
+    <Content Include="Images\DinerReportsStaticImages\4.png" />
+    <Content Include="Images\DinerReportsStaticImages\40.png" />
+    <Content Include="Images\DinerReportsStaticImages\41.png" />
+    <Content Include="Images\DinerReportsStaticImages\42.png" />
+    <Content Include="Images\DinerReportsStaticImages\5.png" />
+    <Content Include="Images\DinerReportsStaticImages\6.png" />
+    <Content Include="Images\DinerReportsStaticImages\7.png" />
+    <Content Include="Images\DinerReportsStaticImages\8.png" />
+    <Content Include="Images\DinerReportsStaticImages\9.png" />
+    <Content Include="Images\Dine_Sprite_Admin_Sprite.svg" />
+    <Content Include="Images\K&amp;I_Tooltip-19.png" />
+    <Content Include="Images\K&amp;I_Tooltip_18.png" />
+    <Content Include="Images\K&amp;I_Tooltip_Sprite_V3.png" />
+    <Content Include="Images\P2PDashboardEsthmtImages\7-Eleven.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\76.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\99 Cents Only Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\99 Ranch Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\A Plus Mini Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\A Seabra Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\A&amp;P.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\A&amp;W All American Food.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Acme Fresh Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Acme.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Admiral Petroleum.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\AJ%27s Fine Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Albertsons.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\ALDI.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Allsup%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Amazon go.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\American Deli.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\ampm.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Andersons.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Andronico%27s Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Applebee%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Arby%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Arco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Associated Food Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Atlanta Bread Company.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Au Bon Pain.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Auntie Anne%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Aurora Pharmacy.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Back Yard Burgers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\BagelDonut Shop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bahama Breeze.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Baja Fresh Mexican Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bakers Square.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Balducci%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bar Louie.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bartell Drugs.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bashas%27 Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Baskin-Robbins.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Beef %27O%27 Brady%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Beer.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bel Air Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Benihana of Tokyo.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bertucci%27s Italian Restaurant.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\BI-LO.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bi-Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Big Boy or Frisch%27s Big Boy.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Big Lots.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Big Y.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bigg%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bill Miller Bar-B-Q.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\BJ%27s Restaurant &amp; Brewery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\BJ%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Blaze Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Blimpie.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\bloom.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bob Evans Farms.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bodega or Tiendita.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bojangles.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bonefish Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Boston Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bottom Dollar.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\BP.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Braum%27s Ice Cream and Dairy.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bravo! Cucina Italiana.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Brio Tuscan Grille.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bristol Farms.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Brookshire%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bruegger%27s Bagels.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Brunos.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bubba Gump Shrimp Co..svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Bubba Gump Shrimp Co.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Buca di Beppo.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Buehler%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Buffalo Wild Wings.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Burger King.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\BurgerFi.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Buy For Less Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Byerly%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\C-Town Super Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cafe Rio Mexican Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\California Pizza KitchenCPK.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Captain D%27s Seafood Kitchen.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cardenas.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Caribou Coffee.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Carl%27s Jr..svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Carl%27s Jr.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Carrabba%27s Italian Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casey%27s General Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cash &amp; Carry.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cash Wise Food Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining Asian.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining Bar &amp; Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining Italian.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining Mexican.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining Other.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining Seafood.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining Steak &amp; Rib.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Casual Dining.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Central Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Champps Americana.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Charley%27s Grilled Subs or Charley%27s Philly Steaks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Charley%27s Grilled SubsCharley%27s Philly Steaks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Charleys-Philly-Steaks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Checkers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cheddar%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Chevron Extra Mile.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Chevys Fresh Mex.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Chick-fil-A.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Chicken Express.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Chili%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Chipotle Mexican Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Chuck E. Cheese%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Church%27s Chicken.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Chuy%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cici%27s Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cinnabon.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Circle K.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Citgo.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\City Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Claim Jumper.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Club.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Coborn%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\COCO%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Coffee Shop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cold Stone Creamery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Commissary.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Conoco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Convenience.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Convenient Food Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cookout.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Copps.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Core QSR.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Corner Bakery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Corner Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\COSI.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cost Cutter.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Costco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Country Kitchen.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\County Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cracker Barrel Old Country Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Crest Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cub Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Culver%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Cumberland Farms.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\CVS.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\D%27Angelo Grilled Sandwiches.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\D&amp;W Fresh Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dahl%27s Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dairy Mart Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dairy Queen.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dan%27s Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dave &amp; Buster%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dave%27s Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dean &amp; Deluca.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Del Frisco%27s Double Eagle Steak House.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Del Frisco%27s Double Eagle Steak House .svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Del Taco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Denny%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Diamond Shamrock.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dickey%27s Barbecue Pit.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dickey%27s Barbeque Pit.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dierbergs Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dillons.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Discount Drug Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dollar General Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dollar General.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dollar Tree.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dollar.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dominick%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Domino%27s Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Donatos Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Drug.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Duane Reade.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Dunkin%27 Donuts.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\E-Z Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Eat%27n Park.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Econofoods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Einstein Bros Bagels.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\El Pollo Loco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\El Super.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\El Torito.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Elephant Bar Restaurant.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ethnic Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Exxon.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Family Dollar.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Family Fare Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Famous Dave%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fareway Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Farm Fresh.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Farmer Boys.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual Asian.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual BagelBakery CafeSandwichDeli.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual BagelBakery CaféSandwichDeli.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual Burger.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual Chicken.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual Italian.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual Mexican.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual Soup &amp; Salad.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast Casual.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast FoodFast Casual Chicken.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast FoodFast Casual Hamburger.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast FoodFast Casual Mexican.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast FoodFast Casual Other.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fast FoodFast Casual Sandwich.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fazoli%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fiesta Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fine Dining.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Firehouse Subs.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Five Guys Burgers and Fries.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fleming%27s Prime Steakhouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Flying J Travel Plaza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fogo de Chao.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food 4 Less.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food Basics.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food City.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food Emporium.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food Giant.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food Lion.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food Maxx.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food Pavilion.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food Source.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Food World.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Foodland.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Foods Co.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Foodtown.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fred Meyer.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fred%27s Super Dollar Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freddy%27s Frozen Custard &amp; Steakburgers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freebirds World Burrito.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fresh &amp; Easy.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fresh Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freshly Prepared Hot Coffee.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freshly Prepared Hot Tea.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freshly Prepared Iced Coffee.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freshly Prepared Iced Tea.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freshly Prepared Juice Drinks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freshly Prepared Smoothies.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Freshly Squeezed Juice.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Friendly%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Frozen Slushies.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fry%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\FSR.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fuddruckers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Fuzzy%27s Taco Shop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Gas America Mini Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Gelson.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Genuardi%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\GetGo.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\GFS Marketplace.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Giant Eagle.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Giant Food-Carlisle.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Giant Food-Landover.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Giant Oil.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Godfather%27s Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Golden Corral.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Great American Cookie Company.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Green Valley.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Grocery Outlet.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\GroceryMass MerchandiseSupercenter.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Grocery_Lowes Country Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Habit Burger Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Haggen.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Han-Dee Hugo%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Handy Andy Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hannaford.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Happy Harry Discount Drugs.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hard Rock Cafe.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hardee%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Harding%27s Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Harmons Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Harris Teeter.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Harveys.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\HEB.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Heinen%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hen House Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Henry%27s Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hess.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hiller%27s Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Holiday Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Homeland Stores.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\HomeTown Buffet.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hooters.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hot Chocolate_Cocoa.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hot Spot.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Houlihan%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Houston%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Huck%27s Food &amp; Fuel.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Huddle House.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hungry Howie%27s Flavored Crust Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Hy-Vee.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ice CreamYogurt.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\IGA.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\IHOP Restaurant.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\In-N-Out Burger.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ingles Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\J. Alexander%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Jack in the Box.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Jack%27s Family Restaurants.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Jamba Juice.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Jason%27s Deli.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Jay C Food Stores.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Jersey Mike%27s Subs.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Jewel-Osco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Jimmy John%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Joe%27s Crab Shack.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Johnny Carino%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Johnny Rockets.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kangaroo Express.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Karns Quality Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kerr Drug.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Key Food Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\KFC.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\King Kullen.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\King Soopers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kings Super Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kmart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\KmartBig Kmart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Krispy Kreme Doughnuts.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kroger Fuel Center.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kroger.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Krystal.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kum &amp; Go Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kwik Shop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Kwik Trip.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\La Madeleine Country French Cafe.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\La Michoacana.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Large Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Le Pain Quotidien.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Legal Sea Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Lidl.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Lil Cricket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Liquor_Mixed Drinks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Little Caesars.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Loaf n%27 Jug.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Local Farmer%27s Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Logan%27s Roadhouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Lone Star Steakhouse &amp; Saloon.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Long John Silver%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\LongHorn Steakhouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Longs.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Love%27s Country Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Lowes Food Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Luby%27s Cafeteria.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Lucky Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Lunds.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Macey%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Maggiano%27s Little Italy.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mapco Express.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Marathon.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Marc%27s Pharmacy.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Marco%27s Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Marianos.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Marie Callender%27s Restaurant &amp; Bakery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Marie Callender%27s Restaurant and Bakery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Marie Callenders.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Market Basket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Market Street.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mars Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Marsh Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Martin%27s Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mass Merc..svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mass Merc.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Maverick Country Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Max &amp; Erma%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mazzio%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\McAlister%27s Deli.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\McCormick &amp; Schmick%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\McDonald%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Meijer.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mellow Mushroom.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Melting Pot.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Melting Pot .svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Menchie%27s Frozen Yogurt.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Midscale BBQ.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Midscale BuffetCafeteria.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Midscale Family Style.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Midscale.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Military ShoppetteMini Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Milkshake.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Miller%27s Ale House.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mimi%27s Cafe.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Minyard Food Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mitsuwa.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mobil.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\MOD Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Moe%27s Southwest Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Morton%27s The Steakhouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Morton%27s The Steakhouse .svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mrs Winners.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mrs. Winner%27s Chicken &amp; Biscuits.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Mrs. Winner%27s Chicken and Biscuits.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Murphy Express.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Murphy USA.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\National Wholesale Liquidators.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Naturalhealth or organic food store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Navarro Discount Pharmacy.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Newk%27s Eatery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ninety Nine Restaurant &amp; Pub.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Nob Hill Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Noodles &amp; Company.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Northgate.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Nugget Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\O%27Charley’s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ocean State Job Lot.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Old Chicago Pizza &amp; Taproom.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Old Country Buffet.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Olive Garden.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Omaha Steaks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\On The Border Mexican Grill &amp; Cantina.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\On the Run.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Osco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other Alcoholic Beverages.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other Convenience Store or Gas Station Food Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other Dollar Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other Drug Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other Grocery, Mass Merchandise, or Supercenter.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other Mass Merchandise Store Without Full-Line Grocery Section.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other Mass Merchandise Super Center With Full-Line Grocery Section.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other Warehouse Club.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Other.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Outback Steakhouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\P.F. Chang%27s China Bistro.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pak %27N%27 Save Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Palm Restaurant.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pamida.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Panda Express Chinese Kitchen.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Panda Express Gourmet Chinese.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Panera Bread.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Papa Gino%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Papa John%27s Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Papa Murphy%27s Take-n-Bake Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Paradise Bakery &amp; Cafe.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pathmark.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pavilions.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pay Less Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Peet%27s Coffee &amp; Tea.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Peet%27s Coffee and Tea.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Peet%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pei Wei Asian Diner.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Perkins Restaurant &amp; Bakery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Peter Piper Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Petro Express.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Phillips 66.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Piccadilly.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pick %27n Save.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pie Five Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pieology Pizzeria.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Piggly Wiggly.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pilot Travel Centers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pizza Hut.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pizza Place.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pizza Ranch.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\PizzaRev.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Plaid Pantry.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Plain or Flavored Milk.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Plumbs Valu-Rite.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pollo Tropical.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ponderosa Steakhouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Popeyes Louisiana Kitchen.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Portillo%27s Hot Dogs.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Potbelly Sandwich Works.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Pretzel Shop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Price Chopper.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\PriceRite.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Publix.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Qdoba Mexican Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Asian.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Burger.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Chicken.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Coffee.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Donut.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Ice CreamYogurt.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Mexican.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Other.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Sandwich.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Seafood.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR SmoothieJuice.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Snack.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR Soup &amp; Salad.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QSR.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Quaker Steak &amp; Lube.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Quality Food Center.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Quick Chek.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Quik Stop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\QuikTrip.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Quiznos.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\RaceTrac.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Rainbow Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Rainforest Cafe.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Raising Cane%27s Chicken Fingers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Raley%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Rally%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ralphs.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Randalls.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Reams Food Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Red Lobster.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Red Robin Gourmet Burgers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Redner%27s Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Remke Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Restaurants.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Retailers .svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Retailers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Rite Aid.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Roche Bros.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Romano%27s Macaroni Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Rose%27s Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Roth%27s Fresh Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Round Table Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Rouses.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Roy Rogers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Royal Farms.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Rubio%27s Fresh Mexican Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ruby Tuesday.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ruth%27s Chris.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Rutter%27s Farm Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ryan%27s Family Steakhouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\S-Mart Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Safeway Fuel Centers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Safeway.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Saladworks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Saltgrass Steak House.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sam%27s Club.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sarku Japan.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sav-On.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Save Mart Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Save-A-Lot.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sbarro.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Schlotzsky%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Schnucks Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Seasons 52.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sedano%27s Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sentry Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Shake shack.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Shari%27s Cafe Pies.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Shaw%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sheetz.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Shell.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Shoney%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Shop %27n Save.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\ShopKo.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Shoppers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\ShopRite.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Shurfine.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sizzler.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Slim Chickens.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Smallcakes Cupcakery and Creamery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Smart &amp; Final.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Smashburger.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Smith%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Smiths.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Smokey Bones Bar &amp; Fire Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Smoothie King.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Smoothie Shop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sonic.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sonny%27s Real Pit BBQ.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Souplantation.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Speedee Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Speedway.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Spinx.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sprouts.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Star Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Starbucks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Stater Brothers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Stauffers of Kissel Hill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Steak %27n Shake.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Stewart%27s Shops.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Stop &amp; Shop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Stop-N-Go.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Strack &amp; Van Til Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Stripes.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Subway.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sunflower Farmers Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sunoco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Super 1.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Super Fresh.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Super Kmart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Super S Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\SuperAmerica.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Supercenter.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Superior Super Warehouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\SupermarketGrocery.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\SuperTarget.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sweet Tomatoes.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Sweetbay.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\T.G.I. Friday%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Taco Bell.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Taco Bueno.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Taco Cabana Mexican Patio Cafe.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Taco John%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Taco Time.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tap Water.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\TargetSuperTarget.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\TCBY.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ted%27s Montana Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tetco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Texaco.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Texas de Brazil Churrascaria.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Texas de Brazil Churrascaria .svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Texas Roadhouse.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\The Capital Grille.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\The Capital Grille .svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\The Cheesecake Factory.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Thornton%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tijuana Flats.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tim Hortons.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Times.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\TOGO%27S.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tom Thumb Convenience Store.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tom Thumb Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tom%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tony Roma%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Top Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tops.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Torchy%27s Tacos.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Total Dine.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Trade Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Trader Joe%27s Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Travel Centers of America.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Tropical Smoothie Cafe.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Trucchi%27s Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Turkey Hill Minit Markets.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Twin Peaks.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Ultra Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Uni Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\United Dairy Farmers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\United Supermarket.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Uno Chicago Grill.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Valero.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Village Inn.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Village Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Village Pantry.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Vons.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Waffle House.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Waldbaum%27s Super Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Walgreens.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Walmart Neighborhood Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Walmart Supercenter.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\WalmartWalmart Supercenter.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wawa.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wayback Burgers.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wegmans.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Weis Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wendy%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wesco Good Neighbor.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Western Sizzlin.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wetzel%27s Pretzels.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Whataburger.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Which Wich.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\White Castle.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\White Hen Pantry.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Whole Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wienerschnitzel.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wilco Food Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Winco Foods.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wine.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Wingstop.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Winn Dixie.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Woodman%27s Food Market.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\XPECT.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Xtra Mart.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Yard House.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Your Pie Pizza.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Zaxby%27s.svg" />
+    <Content Include="Images\P2PDashboardEsthmtImages\Zoe%27s Kitchen.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\100 Non Orange Juice.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\100 Orange Juice.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Almond Milk.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Beer.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Dairy Alternative.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Drinkable Yogurt.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Energy Drink Shot.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Energy DrinksShots.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Flavored Non-Sparkling Packaged Water.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Flavored Sparkling Water.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Fountain Soda Machine Tea.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Freshly Prepared Hot Coffee.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Freshly Prepared Hot Tea.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Freshly Prepared Iced Coffee.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Freshly Prepared Iced Tea.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Freshly Prepared Juice Drinks.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Freshly Prepared Smoothies.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Freshly Squeezed Juice.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Frozen Slushies.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Hot ChocolateCocoa.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Hot Chocolate_Cocoa.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Lemonade.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Limeade.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Liquor.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\LiquorMixed Drinks.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Liquor_Mixed Drinks.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Meal Replacements.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Milkshake.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Other Alcoholic Beverages.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Other.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Packaged 100 Juice %28Not Orange%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Packaged 100 Orange Juice.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Packaged RTD Tea %28BottleCanCarton%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Plain or Flavored Milk.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Protein Drinks.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Rice Milk.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\RTD Coffee.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\RTD Juice Drink or Ade.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\RTD Smoothies.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\RTD Tea.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Soy Milk.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Sports Drinks.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\SSD Diet.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\SSD Regular.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Tap Water.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Unflavored Non-Sparkling Packaged Water.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Unflavored Sparkling Packaged Water.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Vegetable Juice Vegetable  Juice Blend.svg" />
+    <Content Include="Images\P2PDashboardImages\Beverage_Items\Wine.svg" />
+    <Content Include="Images\P2PDashboardImages\Dashbrd_Popup\close_icon.svg" />
+    <Content Include="Images\P2PDashboardImages\Dashbrd_Popup\header_shadow.svg" />
+    <Content Include="Images\P2PDashboardImages\Dashbrd_Popup\ppt_icon.svg" />
+    <Content Include="Images\P2PDashboardImages\Dashbrd_Popup\radio_btn.svg" />
+    <Content Include="Images\P2PDashboardImages\Dashbrd_Popup\radio_btn_active.svg" />
+    <Content Include="Images\P2PDashboardImages\Dashbrd_Popup\v_shadow.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_BG V3.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_BG2 V3.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_blue_cross.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_carbonated_soft_drink.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_grey cross.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_hamburger.svg" />
+    <Content Include="Images\Dine_visit_pie chart_Bg.svg" />
+    <Content Include="Images\line.png" />
+    <Content Include="Images\P2PDashboardImages\Dine_Occasion_Motivation.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_Order Summary Beverage ONLY.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_Order Summary Food &amp; Beverage.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_Order Summary Food ONLY.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_Outlet_Motivation.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_Overall_Mood_Motivation.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_popup_radiobutton_clected.svg" />
+    <Content Include="Images\P2PDashboardImages\Dine_popup_radio_button.svg" />
+    <Content Include="Images\P2PDashboardImages\Establishment_Items\applebees_Logo.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Asian Entrée %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\B-fast SandwichBurrito %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\BaconSausageHam %28BS%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Bagels %28BB%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Bars %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Bars %28S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Beans %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\BiscuitsGravy %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Bread Items %28BB%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\BrowniesCookies %28D%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Burger %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\CakePieCheesecake %28D%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\CandyGumMints %28S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Cereal %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Cheese Dip %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Cheese Sticks %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Chicken TendersNugg. %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Chicken TendersNuggets %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Chicken Wings %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Chicken Wings %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Chips and Salsa %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Cinnamon RollsDanish %28BB%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Dine_Healthy_Focus_Motivation.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Dine_Meals_HamCheeseburger.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Donuts %28BB%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\EggsOmelet %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\EggSpring Roll %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\French Toast %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Fried Chicken %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\FriesOnion Rings %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\FriesOnion Rings %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Fruit %28BS%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Fruit %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Fruit %28S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Grilled Chicken %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\GritsPotatoes %28BS%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\HotCorn Dog %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Ice CreamFrozen Yogurt %28D%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\MashedBaked Potato %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Mexican Entree %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\MuffinsPastries %28BB%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Nachos %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Other Appetizer %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Other B-fast Entrée %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Other B-fast Side %28BS%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Other Baked Goods %28BB%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Other Dessert %28D%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Other Entrée %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Other Side %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Other Snack %28S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\PancakesWaffles %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Pasta %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Pizza %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Rice %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Rotisserie Chicken %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Salty Snacks %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Salty Snacks %28S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\SandwichWrap %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Seafood %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\SoupSalad %28LD A%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\SoupSalad %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\SoupSalad Side %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\SteakBeef %28LD M%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Sweet Snacks %28S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Vegetables %28LD S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Yogurt %28BM%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Yogurt %28BS%29.svg" />
+    <Content Include="Images\P2PDashboardImages\Food_Items\Yogurt %28S%29.svg" />
+    <Content Include="Images\P2PDashboardImages\p2p-pdf-icon.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_3rds.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_4rds.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Atmosphere.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Beverages.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Cleanliness.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Delivery.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Dine_In.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Drive_Thru.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Food.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Icons.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Lctn_Church.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Lctn_Entermnt.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Lctn_Gym.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Lctn_Home.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Lctn_Restaurant.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Lctn_School.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Lctn_Store.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Lctn_Work.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Motvtn_Bg.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_0.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_1.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_2.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_3.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_4.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_5.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_Pie_Chart_Bg.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_Somewhat.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Planning_Well.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Service.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Take_Out.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Transportaion_Bus.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Transportaion_Cab.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Transportaion_Car.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Transportaion_Other.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Transportaion_Walked.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Value.svg" />
+    <Content Include="Images\P2PDashboardImages\P2P_Visit_Pie_Chart_Bg.svg" />
+    <Content Include="Images\P2PDashboardImages\pdf.svg" />
+    <Content Include="Images\P2PDashboardImages\ppt.svg" />
+    <Content Include="Images\ReportsStaticImages\1.png" />
+    <Content Include="Images\ReportsStaticImages\10.png" />
+    <Content Include="Images\ReportsStaticImages\11.png" />
+    <Content Include="Images\ReportsStaticImages\12.png" />
+    <Content Include="Images\ReportsStaticImages\13.png" />
+    <Content Include="Images\ReportsStaticImages\14.png" />
+    <Content Include="Images\ReportsStaticImages\15.png" />
+    <Content Include="Images\ReportsStaticImages\16.png" />
+    <Content Include="Images\ReportsStaticImages\17.png" />
+    <Content Include="Images\ReportsStaticImages\18.png" />
+    <Content Include="Images\ReportsStaticImages\19.png" />
+    <Content Include="Images\ReportsStaticImages\20.png" />
+    <Content Include="Images\ReportsStaticImages\21.png" />
+    <Content Include="Images\ReportsStaticImages\22.png" />
+    <Content Include="Images\ReportsStaticImages\23.png" />
+    <Content Include="Images\ReportsStaticImages\24.png" />
+    <Content Include="Images\ReportsStaticImages\25.png" />
+    <Content Include="Images\ReportsStaticImages\26.png" />
+    <Content Include="Images\ReportsStaticImages\27.png" />
+    <Content Include="Images\ReportsStaticImages\28.png" />
+    <Content Include="Images\ReportsStaticImages\29.png" />
+    <Content Include="Images\ReportsStaticImages\30.png" />
+    <Content Include="Images\ReportsStaticImages\31.png" />
+    <Content Include="Images\ReportsStaticImages\32.png" />
+    <Content Include="Images\ReportsStaticImages\33.png" />
+    <Content Include="Images\ReportsStaticImages\34.png" />
+    <Content Include="Images\ReportsStaticImages\35.png" />
+    <Content Include="Images\ReportsStaticImages\36.png" />
+    <Content Include="Images\ReportsStaticImages\37.png" />
+    <Content Include="Images\ReportsStaticImages\38.png" />
+    <Content Include="Images\ReportsStaticImages\39.png" />
+    <Content Include="Images\ReportsStaticImages\40.png" />
+    <Content Include="Images\ReportsStaticImages\41.png" />
+    <Content Include="Images\ReportsStaticImages\42.png" />
+    <Content Include="Images\ReportsStaticImages\43.png" />
+    <Content Include="Images\ReportsStaticImages\44.png" />
+    <Content Include="Images\ReportsStaticImages\45.png" />
+    <Content Include="Images\ReportsStaticImages\46.png" />
+    <Content Include="Images\ReportsStaticImages\47.png" />
+    <Content Include="Images\ReportsStaticImages\48.png" />
+    <Content Include="Images\ReportsStaticImages\49.png" />
+    <Content Include="Images\ReportsStaticImages\50.png" />
+    <Content Include="Images\ReportsStaticImages\51.png" />
+    <Content Include="Images\ReportsStaticImages\52.png" />
+    <Content Include="Images\ReportsStaticImages\53.png" />
+    <Content Include="Images\ReportsStaticImages\54.png" />
+    <Content Include="Images\ReportsStaticImages\55 - Appendix 11.png" />
+    <Content Include="Images\ReportsStaticImages\55.png" />
+    <Content Include="Images\ReportsStaticImages\56.png" />
+    <Content Include="Images\ReportsStaticImages\57.png" />
+    <Content Include="Images\ReportsStaticImages\58.png" />
+    <Content Include="Images\ReportsStaticImages\7.png" />
+    <Content Include="Images\ReportsStaticImages\8.png" />
+    <Content Include="Images\ReportsStaticImages\9.png" />
+    <Content Include="Images\ReportsStaticImages\Section-Visit Demographics.png" />
+    <Content Include="Images\ReportsStaticImages\3.png" />
+    <Content Include="Images\ReportsStaticImages\2.png" />
+    <Content Include="Images\ReportsStaticImages\4.png" />
+    <Content Include="Images\ReportsStaticImages\5.png" />
+    <Content Include="Images\ReportsStaticImages\6.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\choose_restaurant_based_on_couponsdiscount.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\choose_restaurant_based_on_price.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\choose_restaurant_if_they_offer_healthy_menu_items.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\comfortable_order_through_mobile_pay_technologies.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\consider_dining_out_a_form_of_entertainment.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\consider_myself_a_foodie.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\consider_myself_health_conscious_even_if_dine_at_restaurant.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\dining_out_is_way_to_connect_with_familyfriends.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\dont_have_time_to_eat_right.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\feel_guilty_when_eat_fast_food.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\like_to_eat_at_fast_food_restaurants.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\like_to_eat_at_restaurants_with_ethnicintl_menu_options.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\like_to_eat_at_upscale_restaurants.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\like_to_try_new_and_different_menu_items.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\like_to_try_new_restaurants.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\look_for_restaurants_that_are_kid_friendly.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\plan_where_to_dine_out_well_in_advance.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\prefer_eating_at_home_versus_resrtaurant.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\prefer_popular_chain_restaurants.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\rather_cook_than_eat_from_a_restaurant.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\restaurants_have_responsibility_help_people_eat_healthier.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\share_pictures_of_foodbev_from_restaurants_on_social_media.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\tend_to_stick_with_familiar_menu_items.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\when_it_comes_to_dining_out_im_adventurous.png" />
+    <Content Include="Images\SituationAssessmentReport\attitudinal_statements\worry_about_food_safety_when_dine_out.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining_asian.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining_bar___grill.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining_italian.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining_mexican.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining_other.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining_pizza.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining_seafood.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\casual_dining_steak___rib.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\club.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\convenience.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\core_qsr.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\dollar.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\drug.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual_asian.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual_bagelbakery_cafesandwichdeli.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual_burger.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual_chicken.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual_italian.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual_mexican.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual_pizza.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fast_casual_soup___salad.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\fsr.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\grocerymass_merchandisesupercenter.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\midscale.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\midscale_bbq.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\midscale_buffetcafeteria.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\midscale_family_style.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_asian.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_burger.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_chicken.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_coffee.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_donut.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_ice_creamyogurt.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_mexican.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_other.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_pizza.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_sandwich.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_seafood.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_smoothiejuice.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_snack.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel\qsr_soup___salad.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel_fill_images\casual_dining.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel_fill_images\core_qsr.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel_fill_images\fast_casual.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel_fill_images\fine_dining.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel_fill_images\midscale.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel_fill_images\qsr_snack.png" />
+    <Content Include="Images\SituationAssessmentReport\cross_dining_channel_fill_images\retailers.png" />
+    <Content Include="Images\SituationAssessmentReport\digital_page\android_based_smartphone.png" />
+    <Content Include="Images\SituationAssessmentReport\digital_page\ipad.png" />
+    <Content Include="Images\SituationAssessmentReport\digital_page\iphone.png" />
+    <Content Include="Images\SituationAssessmentReport\diner_segments\carefree_diners.png" />
+    <Content Include="Images\SituationAssessmentReport\diner_segments\food_enthusiasts.png" />
+    <Content Include="Images\SituationAssessmentReport\diner_segments\health_conscious.png" />
+    <Content Include="Images\SituationAssessmentReport\diner_segments\reluctant_diners.png" />
+    <Content Include="Images\SituationAssessmentReport\diner_segments\social_diners.png" />
+    <Content Include="Images\SituationAssessmentReport\diner_segments\value_seekers.png" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\age.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\attitudinal_statements.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\best_in_class.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\children_in_hh.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\coke_logo.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\considered_another_establishment.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\cross_dining_across_establishments.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\cross_dining_channel.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\cross_dining_competitors.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\day_of_week.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\decision_location.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\decision_made_with_time_left_before_arrival.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\decision_makers.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\digital_page.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\diner_segments.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\distance_travelled.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\education.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\employement_status.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\establishment_imageries.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\ethnicity.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\frequency_funnel.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\gender.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\geography.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\hec.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\hh_income.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\hh_size.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\location_prior.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\loyalty_pyramid.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\main_decision_maker.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\marital_status.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\mode_of_doing_online_booking.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\mode_of_reservation.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\mode_of_transportation.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\motivations.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\occasion_context.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\online_review_or_social_media_sites.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\other_places_considered.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\parental_identification.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\perceptions.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\planning_type.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\Popeyes.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\Popeyes.png" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\satisfaction_drivers.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\share_of_guests___trips.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\socio_economic.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\strength___oppurtunites.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\test.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\trip_activities.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\trip_purpose.svg" />
+    <Content Include="Images\SituationAssessmentReport\PreviewImages\use_of_online_review_or_social_media_sites.svg" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\didnt_want_to_cook.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\had_business_or_work_related_meeting.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\had_gift_certificate.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\homework_not_convenient.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\in_the_mood_for_specific_beverage.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\in_the_mood_for_specific_food.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\more_funentertaining.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\nothing_at_home_that_i_wanted_to_eat.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\no_beverage_at_home_that_i_wanted_to_drink.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\part_of_my_normal_routine.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\spend_time_with_my_significant_other.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\take_a_break_from_what_i_was_doing.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\wanted_to_celebrate_a_special_occasion.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\wanted_to_indulge_or_treat_myself.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\wanted_to_relax_and_unwind.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\wanted_to_socialize_with_friendsfamily.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\wanted_to_take_advantage_of_a_special_deal.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_ocassion_motivations\wanted_to_try_something_new.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\always_clean.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\always_gets_my_order_right.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\always_something_new_on_the_menu.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\beverages_that_i_like.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\convenient_way_to_pre_order.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\excellent_service.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\get_something_quick.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\good_atmosphere.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\great_tasting_food.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\healthy_options.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\healthy_options_for_kids.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\high_quality_menu_options.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\is_kid_friendly.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\specific_food_item_that_i_like.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\was_conveniently_located.png" />
+    <Content Include="Images\SituationAssessmentReport\primary_outlet_motivations\was_inexpensive.png" />
+    <Content Include="Images\Sprite-Shadow_Horizontal.svg" />
+    <Content Include="Images\Sprite-Shadow_Vertical.svg" />
+    <Content Include="Images\Sprite-Shadow_Vertical_fliped.svg" />
+    <Content Include="Images\Sprite-Shadow_Vertical_fliped_Bottom.svg" />
+    <Content Include="Images\sprite.svg" />
+    <Content Include="Images\sprite_filter_icons.svg" />
+    <Content Include="Images\Sprite_Shadow_Vertical_thin.svg" />
+    <Content Include="Images\Visits_Dashboard.jpg" />
+    <Content Include="Images\zoomIn.png" />
+    <Content Include="Images\zoomlevel.png" />
+    <Content Include="Images\zoomOut.png" />
+    <Content Include="Libraries\Aq.Plugin.AsposeExport.dll" />
+    <Content Include="Libraries\Aq.Plugin.Utility.dll" />
+    <Content Include="Libraries\AQ.Security.Cryptography.dll" />
+    <Content Include="Libraries\AQLogger.dll" />
+    <Content Include="Libraries\AqUtility.dll" />
+    <Content Include="Libraries\Aspose.Slides.dll" />
+    <Content Include="Libraries\EPPlus.dll" />
+    <Content Include="Libraries\iSHOP.BLL.dll" />
+    <Content Include="Libraries\log4net.dll" />
+    <Content Include="Libraries\MathNet.Numerics.dll" />
+    <Content Include="Libraries\Newtonsoft.Json.dll" />
+    <Content Include="Libraries\RserveCLI2.dll" />
+    <Content Include="Libraries\Stats.dll" />
+    <Content Include="Scripts\analyses_crossdinerfreqcy.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\aq-d3\aq-chart.js" />
+    <Content Include="Scripts\aq-d3\cache.js" />
+    <Content Include="Scripts\aq-d3\column.js" />
+    <Content Include="Scripts\aq-d3\columntrendchart.js" />
+    <Content Include="Scripts\aq-d3\flexi-grid.js" />
+    <Content Include="Scripts\aq-d3\global.js" />
+    <Content Include="Scripts\aq-d3\jquery.scrollbar.js" />
+    <Content Include="Scripts\aq-d3\site.js" />
+    <Content Include="Scripts\aq-d3\trendChart.js" />
+    <Content Include="Scripts\aq-plugins\aq.global.js" />
+    <Content Include="Scripts\aq-plugins\leftbasemenu.css" />
+    <Content Include="Scripts\aq-plugins\leftbasemenu.js" />
+    <Content Include="Scripts\aq-plugins\leftpanel-theme.js" />
+    <Content Include="Scripts\bootstrap-select.js" />
+    <Content Include="Scripts\bootstrap-select.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chart.js" />
+    <Content Include="Scripts\bootstrap.min.css" />
+    <Content Include="Scripts\analyses_establishment_compare.js" />
+    <Content Include="Scripts\analyses_establishment_deepdive.js" />
+    <Content Include="Scripts\d3.js" />
+    <Content Include="Scripts\d3.tip.v0.6.3.js" />
+    <Content Include="Scripts\d3\d3.js" />
+    <Content Include="Scripts\d3\d3.min.js" />
+    <Content Include="Scripts\dashboard.js" />
+    <Content Include="Scripts\dashboard_p2p.js" />
+    <Content Include="Scripts\dashboard_visits.js" />
+    <Content Include="Scripts\dashboard_demographic.js" />
+    <Content Include="Scripts\dashboard_brandhealth.js" />
+    <Content Include="Scripts\draw-chart.js" />
+    <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\html2canvas.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="App_Data\ProfilerConfig.json" />
+    <Content Include="App_Data\SnapshotConfig.json" />
+    <Content Include="App_Data\TableConfig.json" />
+    <Content Include="App_Data\tableestablishmentcompare.json" />
+    <Content Include="App_Data\tableestablishmentdeepdive.json" />
+    <Content Include="App_Data\tablebeveragecomparison.json" />
+    <Content Include="App_Data\chartestablishmentcompare.json" />
+    <Content Include="App_Data\chartestablishmentdeepdive.json" />
+    <Content Include="App_Data\analyses_advancefilter.json" />
+    <Content Include="App_Data\chart_advancefilter.json" />
+    <Content Include="App_Data\table_advancefilter.json" />
+    <Content Include="App_Data\analyses_advancefilter_visits.json" />
+    <Content Include="App_Data\analyses_advancefilter_guest.json" />
+    <Content Include="App_Data\chart_advancefilter_visits.json" />
+    <Content Include="App_Data\chart_advancefilter_guest.json" />
+    <Content Include="App_Data\table_advancefilter_guest.json" />
+    <Content Include="App_Data\table_advancefilter_visits.json" />
+    <Content Include="App_Data\chartbeveragecomparison.json" />
+    <Content Include="App_Data\tablebeveragedeepdive.json" />
+    <Content Include="App_Data\chartbeveragedeepdive.json" />
+    <Content Include="App_Data\analysesestablishmentdeepdive.json" />
+    <Content Include="App_Data\analysesestablishmentcompare.json" />
+    <Content Include="Areas\StoryBoard\Views\web.config" />
+    <Content Include="Areas\StoryBoard\Views\Story\Index.cshtml" />
+    <Content Include="App_Data\table_advancedfilter_guest_beverage.json" />
+    <Content Include="App_Data\reportp2preport.json" />
+    <Content Include="App_Data\reportdinerreport.json" />
+    <Content Include="App_Data\dashboardp2pdashboard.json" />
+    <Content Include="App_Data\dashboardbrandhealth.json" />
+    <Content Include="App_Data\dashboardvisits.json" />
+    <Content Include="App_Data\table_advancedfilter_establishment_frequency.json" />
+    <Content Include="App_Data\chart_advancedfilter_establishment_frequency.json" />
+    <Content Include="App_Data\table_advancedfilter_visit_beverage.json" />
+    <Content Include="App_Data\table_beverage_advancefilter_guest.json" />
+    <Content Include="App_Data\table_beverage_advancefilter_visits.json" />
+    <Content Include="Aspose.Slides.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\Chivo-Black.otf" />
+    <Content Include="fonts\Chivo-BlackItalic.otf" />
+    <Content Include="fonts\Chivo-Bold.otf" />
+    <Content Include="fonts\Chivo-BoldItalic.otf" />
+    <Content Include="fonts\Chivo-Italic.otf" />
+    <Content Include="fonts\Chivo-Light.otf" />
+    <Content Include="fonts\Chivo-LightItalic.otf" />
+    <Content Include="fonts\Chivo-Regular.ttf" />
+    <Content Include="App_Data\dashboardp2pdashboardCustomBase.json" />
+    <Content Include="App_Data\analysescrossdinerfrequencies.json" />
+    <Content Include="App_Data\dashboard_demographics.json" />
+    <Content Include="App_Data\dashboardp2pdashboardCustomBaseAdvancedFilters.json" />
+    <Content Include="App_Data\reportsituationassessment.json" />
+    <Content Include="App_Data\reportsituationassessment_frequency.json" />
+    <Content Include="PPTBuilder\UploadHandler.ashx" />
+    <Content Include="Content\bootstrap-select.css.map" />
+    <Content Include="PPTBuilder\arby\arby-sections-arby.pptx" />
+    <Content Include="PPTBuilder\kfc\kfc-subsec2-kfc.pptx" />
+    <Content Include="PPTBuilder\kfc\kfc-subsec3-kfc.pptx" />
+    <Content Include="PPTBuilder\kfc\kfc-subsection-kfc" />
+    <Content Include="PPTBuilder\kfc\newsubsection-kfc.pptx" />
+    <Content Include="PPTBuilder\kfc\sample-kfc.pptx" />
+    <Content Include="PPTBuilder\kfc\subsection1-kfc.pptx" />
+    <Content Include="PPTBuilder\wendy\arby-subsection2-wendy.pptx" />
+    <Content Include="PPTBuilder\wendy\burger-army-wendy.pptx" />
+    <Content Include="PPTBuilder\wendy\newsection-wendy.pptx" />
+    <Content Include="PPTBuilder\wendy\sample-wendy.pptx" />
+    <Content Include="PPTBuilder\sectn1\sec-sectn1.pptx" />
+    <Content Include="PPTBuilder\sectn1\sec1-sectn1.pptx" />
+    <Content Include="PPTBuilder\sectn1\sec2-sectn1.pptx" />
+    <Content Include="PPTBuilder\sectn1\sec3-sectn1.pptx" />
+    <Content Include="PPTBuilder\sectn1\sec4-sectn1.pptx" />
+    <Content Include="PPTBuilder\sectn1\sec5-sectn1.pptx" />
+    <Content Include="PPTBuilder\sectn2\sec21-sectn2.pptx" />
+    <Content Include="PPTBuilder\sectn2\sec22-sectn2.pptx" />
+    <Content Include="PPTBuilder\sectn2\sec23-sectn2.pptx" />
+    <Content Include="PPTBuilder\sectn2\sec24-sectn2.pptx" />
+    <Content Include="PPTBuilder\sectn2\sec25-sectn2.pptx" />
+    <Content Include="PPTBuilder\sectn2\sec26-sectn2.pptx" />
+    <Content Include="PPTBuilder\sectn3\sect31-sectn3.pptx" />
+    <Content Include="PPTBuilder\sectn3\sect32-sectn3.pptx" />
+    <Content Include="PPTBuilder\sectn3\sect33-sectn3.pptx" />
+    <Content Include="PPTBuilder\testing\Sub Section - Testing-testing.pptx" />
+    <Content Include="PPTBuilder\testing\SUb section1-testing.pptx" />
+    <Content Include="PPTBuilder\testing\subsec12-testing.pptx" />
+    <Content Include="log4net.config" />
+    <None Include="Properties\PublishProfiles\SAbat  Ullah.pubxml" />
+    <None Include="Properties\PublishProfiles\Sabat Ullah.pubxml" />
+    <None Include="Properties\PublishProfiles\Sabat.pubxml" />
+    <None Include="Properties\PublishProfiles\SabatUllah.pubxml" />
+    <None Include="Properties\PublishProfiles\SabatUllahDine.pubxml" />
+    <None Include="Properties\PublishProfiles\Sabat_Ullah.pubxml" />
+    <None Include="Properties\PublishProfiles\Sabt.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Scripts\i18n\defaults-am_ET.js" />
+    <Content Include="Scripts\i18n\defaults-am_ET.min.js" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.js" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\i18n\defaults-da_DK.min.js" />
+    <Content Include="Scripts\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\i18n\defaults-es_ES.js" />
+    <Content Include="Scripts\i18n\defaults-es_ES.min.js" />
+    <Content Include="Scripts\i18n\defaults-et_EE.js" />
+    <Content Include="Scripts\i18n\defaults-et_EE.min.js" />
+    <Content Include="Scripts\i18n\defaults-eu.js" />
+    <Content Include="Scripts\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.js" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\i18n\defaults-hr_HR.js" />
+    <Content Include="Scripts\i18n\defaults-hr_HR.min.js" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Scripts\i18n\defaults-id_ID.js" />
+    <Content Include="Scripts\i18n\defaults-id_ID.min.js" />
+    <Content Include="Scripts\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\i18n\defaults-ja_JP.js" />
+    <Content Include="Scripts\i18n\defaults-ja_JP.min.js" />
+    <Content Include="Scripts\i18n\defaults-kh_KM.js" />
+    <Content Include="Scripts\i18n\defaults-kh_KM.min.js" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.js" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Scripts\i18n\defaults-lv_LV.js" />
+    <Content Include="Scripts\i18n\defaults-lv_LV.min.js" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.js" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\i18n\defaults-vi_VN.js" />
+    <Content Include="Scripts\i18n\defaults-vi_VN.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.js.map" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.js.map" />
+    <Content Include="Scripts\i18n\defaults-vi_VN.js.map" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.js.map" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.js.map" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.js.map" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.js.map" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.js.map" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.js.map" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.js.map" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.js.map" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.js.map" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.js.map" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.js.map" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.js.map" />
+    <Content Include="Scripts\i18n\defaults-lv_LV.js.map" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.js.map" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.js.map" />
+    <Content Include="Scripts\i18n\defaults-kh_KM.js.map" />
+    <Content Include="Scripts\i18n\defaults-ja_JP.js.map" />
+    <Content Include="Scripts\i18n\defaults-it_IT.js.map" />
+    <Content Include="Scripts\i18n\defaults-id_ID.js.map" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.js.map" />
+    <Content Include="Scripts\i18n\defaults-hr_HR.js.map" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.js.map" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.js.map" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.js.map" />
+    <Content Include="Scripts\i18n\defaults-eu.js.map" />
+    <Content Include="Scripts\i18n\defaults-et_EE.js.map" />
+    <Content Include="Scripts\i18n\defaults-es_ES.js.map" />
+    <Content Include="Scripts\i18n\defaults-es_CL.js.map" />
+    <Content Include="Scripts\i18n\defaults-en_US.js.map" />
+    <Content Include="Scripts\i18n\defaults-de_DE.js.map" />
+    <Content Include="Scripts\i18n\defaults-da_DK.js.map" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.js.map" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.js.map" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.js.map" />
+    <Content Include="Scripts\i18n\defaults-am_ET.js.map" />
+    <Content Include="Scripts\bootstrap-select.min.js.map" />
+    <Content Include="Scripts\bootstrap-select.js.map" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Scripts\insightsmeeting.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-slider-pips.css" />
+    <Content Include="Scripts\jquery-ui-slider-pips.js" />
+    <Content Include="Scripts\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.nicescroll.js" />
+    <Content Include="Scripts\lodash.min.js" />
+    <Content Include="Scripts\login.js" />
+    <Content Include="Scripts\master-theme.js" />
+    <Content Include="Scripts\report_Diner.js" />
+    <Content Include="Scripts\report.js" />
+    <Content Include="Scripts\analyses.js" />
+    <Content Include="Scripts\reportdinerreport.js" />
+    <Content Include="Scripts\report_situationassessmnt.js" />
+    <Content Include="Scripts\storyBoard.js" />
+    <Content Include="Scripts\table-scroll\tablescroller.jquery.js" />
+    <Content Include="Scripts\table-scroll\tablescroller.js" />
+    <Content Include="Scripts\table.js" />
+    <Content Include="Scripts\tableHeadFixer.js" />
+    <Content Include="Scripts\chart_beverage_comparison.js" />
+    <Content Include="Scripts\table_beverage_comparison.js" />
+    <Content Include="Scripts\chart_beverage_deepdive.js" />
+    <Content Include="Scripts\table_beverage_deepdive.js" />
+    <Content Include="Scripts\chart_establishment_compare.js" />
+    <Content Include="Scripts\reportp2preport.js" />
+    <Content Include="Scripts\table_establishment_compare.js" />
+    <Content Include="Scripts\chart_establishment_deepdive.js" />
+    <Content Include="Scripts\table_establishment_deepdive.js" />
+    <Content Include="Scripts\tool-config.js" />
+    <Content Include="StoryBoard Images\info.txt" />
+    <Content Include="Temp\info.txt" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Templates\P2PDashboard.pptx" />
+    <Content Include="Templates\P2PDashboard_Popup.pptx" />
+    <Content Include="Templates\P2PDashboard_PopupBar.pptx" />
+    <Content Include="Templates\barWithChange.pptx" />
+    <Content Include="Templates\pyramid.pptx" />
+    <Content Include="Templates\pyramidWithChange.pptx" />
+    <Content Include="Templates\ExportToPPTTemplateSavedReports.pptx" />
+    <Content Include="Views\Analyses\CrossDinerFrequencies.cshtml" />
+    <Content Include="Temp\CrossDinerExcelTemplate.xlsx" />
+    <Content Include="Templates\Dine_Custom Download_Help Document.pdf" />
+    <Content Include="Views\DashBoard\Demographics.cshtml" />
+    <Content Include="Templates\DemogDashboard.pptx" />
+    <Content Include="Templates\colorForChannel.json" />
+    <Content Include="Templates\ExcelTemplate.xlsx" />
+    <Content Include="Templates\CrossDinerExcelTemplate.xlsx" />
+    <Content Include="Web References\com.aqinsights.coke\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Report\SituationAssessmentReport.cshtml" />
+    <Content Include="Templates\SARReport.pptx" />
+    <Content Include="Views\Report\InsightsMeetingPlanner.cshtml" />
+    <Content Include="Utility\InsightMeetingPlanner-SlideName.pptx" />
+    <Content Include="Templates\Insights Meeting Planning_TemplateSlide.pptx" />
+    <None Include="Web References\com.aqinsights.coke\User_Management.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Logon\Index.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Shared\_LeftPanel.cshtml" />
+    <Content Include="Views\Shared\_MasterLayout.cshtml" />
+    <Content Include="Views\Analyses\Index.cshtml" />
+    <Content Include="Views\Shared\_TableLayout.cshtml" />
+    <Content Include="Views\Tool\Config.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\StoryBoard\Controllers\StoryController.cs" />
+    <Compile Include="Areas\StoryBoard\Models\CustomDownload.cs" />
+    <Compile Include="Areas\StoryBoard\Models\FavoriteReport.cs" />
+    <Compile Include="Areas\StoryBoard\Models\Report.cs" />
+    <Compile Include="Areas\StoryBoard\Models\Slide.cs" />
+    <Compile Include="Areas\StoryBoard\Models\SlideNotes.cs" />
+    <Compile Include="Areas\StoryBoard\Models\SlideShare.cs" />
+    <Compile Include="Areas\StoryBoard\Models\UserGroup.cs" />
+    <Compile Include="Areas\StoryBoard\StoryBoardAreaRegistration.cs" />
+    <Compile Include="BusinessLayer\ChartBO.cs" />
+    <Compile Include="BusinessLayer\DashBoardBO.cs" />
+    <Compile Include="BusinessLayer\LogEntries.cs" />
+    <Compile Include="BusinessLayer\ReportDine.cs" />
+    <Compile Include="BusinessLayer\FilterInfo.cs" />
+    <Compile Include="BusinessLayer\GlobalConstants.cs" />
+    <Compile Include="BusinessLayer\Interface\IReport.cs" />
+    <Compile Include="BusinessLayer\ReportBO.cs" />
+    <Compile Include="BusinessLayer\ReportSummary.cs" />
+    <Compile Include="BusinessLayer\StoryboardRepository.cs" />
+    <Compile Include="BusinessLayer\UserBO.cs" />
+    <Compile Include="BusinessLayer\SnapshotBO.cs" />
+    <Compile Include="BusinessLayer\TableBO.cs" />
+    <Compile Include="BusinessLayer\ToolConfigBO.cs" />
+    <Compile Include="BusinessLayer\Utils.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InsightsMeetingPlannerController.cs" />
+    <Compile Include="Controllers\LogonController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\AnalysesController.cs" />
+    <Compile Include="Controllers\TableController.cs" />
+    <Compile Include="Controllers\ToolController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\DownloadFile.ashx.cs">
+      <DependentUpon>DownloadFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\EnableToolConfigAttribute.cs" />
+    <Compile Include="Infrastructure\UserDbInitialization.cs" />
+    <Compile Include="Infrastructure\ValidateSessionAttribute.cs" />
+    <Compile Include="Models\Dashboard\P2PDashboardData.cs" />
+    <Compile Include="Models\Report\RSlide.cs" />
+    <Compile Include="PPTBuilder\UploadHandler.ashx.cs">
+      <DependentUpon>UploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Utility\Quick_Helpers.cs" />
+    <Compile Include="Web References\com.aqinsights.coke\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Handlers\DownloadFile.ashx" />
+    <Content Include="Templates\Chart_PowerPoint.pptx" />
+    <Content Include="Templates\Snapshot_PowerPoint.pptx" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\d3\LICENSE" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <Content Include="Views\Table\EstablishmentCompare.cshtml" />
+    <Content Include="Views\Table\Index.cshtml" />
+    <Content Include="Views\Table\EstablishmentDeepDive.cshtml" />
+    <Content Include="Views\Table\BeverageCompare.cshtml" />
+    <Content Include="Views\Table\BeverageDeepDive.cshtml" />
+    <Content Include="Views\Shared\_ChartLayout.cshtml" />
+    <Content Include="Views\Chart\BeverageCompare.cshtml" />
+    <Content Include="Views\Chart\BeverageDeepDive.cshtml" />
+    <Content Include="Views\Chart\EstablishmentCompare.cshtml" />
+    <Content Include="Views\Chart\EstablishmentDeepDive.cshtml" />
+    <Content Include="Views\Shared\_AdvancedFilter.cshtml" />
+    <Content Include="Views\Shared\_AnalysesLayout.cshtml" />
+    <Content Include="Views\Analyses\EstablishmentCompare.cshtml" />
+    <Content Include="Views\Analyses\EstablishmentDeepDive.cshtml" />
+    <Content Include="Views\Report\P2PReport.cshtml" />
+    <Content Include="Views\Report\DinerReport.cshtml" />
+    <Content Include="Views\Shared\_ReportLayout.cshtml" />
+    <Content Include="Templates\StoryBoardTemplate.pptx" />
+    <Content Include="Templates\DINE_Reports.pptx" />
+    <Content Include="Templates\Summary_Reports.pptx" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
+    <Content Include="Views\Shared\_DashBoardLayout.cshtml" />
+    <Content Include="Views\DashBoard\P2PDashboard.cshtml" />
+    <Content Include="Views\DashBoard\BrandHealth.cshtml" />
+    <Content Include="Views\DashBoard\Visits.cshtml" />
+    <Content Include="Temp\ExcelTemplate.xlsx" />
+    <Content Include="Templates\ExportToPPTTemplate.pptx" />
+    <Content Include="Templates\ChartExportToExcelTemplate.xlsx" />
+    <Content Include="Templates\CustomDownloadTemplate.pptx" />
+    <Content Include="Templates\ExportToExcelOther.xlsm" />
+    <Content Include="Templates\ExportToPPTOther.pptx" />
+    <Content Include="Templates\DINER_Report.pptx" />
+    <Content Include="Templates\P2P_Report.pptx" />
+    <None Include="Web References\com.aqinsights.coke\User_Management.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\StoryBoard\Views\Shared\" />
+    <Folder Include="Images\temp\" />
+    <Folder Include="TemplateForPPTBuilder\" />
+    <Folder Include="Temp\InputFile\" />
+    <Folder Include="Temp\OutputFile\" />
+    <Folder Include="Views\InsightsMeetingPlanner\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://testkiexplorer.aqinsights.com/kiusermanagementtest/User_Management.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.aqinsights.coke\</RelPath>
+      <UpdateFromURL>http://testkiexplorer.aqinsights.com/kiusermanagementtest/User_Management.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Dine_com_aqinsights_coke_User_Management</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="InteropExtensionLib">
+      <Guid>{C3D19104-7A67-4EB0-B459-D5B2E734D430}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\DineRep\NextGen.Framework\NextGen.Core.Configuration\NextGen.Core.Configuration.csproj">
+      <Project>{2473ae85-fe3c-4003-bc8b-91a6baec955d}</Project>
+      <Name>NextGen.Core.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\DineRep\NextGen.Framework\NextGen.Core.Data\NextGen.Core.Data.csproj">
+      <Project>{31170d82-35f6-4b43-aa45-dd1fea1ebff9}</Project>
+      <Name>NextGen.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\DineRep\NextGen.Framework\NextGen.Core.Models\NextGen.Core.Models.csproj">
+      <Project>{1f916fae-6728-492b-ad9c-d5d587d2359c}</Project>
+      <Name>NextGen.Core.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dine.ReportContext\Dine.ReportContext.csproj">
+      <Project>{F7687FC9-6149-4429-95B5-5BC549ACC84C}</Project>
+      <Name>Dine.ReportContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dine.Storyboard.Data\Dine.Storyboard.Data.csproj">
+      <Project>{E7C63CE1-3BD1-4E4F-AC77-0D8B7698214C}</Project>
+      <Name>Dine.Storyboard.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Data\Framework.Data.csproj">
+      <Project>{b5e92023-4b31-4e79-b796-8fda5a26f31e}</Project>
+      <Name>Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Models\Framework.Models.csproj">
+      <Project>{a5bcac25-4fe5-448b-b301-892d8b10145b}</Project>
+      <Name>Framework.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51578</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51578/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = @Dine.Utility.Constants.ToolTitlePrefix + "Chart";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<div ng-controller="chartController" class="master-view-content">
+    <div class="submodules">
+        <div class="submodules-band"></div>
+        <div class="submodules-options">
+            <ul>
+                <li class="link_hover establishment_chart-msehover classMouseHover">
+                    <div class="link_items">ESTABLISHMENT<div class="downarrw"></div></div>
+                    <div class="list_content">
+                        <div class="submodules-options-link establishment-link-compare establishment-compare-chart-msehover classMouseHover">@Html.ActionLink("COMPARE ESTABLISHMENTS", "EstablishmentCompare", "Chart")</div>
+                        <div class="submodules-options-link establishment-link-deep-dive establishment-deep-dive-chart-msehover classMouseHover">@Html.ActionLink("ESTABLISHMENT DEEP DIVE", "EstablishmentDeepDive", "Chart")</div>
+                    </div>
+                </li>
+                <li class="link_hover beverage_chart-msehover classMouseHover">
+                    <div class="link_items">BEVERAGES<div class="downarrw"></div></div>
+                    <div class="list_content">
+                        <div class="submodules-options-link beverage-link beverage-compare-chart-msehover classMouseHover">@Html.ActionLink("COMPARE BEVERAGES", "BeverageCompare", "Chart")</div>
+                        <div class="submodules-options-link beverage-link beverage-deep-dive-chart-msehover classMouseHover">@Html.ActionLink("BEVERAGE DEEP DIVE", "BeverageDeepDive", "Chart")</div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+    <div class="red_bar"></div>
+</div>
+@System.Web.Optimization.Styles.Render("~/bundle/schart")
+@System.Web.Optimization.Scripts.Render("~/bundle/jchart")
+@*<script src="@Utils.ContentVersioned("~/Scripts/chart.js")"> </script>*@
+@*<link href="~/Content/chart.css" rel="stylesheet" />*@
